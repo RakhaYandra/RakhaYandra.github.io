@@ -35,7 +35,7 @@ export const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navContainer}>
-        <a className={styles.logo} href="/web-port/">
+        <a className={styles.logo} href="/">
           <div className={styles.logoIcon}>
             <img
               src={getImageUrl("hero/heroImage.jpg")}

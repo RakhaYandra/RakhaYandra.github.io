@@ -43,7 +43,7 @@ export default defineConfig({
       },
     },
   },
-  base: "/web-port/",
+  base: "/",
   css: {
     modules: {
       localsConvention: "camelCase",
@@ -75,14 +75,4 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
   },
-  // Enable experimental features for better performance
-  experimental: {
-    renderBuiltUrl(filename, { hostType }) {
-      if (hostType === 'js') {
-        return { js: `"/web-port/${filename}"` };
-      } else {
-        return `/web-port/${filename}`;
-      }
-    }
-  }
 });

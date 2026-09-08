@@ -73,7 +73,7 @@ jobs:
       - name: 🏗️ Build project
         env:
           NODE_ENV: production
-          VITE_BASE_URL: /web-port/
+          VITE_BASE_URL: /
           CI: true
         run: |
           echo "🏗️ Building project for production..."

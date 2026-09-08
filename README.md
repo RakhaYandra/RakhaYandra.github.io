@@ -45,7 +45,7 @@ This website acts as a comprehensive resume, demonstrating to HR recruiters, tec
 ## 📁 Folder Structure
 
 ```text
-web-port/
+RakhaYandra.github.io/
 ├── assets/                 # Compilable and static media assets
 │   ├── about/              # Illustration assets
 │   ├── certificates/       # Credential issuer logos
@@ -101,8 +101,8 @@ web-port/
 ### Installation
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/RakhaYandra/web-port.git
-    cd web-port
+    git clone https://github.com/RakhaYandra/RakhaYandra.github.io.git
+    cd RakhaYandra.github.io
     ```
 2.  Install dependencies:
     ```bash
@@ -113,7 +113,7 @@ web-port/
     npm run dev
     ```
 4.  Open browser:
-    Navigate to `http://localhost:3000/web-port/` (Vite port is configured to 3000 in `vite.config.js`).
+    Navigate to `http://localhost:3000/` (Vite port is configured to 3000 in `vite.config.js`).
 
 ### Available Scripts
 *   `npm run dev` - Launches Vite local server on port 3000 with hot-reload.

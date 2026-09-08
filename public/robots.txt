@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rakhayandra.github.io/web-port/sitemap.xml
+Sitemap: https://rakhayandra.github.io/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1

@@ -9,7 +9,7 @@ This document outlines the software architecture, component relationships, data 
 The project follows a modular, feature-oriented React folder structure:
 
 ```text
-web-port/
+RakhaYandra.github.io/
 ├── assets/                 # Raw/compressed assets organized by section
 ├── docs/                   # Planning, roadmap, and design documentation
 ├── public/                 # Static public assets (e.g., favicon)
