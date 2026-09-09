@@ -99,7 +99,7 @@ export const GetInTouch = () => {
               }`}
           >
             <div className={styles.pulseIndicator}></div>
-            <span>💼 Available for Full-Time IT Opportunities</span>
+            <span>💼 Open to Work — Remote-friendly IT Roles</span>
           </div>
 
           <h2
@@ -114,7 +114,7 @@ export const GetInTouch = () => {
             className={`${styles.subtitle} ${isVisible ? styles.slideInRight : ""
               }`}
           >
-            Whether you are looking to hire a versatile IT professional, discuss digital transformation, or collaborate on tech solutions, I am always open to new opportunities. Let&apos;s connect.
+            Whether you are looking to hire a versatile IT professional for a remote, hybrid, or on-site team, discuss digital transformation, or collaborate on tech solutions, I am always open to new opportunities. Let&apos;s connect.
           </p>
 
           <div className={styles.heroActions}>

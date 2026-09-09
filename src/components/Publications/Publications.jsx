@@ -293,9 +293,14 @@ export const Publications = () => {
                       selectedPublication.doi !== "Pending" && (
                         <div className={styles.detailItem}>
                           <span className={styles.detailLabel}>DOI:</span>
-                          <span className={styles.detailValue}>
+                          <a
+                            href={selectedPublication.doi}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.detailValue}
+                          >
                             {selectedPublication.doi}
-                          </span>
+                          </a>
                         </div>
                       )}
                   </div>

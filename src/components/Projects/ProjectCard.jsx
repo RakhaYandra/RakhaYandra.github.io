@@ -1,22 +1,39 @@
 import styles from "./ProjectCard.module.css";
 import { getImageUrl } from "../../utils";
 
+const LinkButton = ({ href, className, children, disabledLabel }) => {
+  if (!href) {
+    return (
+      <span className={`${className} ${styles.disabledAction}`} aria-label={disabledLabel}>
+        {children}
+      </span>
+    );
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </a>
+  );
+};
+
 export const ProjectCard = ({
   project: {
     title,
     imageSrc,
     description,
+    myRole,
+    outcome,
     skills,
-    demo,
-    source,
     workType,
     duration,
     teamSize,
     advisor,
+    archived,
+    links = {},
   },
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${archived ? styles.archivedCard : ""}`}>
       {/* Liquid Glass Layers */}
       <div className={styles.liquidLayer1}></div>
       <div className={styles.liquidLayer2}></div>
@@ -31,50 +48,8 @@ export const ProjectCard = ({
           alt={`${title} project screenshot`}
           className={styles.image}
         />
-        <div className={styles.overlay}>
-          <div className={styles.overlayContent}>
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.overlayBtn}
-              aria-label={`View ${title} demo`}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-              </svg>
-              View Demo
-            </a>
-            <a
-              href={source}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.overlayBtn}
-              aria-label={`View ${title} source code`}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Source
-            </a>
-          </div>
-        </div>
         <div className={styles.imageGlow}></div>
+        {archived && <div className={styles.archivedBadge}>Archived</div>}
       </div>
 
       <div className={styles.content}>
@@ -86,45 +61,38 @@ export const ProjectCard = ({
               {duration && <span className={styles.duration}>{duration}</span>}
             </div>
           </div>
-          <div className={styles.links}>
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.linkIcon}
-              aria-label={`View ${title} demo`}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M7 17L17 7M17 7H7M17 7V17"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
-            <a
-              href={source}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.linkIcon}
-              aria-label={`View ${title} source code`}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
         </div>
 
+        {myRole && (
+          <p className={styles.myRole}>
+            <span className={styles.myRoleLabel}>My role:</span> {myRole}
+          </p>
+        )}
+
         <p className={styles.description}>{description}</p>
+
+        {outcome && outcome.length > 0 && (
+          <ul className={styles.outcomes}>
+            {outcome.map((item, id) => (
+              <li key={id} className={styles.outcomeItem}>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={styles.outcomeCheck}
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
 
         <div className={styles.skills}>
           {skills.map((skill, id) => (
@@ -153,22 +121,30 @@ export const ProjectCard = ({
         )}
 
         <div className={styles.actions}>
-          <a
-            href={demo}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkButton
+            href={links.live}
             className={styles.primaryAction}
+            disabledLabel={`${title} has no live demo`}
           >
             Live Demo
-          </a>
-          <a
-            href={source}
-            target="_blank"
-            rel="noopener noreferrer"
+          </LinkButton>
+          <LinkButton
+            href={links.repo}
             className={styles.secondaryAction}
+            disabledLabel={`${title} has no source repository`}
           >
             View Code
-          </a>
+          </LinkButton>
+          {links.docs && (
+            <a
+              href={links.docs}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.docsAction}
+            >
+              Docs / Paper
+            </a>
+          )}
         </div>
       </div>
     </div>

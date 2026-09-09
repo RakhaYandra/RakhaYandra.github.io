@@ -12,6 +12,7 @@ import { Projects } from "./components/Projects/Projects";
 import { Publications } from "./components/Publications/Publications";
 import { Skills } from "./components/Skills/Skills";
 import { Footer } from "./components/Footer/Footer";
+import { Writing } from "./components/Writing/Writing";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Organizations />
           <Publications />
           <Projects />
+          <Writing />
           <GetInTouch />
         </main>
         

@@ -572,6 +572,16 @@
   max-width: 60%;
 }
 
+a.detailValue {
+  color: #60a5fa;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+a.detailValue:hover {
+  text-decoration: underline;
+}
+
 .modalTakeaway {
   margin-bottom: 2rem;
   padding: 1.5rem;

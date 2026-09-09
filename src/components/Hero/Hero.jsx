@@ -57,7 +57,7 @@ export const Hero = () => {
           className={`${styles.statusBadge} ${isLoaded ? styles.fadeInUp : ""}`}
         >
           <div className={styles.statusDot}></div>
-          <span>Available for opportunities</span>
+          <span>Open to Work · Remote / Hybrid / On-site</span>
         </div>
 
         {/* Hero Heading */}
@@ -70,7 +70,7 @@ export const Hero = () => {
             <span className={styles.titleRole}>Information Systems Graduate</span>
           </h1>
           <p className={styles.subtitle}>
-            Bridging the gap between business processes and technology. An honors graduate (Cum Laude) with professional software development experience, analytical thinking, and the versatility to drive value across diverse IT functions.
+            Bridging the gap between business processes and technology. An honors graduate (Cum Laude) with professional software development experience, analytical thinking, and the versatility to drive value across diverse IT functions. Based in Indonesia, open to remote roles.
           </p>
         </div>
 

@@ -4,37 +4,70 @@
       {
         "title": "Air Quality Monitoring System (IoT & Machine Learning)",
         "imageSrc": "projects/project.png",
-        "description": "Designed and implemented a modular backend system for real-time air quality forecasting. Integrates a Laravel database backend with a Flask machine learning microservice predicting AQI via the Prophet model. Formulated a 4-layer architecture (Device, Service, Data, Presentation) validated under load. This system served as the basis for a peer-reviewed research paper published in IEEE ICoDSA 2025.",
+        "description": "Modular backend for real-time air quality forecasting. Integrates a Laravel backend with a Flask machine learning microservice predicting AQI via the Prophet model. Formulated a 4-layer architecture (Device, Service, Data, Presentation) validated under load.",
+        "myRole": "Backend Developer — Laravel REST APIs, PostgreSQL, system validation",
+        "outcome": [
+          "Published as a peer-reviewed conference paper at IEEE ICoDSA 2025",
+          "API performance measured at 557 ms average response time (paper)",
+          "4-layer architecture validated under load and stress testing"
+        ],
         "skills": ["Laravel", "Flask", "PostgreSQL", "Machine Learning", "IoT", "Agile"],
-        "demo": "https://github.com/RakhaYandra/air-quality-monitoring-system.git",
-        "source": "https://github.com/RakhaYandra/air-quality-monitoring-system.git",
+        "demo": null,
+        "source": null,
+        "links": {
+          "live": null,
+          "repo": null,
+          "docs": "https://ieeexplore.ieee.org/document/11157609"
+        },
         "workType": "Final Project",
         "teamSize": "4 members",
         "duration": "4 months",
-        "advisor": ["Dr. Hanif Fakhrurroja, S.Si, M. T.", "Dita Pramesti, S.Si, M. Si."]
+        "advisor": ["Dr. Hanif Fakhrurroja, S.Si, M. T.", "Dita Pramesti, S.Si, M. Si."],
+        "featured": true
       }
     ],
     "Group": [
       {
-        "title": "AI & ML based Health Diagnosis System",
-        "imageSrc": "projects/project.png",
-        "description": "Collaborated in a team of 6 to build an AI/ML health diagnosis system predicting Alzheimer's, pneumonia, and fetal health. Developed backend API services and frontend interfaces, integrating machine learning models with a conversational AI interface. Solved user trust and analysis bottlenecks for diagnostic screening.",
-        "skills": ["React", "Express", "Node.js", "MongoDB", "AI", "Machine Learning"],
-        "demo": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis.git",
-        "source": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis.git",
-        "workType": "Group",
-        "teamSize": "6 members",
-        "duration": "4 months"
-      },
-      {
         "title": "Horticultural Production Forecasting Dashboard",
         "imageSrc": "projects/project.png",
-        "description": "Developed a predictive forecasting dashboard to model and visualize agricultural production metrics. Built using React and Node.js with MongoDB to ingest historical production datasets, providing predictive insights and enabling optimized resource allocation.",
+        "description": "Predictive forecasting dashboard modeling and visualizing agricultural production metrics. Ingests historical production datasets to provide predictive insights for resource allocation planning.",
+        "myRole": "Frontend Developer — React dashboard, REST API integration, data visualization",
+        "outcome": [
+          "Forecasting dashboard for agricultural production metrics",
+          "Integration of historical datasets via REST API"
+        ],
         "skills": ["React", "Express", "MongoDB", "Machine Learning", "Data Visualization"],
-        "demo": "https://github.com/RakhaYandra/horticulture-dashboard-noted.git",
-        "source": "https://github.com/RakhaYandra/horticulture-dashboard-noted.git",
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/horticulture-dashboard-noted",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/horticulture-dashboard-noted",
+          "docs": null
+        },
         "workType": "Group",
         "teamSize": "3 members",
+        "duration": "4 months",
+        "featured": true
+      },
+      {
+        "title": "AI & ML based Health Diagnosis System",
+        "imageSrc": "projects/project.png",
+        "description": "Team of 6 building an AI/ML health diagnosis system predicting Alzheimer's, pneumonia, and fetal health. I worked as the business analyst: gathering requirements, mapping the diagnosis flow, and bridging the ML team's model outputs with user-facing screening needs.",
+        "myRole": "Business Analyst — requirements, diagnosis flow, team of 6 (AI/ML)",
+        "outcome": [
+          "Requirements and diagnosis flow for multi-disease screening",
+          "Mitigated user trust issues in diagnostic screening flows"
+        ],
+        "skills": ["Requirements Analysis", "Process Modeling", "AI", "Machine Learning", "Team Collaboration"],
+        "demo": null,
+        "source": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis",
+          "docs": null
+        },
+        "workType": "Group",
+        "teamSize": "6 members",
         "duration": "4 months"
       }
     ],
@@ -42,52 +75,98 @@
       {
         "title": "Campkit (Camping E-Commerce & Booking)",
         "imageSrc": "projects/project.png",
-        "description": "An e-commerce and booking platform for campers to find and rent high-quality camping equipment. Built as a solo project, implementing full-stack features including product catalogs, cart logic, and PostgreSQL database queries.",
+        "description": "E-commerce and booking platform for renting camping equipment. Full-stack solo build: product catalogs, cart logic, and PostgreSQL database queries.",
+        "myRole": "Solo Full-stack — catalog, cart logic, PostgreSQL",
+        "outcome": [
+          "End-to-end rental flow: browse, cart, checkout"
+        ],
         "skills": ["React", "Express", "PostgreSQL", "JavaScript", "CSS3"],
-        "demo": "https://github.com/RakhaYandra/campkit.git",
-        "source": "https://github.com/RakhaYandra/campkit.git",
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/campkit",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/campkit",
+          "docs": null
+        },
         "workType": "Solo",
         "duration": "2 Days"
       },
       {
         "title": "Gamepad Calibration Dashboard",
         "imageSrc": "projects/project.png",
-        "description": "Developed a sleek, modern dashboard for monitoring gamepad controller inputs and configuring profile settings. Focuses on minimal load times, high-framerate input tracking, and responsive layout styling.",
+        "description": "Dashboard for monitoring gamepad controller inputs and configuring profile settings. Focuses on minimal load times, high-framerate input tracking, and responsive layout styling.",
+        "myRole": "Solo Frontend — input tracking UI, responsive layout",
+        "outcome": [
+          "Real-time gamepad input visualization via Web APIs"
+        ],
         "skills": ["React", "Vite", "Tailwind CSS", "Web APIs"],
-        "demo": "https://github.com/RakhaYandra/gamepad-dashboard.git",
-        "source": "https://github.com/RakhaYandra/gamepad-dashboard.git",
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/gamepad-dashboard",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/gamepad-dashboard",
+          "docs": null
+        },
         "workType": "Solo",
         "duration": "5 Days"
       },
       {
-        "title": "Custom Planning & Resource Management System",
-        "imageSrc": "projects/project.png",
-        "description": "Engineered a comprehensive planning and budgeting system for managing complex event logistics. Implemented advanced data filtering, budget calculations, task tracking, and resource management models using Excel and Google Sheets to resolve operational constraints.",
-        "skills": ["Excel", "Google Sheets", "Project Management", "Data Modeling"],
-        "demo": "https://github.com/RakhaYandra/wedding-tracker.git",
-        "source": "https://github.com/RakhaYandra/wedding-tracker.git",
-        "workType": "Solo",
-        "duration": "1 Day"
-      },
-      {
         "title": "Next.js Camera Photobooth",
         "imageSrc": "projects/project.png",
-        "description": "Developed a web application that interacts with device cameras to capture photos, apply dynamic image filters, and handle image downloads. Built using Next.js and React to ensure optimal performance.",
+        "description": "Web application interacting with device cameras to capture photos, apply dynamic image filters, and handle image downloads.",
+        "myRole": "Solo Frontend — Camera API, filters, image download",
+        "outcome": [
+          "Camera capture with client-side filter pipeline"
+        ],
         "skills": ["Next.js", "React", "Tailwind CSS", "Web Camera API"],
-        "demo": "https://github.com/RakhaYandra/photobooth.git",
-        "source": "https://github.com/RakhaYandra/photobooth.git",
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/photobooth",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/photobooth",
+          "docs": null
+        },
         "workType": "Solo",
         "duration": "1 Week"
       },
       {
         "title": "Command Line Task Manager",
         "imageSrc": "projects/project.png",
-        "description": "Built a Python-based task management utility utilizing structured object-oriented programming to handle task priority, storage persistence, and task scheduling.",
+        "description": "Python-based task management utility using structured object-oriented programming for task priority, storage persistence, and scheduling.",
+        "myRole": "Solo — Python OOP, persistence layer",
+        "outcome": [
+          "Persistent task storage with priority scheduling"
+        ],
         "skills": ["Python", "Object-Oriented Programming"],
-        "demo": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python.git",
-        "source": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python.git",
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python",
+          "docs": null
+        },
         "workType": "Solo",
         "duration": "1 Week"
+      },
+      {
+        "title": "Custom Planning & Resource Management System",
+        "imageSrc": "projects/project.png",
+        "description": "Planning and budgeting system for managing event logistics. Implemented data filtering, budget calculations, task tracking, and resource management models in spreadsheets.",
+        "myRole": "Solo — data modeling in Excel & Google Sheets",
+        "outcome": [
+          "Tracked plans, tasks, and budget for a real event"
+        ],
+        "skills": ["Excel", "Google Sheets", "Project Management", "Data Modeling"],
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/wedding-tracker",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/wedding-tracker",
+          "docs": null
+        },
+        "workType": "Solo",
+        "duration": "1 Day",
+        "archived": true
       }
     ]
   },

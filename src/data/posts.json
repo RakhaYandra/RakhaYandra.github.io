@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "cypress-e2e-laravel-enterprise",
+    "title": "Setting Up Cypress E2E Tests for an Enterprise Laravel App",
+    "date": "2026-09-01",
+    "tags": ["Cypress", "Laravel", "QA", "Testing"],
+    "summary": "How I approached end-to-end testing for an internal enterprise web app during an internship: choosing what to automate, structuring specs, and pairing them with Swagger-documented APIs.",
+    "points": [
+      "The team manually re-tested critical user flows every release cycle. Regression testing took days, and recurring issues still slipped through.",
+      "We prioritized automation by risk: authentication, core user workflows, and data submission flows first. Edge-case UI states stayed manual.",
+      "Cypress specs were grouped by user flow, not by page. Each spec read like the scenario a QA would write down: setup, action, assertion, teardown.",
+      "Because the REST APIs were documented in Swagger, API-level checks could be cross-referenced with the UI steps they backed - when a UI test failed, we could tell whether the defect lived in the frontend or the backend contract.",
+      "The scripts became the regression baseline: manual QA cycles shrank to exploring new features, while the critical paths were guarded on every run."
+    ],
+    "links": {
+      "repo": null,
+      "docs": null
+    }
+  },
+  {
+    "slug": "data-validation-golang-mysql",
+    "title": "Catching Data Inconsistencies in a Go + MySQL Backend",
+    "date": "2026-09-05",
+    "tags": ["Golang", "MySQL", "SQL", "Data Validation"],
+    "summary": "Patterns I used while building backend services for a workforce management app: SQL-driven validation to catch inconsistencies before they spread into reports.",
+    "points": [
+      "A workforce management app is only as trustworthy as its data. Roster mismatches and duplicated records surfaced as wrong reports downstream.",
+      "Validation lived at multiple layers: struct-level checks in Go handlers using the Gin framework, database constraints in MySQL, and SQL queries used as diagnostic tools to audit incoming data batches.",
+      "For Excel and PDF imports, we validated before committing: staging the data, running SQL consistency checks for nulls, duplicates, and referential integrity, and only then writing into the live tables.",
+      "Troubleshooting followed the same path - when reports looked off, SQL queries against the affected tables usually located the inconsistency faster than tracing application logs.",
+      "The lesson: in data-heavy backends, SQL is not just a persistence layer - it is a debugging and validation instrument."
+    ],
+    "links": {
+      "repo": null,
+      "docs": null
+    }
+  },
+  {
+    "slug": "laravel-flask-modular-backend-thesis",
+    "title": "Designing a Modular Laravel–Flask Backend for IoT Air Quality Forecasting",
+    "date": "2026-09-10",
+    "tags": ["Laravel", "Flask", "Architecture", "IoT", "Machine Learning"],
+    "summary": "Architecture notes from my thesis: why we split a Laravel backend and a Flask ML microservice into a 4-layer design, and what load testing revealed.",
+    "points": [
+      "The problem: air quality monitoring needs continuous ingestion from distributed IoT sensors plus forecasting - two workloads with very different rhythms.",
+      "We separated concerns into four layers: Device (sensors), Service (API and ingestion), Data (PostgreSQL), and Presentation (dashboard with role-based access).",
+      "Laravel handled relational data management and the API surface. The Prophet forecasting model ran as an independent Flask microservice - so model retraining never blocked ingestion.",
+      "Performance testing measured an average API response time of 557 ms and throughput of 1.34 requests per second. Stress testing exposed a 24.18% error rate under heavy load - a clear signal for where optimization was needed.",
+      "The evaluation was published as a peer-reviewed paper at IEEE ICoDSA 2025, and the numbers above come directly from that paper."
+    ],
+    "links": {
+      "repo": null,
+      "docs": "https://ieeexplore.ieee.org/document/11157609"
+    }
+  },
+  {
+    "slug": "campkit-solo-sprint",
+    "title": "Shipping a Full-Stack Rental App Solo in 5 Days: Campkit",
+    "date": "2026-09-12",
+    "tags": ["React", "Express", "PostgreSQL", "Sequelize", "Solo Sprint"],
+    "summary": "26 commits in 5 days: how I sequenced a camping-gear rental platform - backend and migrations first, then auth, then admin and user frontends, then bugfix.",
+    "points": [
+      "The scope: a rental platform where customers browse gear, book it, and track borrowing history - while admins manage products, confirm returns, and organize categories.",
+      "Day 1-2 went to the foundation: project structure, database migrations with Sequelize, and the backend endpoints. Nothing renders without data, so data came first.",
+      "Day 3 was auth: login and register pages for both user and admin shells, wired to the API before any feature screens existed.",
+      "Day 4 split into the two frontends: the user flow (browse, book, history, profile) and the admin console (products, returns, categories). Building them against the same API kept both consistent.",
+      "Day 5 was bugfix and README. The commit history tells the story honestly - including the fixes - which is exactly what a reviewer wants to see in a solo sprint."
+    ],
+    "links": {
+      "repo": "https://github.com/RakhaYandra/campkit",
+      "docs": null
+    }
+  }
+]

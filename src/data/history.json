@@ -5,9 +5,9 @@
     "startDate": "Nov, 2025",
     "endDate": "Jul, 2026",
     "experiences": [
-      "Developed and optimized key web features for the Pertamina Learning Hub (PLH) using Blazor and .NET Core, improving application responsiveness and user navigation flow across devices.",
-      "Translated UI/UX designs into reusable Razor components while ensuring consistency, responsiveness, and web accessibility standards.",
-      "Collaborated with backend engineers, QA teams, and stakeholders to support UAT, validate frontend functionality, and deliver production-ready features."
+      "Developed and modified functional features for the Pertamina Learning Hub (PLH) using Blazor and .NET Core, based on functional requirements and user workflow specifications.",
+      "Translated UI/UX designs into reusable Razor components, maintaining consistency and responsiveness across device sizes.",
+      "Collaborated with backend engineers, QA teams, and stakeholders to support UAT sessions, validate frontend functionality, and resolve issues before release."
     ],
     "techStack": ["Blazor", ".NET Core", "C#", "HTML5", "CSS3"],
     "imageSrc": "history/arna.png"
@@ -20,9 +20,9 @@
     "experiences": [
       "Engineered scalable RESTful APIs and backend services for a WorkForce Management (WFM) web application for PT Asianet Media Teknologi using Golang and the Gin framework.",
       "Implemented high-performance Excel and PDF import/export features, including dynamic template rendering and structured processing, reducing manual reporting effort by 40%.",
-      "Collaborated with frontend and QA teams to integrate endpoints and optimize PostgreSQL database queries, improving system stability by 30%."
+      "Collaborated with frontend and QA teams to integrate endpoints and optimize MySQL database queries, improving system stability by 30%."
     ],
-    "techStack": ["Golang", "Gin", "PostgreSQL", "REST API"],
+    "techStack": ["Golang", "Gin", "MySQL", "REST API"],
     "imageSrc": "history/technovaid.png"
   },
   {
@@ -31,9 +31,9 @@
     "startDate": "Aug, 2024",
     "endDate": "Feb, 2025",
     "experiences": [
-      "Built and launched responsive landing pages using WordPress and Custom CSS, increasing site accessibility and visitor engagement metrics.",
-      "Co-developed an intuitive room booking system using React and JavaScript, simplifying the reservation workflow and enhancing the user interface consistency.",
-      "Participated in Agile sprints and design reviews, aligning technical requirements with business needs to deliver client-ready solutions."
+      "Built and launched responsive landing pages for client websites using WordPress and custom CSS, following provided design mockups.",
+      "Co-developed a room booking system using React and JavaScript, covering the reservation workflow and its user interface.",
+      "Participated in Agile sprints and design reviews, aligning technical implementation with client requirements."
     ],
     "techStack": ["React", "JavaScript", "WordPress", "CSS3"],
     "imageSrc": "history/sagara.png"
@@ -44,9 +44,9 @@
     "startDate": "Jun, 2024",
     "endDate": "Sep, 2024",
     "experiences": [
-      "Developed and maintained web application features using Laravel and MySQL, contributing to internal software updates and feature rollouts.",
-      "Designed and documented comprehensive RESTful API endpoints using Swagger, clarifying integrations and improving developer collaboration.",
-      "Built end-to-end automated testing scripts using Cypress, which improved application release stability and reduced manual QA testing cycles."
+      "Developed and maintained web application features using Laravel and MySQL as part of internal software updates and feature rollouts.",
+      "Designed and documented RESTful API endpoints using Swagger, giving developers a clear reference for integrations.",
+      "Built end-to-end automated testing scripts using Cypress, covering critical user flows and reducing repetitive manual QA testing."
     ],
     "techStack": ["Laravel", "MySQL", "Swagger", "Cypress"],
     "imageSrc": "history/telkomsel.png"
