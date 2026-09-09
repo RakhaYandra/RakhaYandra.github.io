@@ -2,129 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Publications.module.css";
 import publications from "../../data/publications.json";
 
-const PublicationCard = ({
-  publication,
-  index,
-  getTypeIcon,
-  getStatusColor,
-  onSelect,
-}) => {
-  const [visible, setVisible] = useState(false);
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const node = cardRef.current;
-    if (node) {
-      observer.observe(node);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={cardRef}
-      className={`${styles.publicationCard} ${
-        visible ? styles.slideUp : ""
-      }`}
-      style={{ "--delay": `${index * 0.15}s` }}
-      onClick={() => onSelect(publication)}
-    >
-              <div className={styles.cardHeader}>
-                <div className={styles.publicationType}>
-                  <span className={styles.typeIcon}>
-                    {getTypeIcon(publication.type)}
-                  </span>
-                  <span className={styles.typeText}>{publication.type}</span>
-                </div>
-
-                <div
-                  className={styles.statusBadge}
-                  style={{
-                    "--status-color": getStatusColor(publication.status),
-                  }}
-                >
-                  {publication.status}
-                </div>
-              </div>
-
-              <div className={styles.cardContent}>
-                <h3 className={styles.publicationTitle}>{publication.title}</h3>
-
-                <div className={styles.authorsList}>
-                  {publication.authors.map((author, authorId) => (
-                    <span
-                      key={authorId}
-                      className={`${styles.author} ${
-                        author.includes("Rakha") ? styles.primaryAuthor : ""
-                      }`}
-                    >
-                      {author}
-                    </span>
-                  ))}
-                </div>
-
-                <div className={styles.publicationMeta}>
-                  <div className={styles.venue}>
-                    <span className={styles.venueIcon}>🏛️</span>
-                    {publication.venue}
-                  </div>
-                  <div className={styles.publicationDate}>
-                    <span className={styles.dateIcon}>📅</span>
-                    {publication.publicationDate}
-                  </div>
-                </div>
-
-                <p className={styles.abstract}>
-                  {publication.abstract.substring(0, 150)}...
-                </p>
-
-                <div className={styles.keywords}>
-                  {publication.keywords
-                    .slice(0, 3)
-                    .map((keyword, keywordId) => (
-                      <span key={keywordId} className={styles.keyword}>
-                        {keyword}
-                      </span>
-                    ))}
-                  {publication.keywords.length > 3 && (
-                    <span className={styles.moreKeywords}>
-                      +{publication.keywords.length - 3} more
-                    </span>
-                  )}
-                </div>
-
-                <div className={styles.cardActions}>
-                  <button className={styles.readMoreButton}>Read More</button>
-                  {publication.url && publication.url !== "#" && (
-                    <a
-                      href={publication.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.accessButton}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Access Paper
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <div className={styles.cardGlow}></div>
-            </div>
-  );
-};
-
 export const Publications = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedPublication, setSelectedPublication] = useState(null);
@@ -138,7 +15,7 @@ export const Publications = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
 
     if (sectionRef.current) {
@@ -248,15 +125,97 @@ export const Publications = () => {
         </div>
 
         <div className={styles.publicationsGrid}>
-{filteredPublications.map((publication, id) => (
-            <PublicationCard
-              key={publication.title}
-              publication={publication}
-              index={id}
-              getTypeIcon={getTypeIcon}
-              getStatusColor={getStatusColor}
-              onSelect={handlePublicationClick}
-            />
+          {filteredPublications.map((publication, id) => (
+            <div
+              key={id}
+              className={`${styles.publicationCard} ${
+                isVisible ? styles.slideUp : ""
+              }`}
+              style={{ "--delay": `${id * 0.15}s` }}
+              onClick={() => handlePublicationClick(publication)}
+            >
+              <div className={styles.cardHeader}>
+                <div className={styles.publicationType}>
+                  <span className={styles.typeIcon}>
+                    {getTypeIcon(publication.type)}
+                  </span>
+                  <span className={styles.typeText}>{publication.type}</span>
+                </div>
+
+                <div
+                  className={styles.statusBadge}
+                  style={{
+                    "--status-color": getStatusColor(publication.status),
+                  }}
+                >
+                  {publication.status}
+                </div>
+              </div>
+
+              <div className={styles.cardContent}>
+                <h3 className={styles.publicationTitle}>{publication.title}</h3>
+
+                <div className={styles.authorsList}>
+                  {publication.authors.map((author, authorId) => (
+                    <span
+                      key={authorId}
+                      className={`${styles.author} ${
+                        author.includes("Rakha") ? styles.primaryAuthor : ""
+                      }`}
+                    >
+                      {author}
+                    </span>
+                  ))}
+                </div>
+
+                <div className={styles.publicationMeta}>
+                  <div className={styles.venue}>
+                    <span className={styles.venueIcon}>🏛️</span>
+                    {publication.venue}
+                  </div>
+                  <div className={styles.publicationDate}>
+                    <span className={styles.dateIcon}>📅</span>
+                    {publication.publicationDate}
+                  </div>
+                </div>
+
+                <p className={styles.abstract}>
+                  {publication.abstract.substring(0, 150)}...
+                </p>
+
+                <div className={styles.keywords}>
+                  {publication.keywords
+                    .slice(0, 3)
+                    .map((keyword, keywordId) => (
+                      <span key={keywordId} className={styles.keyword}>
+                        {keyword}
+                      </span>
+                    ))}
+                  {publication.keywords.length > 3 && (
+                    <span className={styles.moreKeywords}>
+                      +{publication.keywords.length - 3} more
+                    </span>
+                  )}
+                </div>
+
+                <div className={styles.cardActions}>
+                  <button className={styles.readMoreButton}>Read More</button>
+                  {publication.url && publication.url !== "#" && (
+                    <a
+                      href={publication.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.accessButton}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Access Paper
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.cardGlow}></div>
+            </div>
           ))}
         </div>
       </div>

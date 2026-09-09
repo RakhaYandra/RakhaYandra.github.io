@@ -564,6 +564,8 @@
     gap: 3rem;
     text-align: center;
     padding: 1.5rem;
+    min-height: auto;
+    align-content: start;
   }
 
   .title {
