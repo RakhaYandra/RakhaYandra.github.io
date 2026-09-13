@@ -73,6 +73,50 @@
     ],
     "Solo": [
       {
+        "title": "Shiftbase — Scheduling & Attendance REST API",
+        "imageSrc": "projects/project.png",
+        "description": "Shift scheduling & attendance REST API: employees, shifts with conflict detection, check-in/out, CSV import, overtime & coverage reports. Go/Gin with database/sql (no ORM), goose migrations, JWT auth, Docker. Business zone Asia/Jakarta, fictional seed data.",
+        "myRole": "Solo Backend — Go/Gin REST, MySQL, JWT, Docker",
+        "outcome": [
+          "RBAC admin/manager/staff across employees, shifts (409 on conflict), attendance, reports",
+          "Swagger + Postman/Newman contract; CI runs vet, golangci-lint, migrate, seed, boot, Newman",
+          "Service tests ~80% coverage (gate ≥ 60%)"
+        ],
+        "skills": ["Go", "Gin", "MySQL", "JWT", "Docker", "Swagger", "Newman"],
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/shiftbase",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/shiftbase",
+          "docs": null
+        },
+        "workType": "Solo",
+        "duration": "Sep 2026",
+        "featured": true
+      },
+      {
+        "title": "Shiftbase Web — Roster Board",
+        "imageSrc": "projects/project.png",
+        "description": "Roster board UI for the Shiftbase API: schedule timeline, shift CRUD with clear conflict messages, attendance tracking + history + CSV import, overtime & coverage reports. Vite + React + TS + Tailwind v4 + shadcn, JWT in localStorage with auto-logout on 401.",
+        "myRole": "Solo Frontend — React roster board, REST integration",
+        "outcome": [
+          "Role-aware pages: schedule, shifts, attendance, reports",
+          "Clear conflict messaging on overlapping shifts",
+          "CI: tsc, oxlint, production build"
+        ],
+        "skills": ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn"],
+        "demo": null,
+        "source": "https://github.com/RakhaYandra/shiftbase-web",
+        "links": {
+          "live": null,
+          "repo": "https://github.com/RakhaYandra/shiftbase-web",
+          "docs": null
+        },
+        "workType": "Solo",
+        "duration": "Sep 2026",
+        "featured": true
+      },
+      {
         "title": "Campkit (Camping E-Commerce & Booking)",
         "imageSrc": "projects/project.png",
         "description": "E-commerce and booking platform for renting camping equipment. Full-stack solo build: product catalogs, cart logic, and PostgreSQL database queries.",
