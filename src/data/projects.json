@@ -95,6 +95,34 @@
   ],
   "Solo": [
    {
+    "title": "Shiftbase QA — RBAC, Import & Reports Testing",
+    "imageSrc": "projects/project.png",
+    "description": "QA portfolio untuk Shiftbase: test plan, 38 test cases 100% Pass, fokus matriks RBAC admin/manager/staff, konflik shift 409, import CSV (header/aturan/2MB), overtime >8 jam & coverage, roster per peran. Newman 15/15, Playwright e2e 6/6, laporan Excel generate via openpyxl.",
+    "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
+    "outcome": [
+     "38/38 Pass; Newman 15/15; e2e 6/6; go test 79.8% + swagger valid",
+     "2 bug UX Low: dropdown tak refresh setelah import, tab tak persist",
+     "MySQL 8.4 docker env terisolasi + urutan run terdokumentasi"
+    ],
+    "skills": [
+     "QA",
+     "Newman",
+     "Playwright",
+     "MySQL",
+     "Docker"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/shiftbase-qa",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase-qa",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
     "title": "LifeOS QA — Test Plan, Cases & Reports",
     "imageSrc": "projects/project.png",
     "description": "QA portfolio untuk LifeOS: test plan, 56 test cases tereksekusi 100% ber-evidence, 4 bug report nyata dengan repro, Newman API suite 75/75, Playwright e2e 21/21 (Chromium headless), laporan Excel 5 sheet (generate via openpyxl, COUNTIF + grafik). Env uji terisolasi, urutan run terdokumentasi.",
