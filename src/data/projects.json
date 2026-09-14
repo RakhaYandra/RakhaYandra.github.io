@@ -95,6 +95,34 @@
   ],
   "Solo": [
    {
+    "title": "LifeOS QA — Test Plan, Cases & Reports",
+    "imageSrc": "projects/project.png",
+    "description": "QA portfolio untuk LifeOS: test plan, 56 test cases tereksekusi 100% ber-evidence, 4 bug report nyata dengan repro, Newman API suite 75/75, Playwright e2e 21/21 (Chromium headless), laporan Excel 5 sheet (generate via openpyxl, COUNTIF + grafik). Env uji terisolasi, urutan run terdokumentasi.",
+    "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
+    "outcome": [
+     "56/56 test cases Pass; Newman 75/75; e2e 21/21; go test + swagger valid",
+     "4 bug nyata: PUT full-replace, dashboard _ts leak, pesan gin mentah, label tanpa htmlFor",
+     "LifeOS-QA-Report.xlsx: Cover, Cases, Execution Log, Bugs, Summary otomatis"
+    ],
+    "skills": [
+     "QA",
+     "Newman",
+     "Playwright",
+     "Python",
+     "openpyxl"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lifeos-qa",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos-qa",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
     "title": "LifeOS — Personal Life Operating System API",
     "imageSrc": "projects/project.png",
     "description": "Personal Life OS REST API: tasks/projects with overdue logic, goals cascade, habit streaks + 30-day logs, finance (transactions, auto-computed budgets, subscriptions), health/workout, learning/reading, weekly reviews with auto-stats, reminders, and a single-call dashboard. Go/Gin with database/sql (no ORM), SQLite pure-Go single file, goose migrations, single-user JWT. Indonesian fictional seed across all tables.",
