@@ -95,6 +95,34 @@
   ],
   "Solo": [
    {
+    "title": "Shiftbase Data — HR Analytics Pipeline",
+    "imageSrc": "projects/project.png",
+    "description": "Pipeline analitik HR untuk database Shiftbase: extract read-only MySQL, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), cross-check overtime vs API identik (GREATEST(jam-8,0)), 4 grafik. Python + pandas + DuckDB + matplotlib.",
+    "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
+    "outcome": [
+     "Cross-check pipeline vs /reports/overtime: MATCH (<0.01)",
+     "Demo data deterministik 101 shift + 101 absensi (lembur/telat)",
+     "Quality gates + runbook MySQL scratch terdokumentasi"
+    ],
+    "skills": [
+     "Python",
+     "pandas",
+     "DuckDB",
+     "MySQL",
+     "ETL"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/shiftbase-data",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase-data",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
     "title": "LifeOS Data — ETL & Analytics Pipeline",
     "imageSrc": "projects/project.png",
     "description": "Pipeline analitik untuk database LifeOS: extract 8 tabel (read-only snapshot), quality gates (orphan FK, nominal, tanggal, duplikat), 5 marts (DuckDB + parquet), 4 grafik Nexus-style, insight tertulis dari angka beneran. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
