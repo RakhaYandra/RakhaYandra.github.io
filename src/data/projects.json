@@ -95,6 +95,34 @@
   ],
   "Solo": [
    {
+    "title": "Shiftbase Ops — Compose, Backup & Support Tickets",
+    "imageSrc": "projects/project.png",
+    "description": "Operasional Shiftbase: runbook compose, backup/restore MySQL teruji roundtrip (5 employees kembali), troubleshooting 15 entri terverifikasi (port bentrok asli, distroless tanpa shell, seed 1062, 409/404 attendance), 10 tiket + XLSX SLA, FAQ.",
+    "myRole": "Solo Support/Ops — compose, MySQL, troubleshooting",
+    "outcome": [
+     "Backup roundtrip + compose full stack Up (api/adminer/mysql)",
+     "15/15 perintah matrix dijalankan beneran",
+     "10 tiket (9 closed), XLSX generate via openpyxl"
+    ],
+    "skills": [
+     "Linux",
+     "Bash",
+     "Docker",
+     "MySQL",
+     "Troubleshooting"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/shiftbase-ops",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase-ops",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
     "title": "LifeOS Ops — Runbook, Backup & Support Tickets",
     "imageSrc": "projects/project.png",
     "description": "Operasional LifeOS: runbook install/backup/restore, skrip bash teruji roundtrip (backup→hapus→restore 25 tasks kembali, guard tolak saat API jalan), troubleshooting matrix 15 entri terverifikasi perintah, 10 tiket simulasi + XLSX (COUNTIF SLA), SLA mini, FAQ.",
