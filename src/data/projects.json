@@ -95,6 +95,33 @@
   ],
   "Solo": [
    {
+    "title": "LifeOS Ops — Runbook, Backup & Support Tickets",
+    "imageSrc": "projects/project.png",
+    "description": "Operasional LifeOS: runbook install/backup/restore, skrip bash teruji roundtrip (backup→hapus→restore 25 tasks kembali, guard tolak saat API jalan), troubleshooting matrix 15 entri terverifikasi perintah, 10 tiket simulasi + XLSX (COUNTIF SLA), SLA mini, FAQ.",
+    "myRole": "Solo Support/Ops — runbook, bash, troubleshooting",
+    "outcome": [
+     "Backup roundtrip teruji; guard restore terbukti menolak",
+     "15/15 perintah matrix dijalankan beneran",
+     "10 tiket (9 closed), XLSX generate via openpyxl"
+    ],
+    "skills": [
+     "Linux",
+     "Bash",
+     "SQLite",
+     "Troubleshooting"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lifeos-ops",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos-ops",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
     "title": "Shiftbase Data — HR Analytics Pipeline",
     "imageSrc": "projects/project.png",
     "description": "Pipeline analitik HR untuk database Shiftbase: extract read-only MySQL, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), cross-check overtime vs API identik (GREATEST(jam-8,0)), 4 grafik. Python + pandas + DuckDB + matplotlib.",
