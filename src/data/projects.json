@@ -95,6 +95,33 @@
   ],
   "Solo": [
    {
+    "title": "LifeOS Data — ETL & Analytics Pipeline",
+    "imageSrc": "projects/project.png",
+    "description": "Pipeline analitik untuk database LifeOS: extract 8 tabel (read-only snapshot), quality gates (orphan FK, nominal, tanggal, duplikat), 5 marts (DuckDB + parquet), 4 grafik Nexus-style, insight tertulis dari angka beneran. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
+    "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
+    "outcome": [
+     "Quality gates gagalkan run bila kotor; quality_report.json tiap run",
+     "Marts = angka API dashboard (net 7.334.001 tertelusur)",
+     "Deterministik: snapshot seed bootstrap otomatis, nol data pribadi di repo"
+    ],
+    "skills": [
+     "Python",
+     "pandas",
+     "DuckDB",
+     "ETL"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lifeos-data",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos-data",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
     "title": "Shiftbase QA — RBAC, Import & Reports Testing",
     "imageSrc": "projects/project.png",
     "description": "QA portfolio untuk Shiftbase: test plan, 38 test cases 100% Pass, fokus matriks RBAC admin/manager/staff, konflik shift 409, import CSV (header/aturan/2MB), overtime >8 jam & coverage, roster per peran. Newman 15/15, Playwright e2e 6/6, laporan Excel generate via openpyxl.",
