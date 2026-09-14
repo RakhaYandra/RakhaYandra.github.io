@@ -1,234 +1,351 @@
 {
-  "categories": {
-    "Final Project": [
-      {
-        "title": "Air Quality Monitoring System (IoT & Machine Learning)",
-        "imageSrc": "projects/project.png",
-        "description": "Modular backend for real-time air quality forecasting. Integrates a Laravel backend with a Flask machine learning microservice predicting AQI via the Prophet model. Formulated a 4-layer architecture (Device, Service, Data, Presentation) validated under load.",
-        "myRole": "Backend Developer — Laravel REST APIs, PostgreSQL, system validation",
-        "outcome": [
-          "Published as a peer-reviewed conference paper at IEEE ICoDSA 2025",
-          "API performance measured at 557 ms average response time (paper)",
-          "4-layer architecture validated under load and stress testing"
-        ],
-        "skills": ["Laravel", "Flask", "PostgreSQL", "Machine Learning", "IoT", "Agile"],
-        "demo": null,
-        "source": null,
-        "links": {
-          "live": null,
-          "repo": null,
-          "docs": "https://ieeexplore.ieee.org/document/11157609"
-        },
-        "workType": "Final Project",
-        "teamSize": "4 members",
-        "duration": "4 months",
-        "advisor": ["Dr. Hanif Fakhrurroja, S.Si, M. T.", "Dita Pramesti, S.Si, M. Si."],
-        "featured": true
-      }
+ "categories": {
+  "Final Project": [
+   {
+    "title": "Air Quality Monitoring System (IoT & Machine Learning)",
+    "imageSrc": "projects/project.png",
+    "description": "Modular backend for real-time air quality forecasting. Integrates a Laravel backend with a Flask machine learning microservice predicting AQI via the Prophet model. Formulated a 4-layer architecture (Device, Service, Data, Presentation) validated under load.",
+    "myRole": "Backend Developer — Laravel REST APIs, PostgreSQL, system validation",
+    "outcome": [
+     "Published as a peer-reviewed conference paper at IEEE ICoDSA 2025",
+     "API performance measured at 557 ms average response time (paper)",
+     "4-layer architecture validated under load and stress testing"
     ],
-    "Group": [
-      {
-        "title": "Horticultural Production Forecasting Dashboard",
-        "imageSrc": "projects/project.png",
-        "description": "Predictive forecasting dashboard modeling and visualizing agricultural production metrics. Ingests historical production datasets to provide predictive insights for resource allocation planning.",
-        "myRole": "Frontend Developer — React dashboard, REST API integration, data visualization",
-        "outcome": [
-          "Forecasting dashboard for agricultural production metrics",
-          "Integration of historical datasets via REST API"
-        ],
-        "skills": ["React", "Express", "MongoDB", "Machine Learning", "Data Visualization"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/horticulture-dashboard-noted",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/horticulture-dashboard-noted",
-          "docs": null
-        },
-        "workType": "Group",
-        "teamSize": "3 members",
-        "duration": "4 months",
-        "featured": true
-      },
-      {
-        "title": "AI & ML based Health Diagnosis System",
-        "imageSrc": "projects/project.png",
-        "description": "Team of 6 building an AI/ML health diagnosis system predicting Alzheimer's, pneumonia, and fetal health. I worked as the business analyst: gathering requirements, mapping the diagnosis flow, and bridging the ML team's model outputs with user-facing screening needs.",
-        "myRole": "Business Analyst — requirements, diagnosis flow, team of 6 (AI/ML)",
-        "outcome": [
-          "Requirements and diagnosis flow for multi-disease screening",
-          "Mitigated user trust issues in diagnostic screening flows"
-        ],
-        "skills": ["Requirements Analysis", "Process Modeling", "AI", "Machine Learning", "Team Collaboration"],
-        "demo": null,
-        "source": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis",
-          "docs": null
-        },
-        "workType": "Group",
-        "teamSize": "6 members",
-        "duration": "4 months"
-      }
+    "skills": [
+     "Laravel",
+     "Flask",
+     "PostgreSQL",
+     "Machine Learning",
+     "IoT",
+     "Agile"
     ],
-    "Solo": [
-      {
-        "title": "Shiftbase — Scheduling & Attendance REST API",
-        "imageSrc": "projects/project.png",
-        "description": "Shift scheduling & attendance REST API: employees, shifts with conflict detection, check-in/out, CSV import, overtime & coverage reports. Go/Gin with database/sql (no ORM), goose migrations, JWT auth, Docker. Business zone Asia/Jakarta, fictional seed data.",
-        "myRole": "Solo Backend — Go/Gin REST, MySQL, JWT, Docker",
-        "outcome": [
-          "RBAC admin/manager/staff across employees, shifts (409 on conflict), attendance, reports",
-          "Swagger + Postman/Newman contract; CI runs vet, golangci-lint, migrate, seed, boot, Newman",
-          "Service tests ~80% coverage (gate ≥ 60%)"
-        ],
-        "skills": ["Go", "Gin", "MySQL", "JWT", "Docker", "Swagger", "Newman"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/shiftbase",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/shiftbase",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "Sep 2026",
-        "featured": true
-      },
-      {
-        "title": "Shiftbase Web — Roster Board",
-        "imageSrc": "projects/project.png",
-        "description": "Roster board UI for the Shiftbase API: schedule timeline, shift CRUD with clear conflict messages, attendance tracking + history + CSV import, overtime & coverage reports. Vite + React + TS + Tailwind v4 + shadcn, JWT in localStorage with auto-logout on 401.",
-        "myRole": "Solo Frontend — React roster board, REST integration",
-        "outcome": [
-          "Role-aware pages: schedule, shifts, attendance, reports",
-          "Clear conflict messaging on overlapping shifts",
-          "CI: tsc, oxlint, production build"
-        ],
-        "skills": ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/shiftbase-web",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/shiftbase-web",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "Sep 2026",
-        "featured": true
-      },
-      {
-        "title": "Campkit (Camping E-Commerce & Booking)",
-        "imageSrc": "projects/project.png",
-        "description": "E-commerce and booking platform for renting camping equipment. Full-stack solo build: product catalogs, cart logic, and PostgreSQL database queries.",
-        "myRole": "Solo Full-stack — catalog, cart logic, PostgreSQL",
-        "outcome": [
-          "End-to-end rental flow: browse, cart, checkout"
-        ],
-        "skills": ["React", "Express", "PostgreSQL", "JavaScript", "CSS3"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/campkit",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/campkit",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "2 Days"
-      },
-      {
-        "title": "Gamepad Calibration Dashboard",
-        "imageSrc": "projects/project.png",
-        "description": "Dashboard for monitoring gamepad controller inputs and configuring profile settings. Focuses on minimal load times, high-framerate input tracking, and responsive layout styling.",
-        "myRole": "Solo Frontend — input tracking UI, responsive layout",
-        "outcome": [
-          "Real-time gamepad input visualization via Web APIs"
-        ],
-        "skills": ["React", "Vite", "Tailwind CSS", "Web APIs"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/gamepad-dashboard",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/gamepad-dashboard",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "5 Days"
-      },
-      {
-        "title": "Next.js Camera Photobooth",
-        "imageSrc": "projects/project.png",
-        "description": "Web application interacting with device cameras to capture photos, apply dynamic image filters, and handle image downloads.",
-        "myRole": "Solo Frontend — Camera API, filters, image download",
-        "outcome": [
-          "Camera capture with client-side filter pipeline"
-        ],
-        "skills": ["Next.js", "React", "Tailwind CSS", "Web Camera API"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/photobooth",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/photobooth",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "1 Week"
-      },
-      {
-        "title": "Command Line Task Manager",
-        "imageSrc": "projects/project.png",
-        "description": "Python-based task management utility using structured object-oriented programming for task priority, storage persistence, and scheduling.",
-        "myRole": "Solo — Python OOP, persistence layer",
-        "outcome": [
-          "Persistent task storage with priority scheduling"
-        ],
-        "skills": ["Python", "Object-Oriented Programming"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "1 Week"
-      },
-      {
-        "title": "Custom Planning & Resource Management System",
-        "imageSrc": "projects/project.png",
-        "description": "Planning and budgeting system for managing event logistics. Implemented data filtering, budget calculations, task tracking, and resource management models in spreadsheets.",
-        "myRole": "Solo — data modeling in Excel & Google Sheets",
-        "outcome": [
-          "Tracked plans, tasks, and budget for a real event"
-        ],
-        "skills": ["Excel", "Google Sheets", "Project Management", "Data Modeling"],
-        "demo": null,
-        "source": "https://github.com/RakhaYandra/wedding-tracker",
-        "links": {
-          "live": null,
-          "repo": "https://github.com/RakhaYandra/wedding-tracker",
-          "docs": null
-        },
-        "workType": "Solo",
-        "duration": "1 Day",
-        "archived": true
-      }
-    ]
-  },
-  "projectTypes": [
-    {
-      "name": "Final Project",
-      "description": "Academic final projects and thesis research",
-      "icon": "🎓"
+    "demo": null,
+    "source": null,
+    "links": {
+     "live": null,
+     "repo": null,
+     "docs": "https://ieeexplore.ieee.org/document/11157609"
     },
-    {
-      "name": "Group",
-      "description": "Collaborative team projects and systems development",
-      "icon": "👥"
+    "workType": "Final Project",
+    "teamSize": "4 members",
+    "duration": "4 months",
+    "advisor": [
+     "Dr. Hanif Fakhrurroja, S.Si, M. T.",
+     "Dita Pramesti, S.Si, M. Si."
+    ],
+    "featured": true
+   }
+  ],
+  "Group": [
+   {
+    "title": "Horticultural Production Forecasting Dashboard",
+    "imageSrc": "projects/project.png",
+    "description": "Predictive forecasting dashboard modeling and visualizing agricultural production metrics. Ingests historical production datasets to provide predictive insights for resource allocation planning.",
+    "myRole": "Frontend Developer — React dashboard, REST API integration, data visualization",
+    "outcome": [
+     "Forecasting dashboard for agricultural production metrics",
+     "Integration of historical datasets via REST API"
+    ],
+    "skills": [
+     "React",
+     "Express",
+     "MongoDB",
+     "Machine Learning",
+     "Data Visualization"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/horticulture-dashboard-noted",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/horticulture-dashboard-noted",
+     "docs": null
     },
-    {
-      "name": "Solo",
-      "description": "Individual projects demonstrating technical execution",
-      "icon": "👤"
-    }
+    "workType": "Group",
+    "teamSize": "3 members",
+    "duration": "4 months",
+    "featured": true
+   },
+   {
+    "title": "AI & ML based Health Diagnosis System",
+    "imageSrc": "projects/project.png",
+    "description": "Team of 6 building an AI/ML health diagnosis system predicting Alzheimer's, pneumonia, and fetal health. I worked as the business analyst: gathering requirements, mapping the diagnosis flow, and bridging the ML team's model outputs with user-facing screening needs.",
+    "myRole": "Business Analyst — requirements, diagnosis flow, team of 6 (AI/ML)",
+    "outcome": [
+     "Requirements and diagnosis flow for multi-disease screening",
+     "Mitigated user trust issues in diagnostic screening flows"
+    ],
+    "skills": [
+     "Requirements Analysis",
+     "Process Modeling",
+     "AI",
+     "Machine Learning",
+     "Team Collaboration"
+    ],
+    "demo": null,
+    "source": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/Owen-Caudinata/RPL-AI-ML-Health-Diagnosis",
+     "docs": null
+    },
+    "workType": "Group",
+    "teamSize": "6 members",
+    "duration": "4 months"
+   }
+  ],
+  "Solo": [
+   {
+    "title": "LifeOS — Personal Life Operating System API",
+    "imageSrc": "projects/project.png",
+    "description": "Personal Life OS REST API: tasks/projects with overdue logic, goals cascade, habit streaks + 30-day logs, finance (transactions, auto-computed budgets, subscriptions), health/workout, learning/reading, weekly reviews with auto-stats, reminders, and a single-call dashboard. Go/Gin with database/sql (no ORM), SQLite pure-Go single file, goose migrations, single-user JWT. Indonesian fictional seed across all tables.",
+    "myRole": "Solo Backend — Go/Gin REST, SQLite, JWT",
+    "outcome": [
+     "9 migrations + full CRUD across 12 modules; PUT full-replace, computed fields (overdue, streak, utilization)",
+     "Newman contract 41 checks green; CI runs vet, golangci-lint, migrate, seed, boot, Newman, swagger validate",
+     "Service tests ~80% coverage (gate >= 60%)"
+    ],
+    "skills": [
+     "Go",
+     "Gin",
+     "SQLite",
+     "JWT",
+     "Swagger",
+     "Newman"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lifeos",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
+    "title": "LifeOS Web — Personal OS Dashboard",
+    "imageSrc": "projects/project.png",
+    "description": "Personal OS dashboard: telemetry-style home (tasks due/overdue, habits, cashflow, goals, renewals), inbox + today/week tasks, goals annual/monthly, habit streaks + 30-day heatmap, finance with budget status colors, health + learning, auto-stat weekly reviews, reminders. Vite + React + TS + Tailwind v4, Nexus dark identity (Inter + JetBrains Mono), JWT localStorage, 401 auto-logout.",
+    "myRole": "Solo Frontend — React TS roster-style dashboard, JWT",
+    "outcome": [
+     "9 pages incl. full 30-day habit heatmap from new habit-logs endpoint",
+     "Nexus design tokens: surface #0F172A, primary #3B82F6, radius 24, mono telemetry labels",
+     "CI tsc + oxlint + build green"
+    ],
+    "skills": [
+     "React",
+     "TypeScript",
+     "Vite",
+     "Tailwind",
+     "shadcn"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lifeos-web",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos-web",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
+    "title": "Shiftbase — Scheduling & Attendance REST API",
+    "imageSrc": "projects/project.png",
+    "description": "Shift scheduling & attendance REST API: employees, shifts with conflict detection, check-in/out, CSV import, overtime & coverage reports. Go/Gin with database/sql (no ORM), goose migrations, JWT auth, Docker. Business zone Asia/Jakarta, fictional seed data.",
+    "myRole": "Solo Backend — Go/Gin REST, MySQL, JWT, Docker",
+    "outcome": [
+     "RBAC admin/manager/staff across employees, shifts (409 on conflict), attendance, reports",
+     "Swagger + Postman/Newman contract; CI runs vet, golangci-lint, migrate, seed, boot, Newman",
+     "Service tests ~80% coverage (gate ≥ 60%)"
+    ],
+    "skills": [
+     "Go",
+     "Gin",
+     "MySQL",
+     "JWT",
+     "Docker",
+     "Swagger",
+     "Newman"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/shiftbase",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
+    "title": "Shiftbase Web — Roster Board",
+    "imageSrc": "projects/project.png",
+    "description": "Roster board UI for the Shiftbase API: schedule timeline, shift CRUD with clear conflict messages, attendance tracking + history + CSV import, overtime & coverage reports. Vite + React + TS + Tailwind v4 + shadcn, JWT in localStorage with auto-logout on 401.",
+    "myRole": "Solo Frontend — React roster board, REST integration",
+    "outcome": [
+     "Role-aware pages: schedule, shifts, attendance, reports",
+     "Clear conflict messaging on overlapping shifts",
+     "CI: tsc, oxlint, production build"
+    ],
+    "skills": [
+     "React",
+     "TypeScript",
+     "Vite",
+     "Tailwind CSS",
+     "shadcn"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/shiftbase-web",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase-web",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true
+   },
+   {
+    "title": "Campkit (Camping E-Commerce & Booking)",
+    "imageSrc": "projects/project.png",
+    "description": "E-commerce and booking platform for renting camping equipment. Full-stack solo build: product catalogs, cart logic, and PostgreSQL database queries.",
+    "myRole": "Solo Full-stack — catalog, cart logic, PostgreSQL",
+    "outcome": [
+     "End-to-end rental flow: browse, cart, checkout"
+    ],
+    "skills": [
+     "React",
+     "Express",
+     "PostgreSQL",
+     "JavaScript",
+     "CSS3"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/campkit",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/campkit",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "2 Days"
+   },
+   {
+    "title": "Gamepad Calibration Dashboard",
+    "imageSrc": "projects/project.png",
+    "description": "Dashboard for monitoring gamepad controller inputs and configuring profile settings. Focuses on minimal load times, high-framerate input tracking, and responsive layout styling.",
+    "myRole": "Solo Frontend — input tracking UI, responsive layout",
+    "outcome": [
+     "Real-time gamepad input visualization via Web APIs"
+    ],
+    "skills": [
+     "React",
+     "Vite",
+     "Tailwind CSS",
+     "Web APIs"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/gamepad-dashboard",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/gamepad-dashboard",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "5 Days"
+   },
+   {
+    "title": "Next.js Camera Photobooth",
+    "imageSrc": "projects/project.png",
+    "description": "Web application interacting with device cameras to capture photos, apply dynamic image filters, and handle image downloads.",
+    "myRole": "Solo Frontend — Camera API, filters, image download",
+    "outcome": [
+     "Camera capture with client-side filter pipeline"
+    ],
+    "skills": [
+     "Next.js",
+     "React",
+     "Tailwind CSS",
+     "Web Camera API"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/photobooth",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/photobooth",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "1 Week"
+   },
+   {
+    "title": "Command Line Task Manager",
+    "imageSrc": "projects/project.png",
+    "description": "Python-based task management utility using structured object-oriented programming for task priority, storage persistence, and scheduling.",
+    "myRole": "Solo — Python OOP, persistence layer",
+    "outcome": [
+     "Persistent task storage with priority scheduling"
+    ],
+    "skills": [
+     "Python",
+     "Object-Oriented Programming"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/-Individual-Project-To-Do-List-Python",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "1 Week"
+   },
+   {
+    "title": "Custom Planning & Resource Management System",
+    "imageSrc": "projects/project.png",
+    "description": "Planning and budgeting system for managing event logistics. Implemented data filtering, budget calculations, task tracking, and resource management models in spreadsheets.",
+    "myRole": "Solo — data modeling in Excel & Google Sheets",
+    "outcome": [
+     "Tracked plans, tasks, and budget for a real event"
+    ],
+    "skills": [
+     "Excel",
+     "Google Sheets",
+     "Project Management",
+     "Data Modeling"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/wedding-tracker",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/wedding-tracker",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "1 Day",
+    "archived": true
+   }
   ]
+ },
+ "projectTypes": [
+  {
+   "name": "Final Project",
+   "description": "Academic final projects and thesis research",
+   "icon": "🎓"
+  },
+  {
+   "name": "Group",
+   "description": "Collaborative team projects and systems development",
+   "icon": "👥"
+  },
+  {
+   "name": "Solo",
+   "description": "Individual projects demonstrating technical execution",
+   "icon": "👤"
+  }
+ ]
 }
