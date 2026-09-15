@@ -1,6 +1,7 @@
 [
   {
     "title": "Python Essentials 2",
+    "featured": true,
     "issuingOrganization": "Cisco",
     "date": "September 2025",
     "credentialId": "74628d61-ae67-44d0-9c9c-6bd49bc13ec0",
@@ -11,6 +12,7 @@
   },
   {
     "title": "Belajar Back-End Pemula dengan JavaScript",
+    "featured": true,
     "issuingOrganization": "Dicoding Indonesia",
     "date": "January 2025",
     "credentialId": "EYX4G9OKOZDL",
@@ -41,6 +43,7 @@
   },
   {
     "title": "Belajar Dasar Cloud dan Gen AI di AWS",
+    "featured": true,
     "issuingOrganization": "Dicoding Indonesia",
     "date": "January 2025",
     "credentialId": "53XEDJGR9PRN",
@@ -51,6 +54,7 @@
   },
   {
     "title": "Web Developer",
+    "featured": true,
     "issuingOrganization": "Badan Nasional Sertifikasi Profesi (BNSP)",
     "date": "October 2024",
     "credentialId": "-",
@@ -81,6 +85,7 @@
   },
   {
     "title": "Fortinet Certified Fundamentals Cybersecurity",
+    "featured": true,
     "issuingOrganization": "Fortinet",
     "date": "June 2024",
     "credentialId": "086fd440-f439-4fc8-ad6b-1a6e5a5598d9",
@@ -141,6 +146,7 @@
   },
   {
     "title": "Junior Security Operations Analyst (SOC) Talent Scouting Academy",
+    "featured": true,
     "issuingOrganization": "Digital Talent Scholarship (DTS)",
     "date": "May 2024",
     "credentialId": "-",

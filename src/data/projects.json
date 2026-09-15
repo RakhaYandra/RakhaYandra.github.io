@@ -93,9 +93,164 @@
     "duration": "4 months"
    }
   ],
-  "Solo": [
+   "Solo": [
+   {
+    "title": "Shiftbase — Workforce Scheduling Platform",
+    "imageSrc": "projects/project.png",
+    "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 5 repos, solo-built — open the card for the full repo breakdown.",
+    "myRole": "Solo Full-stack + QA/Data/Ops — 5 repos",
+    "outcome": [
+     "RBAC admin/manager/staff, shift-conflict 409s, CSV import, overtime & coverage reports",
+     "38/38 QA Pass; Newman 15/15; e2e 6/6; pipeline overtime cross-check MATCH vs API",
+     "Compose full-stack Up + tested MySQL backup roundtrip"
+    ],
+    "skills": [
+     "Go",
+     "Gin",
+     "MySQL",
+     "JWT",
+     "Docker",
+     "Swagger",
+     "Newman",
+     "React",
+     "TypeScript",
+     "Vite",
+     "Tailwind CSS",
+     "shadcn",
+     "QA",
+     "Playwright",
+     "Python",
+     "pandas",
+     "DuckDB",
+     "ETL",
+     "Linux",
+     "Bash",
+     "Troubleshooting",
+     "openpyxl"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/shiftbase",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true,
+    "subProjects": [
+     {
+      "title": "Shiftbase API",
+      "blurb": "Scheduling & attendance REST API — RBAC, conflict 409s, CSV import, overtime & coverage reports.",
+      "repo": "https://github.com/RakhaYandra/shiftbase",
+      "stack": ["Go", "Gin", "MySQL", "JWT", "Docker"]
+     },
+     {
+      "title": "Shiftbase Web",
+      "blurb": "Roster board UI — schedule timeline, shift CRUD, attendance + CSV import, reports.",
+      "repo": "https://github.com/RakhaYandra/shiftbase-web",
+      "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"]
+     },
+     {
+      "title": "Shiftbase QA",
+      "blurb": "38 cases 100% Pass, RBAC matrix, Newman 15/15, Playwright 6/6, Excel report.",
+      "repo": "https://github.com/RakhaYandra/shiftbase-qa",
+      "stack": ["QA", "Newman", "Playwright"]
+     },
+     {
+      "title": "Shiftbase Data",
+      "blurb": "HR analytics pipeline — 5 marts, overtime cross-check MATCH, 4 charts.",
+      "repo": "https://github.com/RakhaYandra/shiftbase-data",
+      "stack": ["Python", "pandas", "DuckDB"]
+     },
+     {
+      "title": "Shiftbase Ops",
+      "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting, 10 tickets.",
+      "repo": "https://github.com/RakhaYandra/shiftbase-ops",
+      "stack": ["Docker", "MySQL", "Bash"]
+     }
+    ]
+   },
+   {
+    "title": "LifeOS — Personal Life Operating System",
+    "imageSrc": "projects/project.png",
+    "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 5 repos, solo-built — open the card for the full repo breakdown.",
+    "myRole": "Solo Full-stack + QA/Data/Ops — 5 repos",
+    "outcome": [
+     "12 modules CRUD + computed fields; Newman 41 checks; ~80% service tests",
+     "56/56 QA Pass; Newman 75/75; e2e 21/21; marts reconcile with dashboard figures",
+     "Tested backup roundtrip + restore guard"
+    ],
+    "skills": [
+     "Go",
+     "Gin",
+     "SQLite",
+     "JWT",
+     "Swagger",
+     "Newman",
+     "React",
+     "TypeScript",
+     "Vite",
+     "Tailwind",
+     "shadcn",
+     "QA",
+     "Playwright",
+     "Python",
+     "openpyxl",
+     "pandas",
+     "DuckDB",
+     "ETL",
+     "Linux",
+     "Bash",
+     "Troubleshooting"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lifeos",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos",
+     "docs": null
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true,
+    "subProjects": [
+     {
+      "title": "LifeOS API",
+      "blurb": "Personal OS REST API — tasks, goals, habits, finance, health, reviews, dashboard.",
+      "repo": "https://github.com/RakhaYandra/lifeos",
+      "stack": ["Go", "Gin", "SQLite", "JWT"]
+     },
+     {
+      "title": "LifeOS Web",
+      "blurb": "Telemetry dashboard — 30-day habit heatmap, cashflow, goals, weekly reviews.",
+      "repo": "https://github.com/RakhaYandra/lifeos-web",
+      "stack": ["React", "TypeScript", "Vite", "Tailwind"]
+     },
+     {
+      "title": "LifeOS QA",
+      "blurb": "56 cases 100% Pass, 4 real bugs, Newman 75/75, Playwright 21/21, Excel report.",
+      "repo": "https://github.com/RakhaYandra/lifeos-qa",
+      "stack": ["QA", "Newman", "Playwright"]
+     },
+     {
+      "title": "LifeOS Data",
+      "blurb": "ETL & analytics pipeline — 8 tables, quality gates, 5 marts, 4 charts.",
+      "repo": "https://github.com/RakhaYandra/lifeos-data",
+      "stack": ["Python", "pandas", "DuckDB"]
+     },
+     {
+      "title": "LifeOS Ops",
+      "blurb": "Runbook + bash scripts, tested backup roundtrip, 15-entry troubleshooting, 10 tickets.",
+      "repo": "https://github.com/RakhaYandra/lifeos-ops",
+      "stack": ["Linux", "Bash", "SQLite"]
+     }
+    ]
+   },
    {
     "title": "Shiftbase Ops — Compose, Backup & Support Tickets",
+    "hidden": true,
+    "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
      "description": "Shiftbase operations: compose runbook, tested MySQL backup/restore roundtrip (5 employees recovered), verified 15-entry troubleshooting matrix (real port conflicts, shell-less distroless, seed 1062, 409/404 attendance), 10 support tickets + XLSX SLA report, FAQ.",
      "myRole": "Solo Support/Ops — compose, MySQL, troubleshooting",
@@ -124,6 +279,8 @@
    },
    {
     "title": "LifeOS Ops — Runbook, Backup & Support Tickets",
+    "hidden": true,
+    "partOf": "lifeos",
     "imageSrc": "projects/project.png",
      "description": "LifeOS operations: install/backup/restore runbook, tested bash roundtrip scripts (backup → delete → restore recovers 25 tasks, restore guard refuses while API runs), verified 15-entry troubleshooting matrix, 10 simulated tickets + XLSX (COUNTIF SLA), mini SLA, FAQ.",
      "myRole": "Solo Support/Ops — runbook, bash, troubleshooting",
@@ -151,6 +308,8 @@
    },
    {
     "title": "Shiftbase Data — HR Analytics Pipeline",
+    "hidden": true,
+    "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
      "description": "HR analytics pipeline for the Shiftbase database: read-only MySQL extract, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), overtime cross-checked identical vs API (GREATEST(hours-8,0)), 4 charts. Python + pandas + DuckDB + matplotlib.",
      "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
@@ -179,6 +338,8 @@
    },
    {
     "title": "LifeOS Data — ETL & Analytics Pipeline",
+    "hidden": true,
+    "partOf": "lifeos",
     "imageSrc": "projects/project.png",
      "description": "Analytics pipeline for the LifeOS database: 8-table extract (read-only snapshot), quality gates (orphan FKs, amounts, dates, duplicates), 5 marts (DuckDB + parquet), 4 Nexus-style charts, written insights derived from real numbers. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
      "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
@@ -206,6 +367,8 @@
    },
    {
     "title": "Shiftbase QA — RBAC, Import & Reports Testing",
+    "hidden": true,
+    "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
      "description": "QA portfolio for Shiftbase: test plan, 38 test cases 100% Pass, admin/manager/staff RBAC matrix, shift-conflict 409s, CSV import (headers/rules/2MB), >8h overtime & coverage, per-role roster. Newman 15/15, Playwright e2e 6/6, Excel report generated via openpyxl.",
      "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
@@ -234,6 +397,8 @@
    },
    {
     "title": "LifeOS QA — Test Plan, Cases & Reports",
+    "hidden": true,
+    "partOf": "lifeos",
     "imageSrc": "projects/project.png",
      "description": "QA portfolio for LifeOS: test plan, 56 evidenced test cases executed at 100%, 4 real bug reports with repro steps, Newman API suite 75/75, Playwright e2e 21/21 (Chromium headless), 5-sheet Excel report (generated via openpyxl, COUNTIF + charts). Isolated test env, documented run order.",
      "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
@@ -262,6 +427,8 @@
    },
    {
     "title": "LifeOS — Personal Life Operating System API",
+    "hidden": true,
+    "partOf": "lifeos",
     "imageSrc": "projects/project.png",
     "description": "Personal Life OS REST API: tasks/projects with overdue logic, goals cascade, habit streaks + 30-day logs, finance (transactions, auto-computed budgets, subscriptions), health/workout, learning/reading, weekly reviews with auto-stats, reminders, and a single-call dashboard. Go/Gin with database/sql (no ORM), SQLite pure-Go single file, goose migrations, single-user JWT. Indonesian fictional seed across all tables.",
     "myRole": "Solo Backend — Go/Gin REST, SQLite, JWT",
@@ -291,6 +458,8 @@
    },
    {
     "title": "LifeOS Web — Personal OS Dashboard",
+    "hidden": true,
+    "partOf": "lifeos",
     "imageSrc": "projects/project.png",
     "description": "Personal OS dashboard: telemetry-style home (tasks due/overdue, habits, cashflow, goals, renewals), inbox + today/week tasks, goals annual/monthly, habit streaks + 30-day heatmap, finance with budget status colors, health + learning, auto-stat weekly reviews, reminders. Vite + React + TS + Tailwind v4, Nexus dark identity (Inter + JetBrains Mono), JWT localStorage, 401 auto-logout.",
     "myRole": "Solo Frontend — React TS roster-style dashboard, JWT",
@@ -319,6 +488,8 @@
    },
    {
     "title": "Shiftbase — Scheduling & Attendance REST API",
+    "hidden": true,
+    "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
     "description": "Shift scheduling & attendance REST API: employees, shifts with conflict detection, check-in/out, CSV import, overtime & coverage reports. Go/Gin with database/sql (no ORM), goose migrations, JWT auth, Docker. Business zone Asia/Jakarta, fictional seed data.",
     "myRole": "Solo Backend — Go/Gin REST, MySQL, JWT, Docker",
@@ -349,6 +520,8 @@
    },
    {
     "title": "Shiftbase Web — Roster Board",
+    "hidden": true,
+    "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
     "description": "Roster board UI for the Shiftbase API: schedule timeline, shift CRUD with clear conflict messages, attendance tracking + history + CSV import, overtime & coverage reports. Vite + React + TS + Tailwind v4 + shadcn, JWT in localStorage with auto-logout on 401.",
     "myRole": "Solo Frontend — React roster board, REST integration",

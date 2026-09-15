@@ -6,6 +6,8 @@ export const GetInTouch = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [formName, setFormName] = useState("");
+  const [formMessage, setFormMessage] = useState("");
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -30,8 +32,7 @@ export const GetInTouch = () => {
     return text && text.length > 25; // Adjust threshold as needed
   };
 
-  const copyEmail = async () => {
-    const email = "rakhaputrapebriyandra272@gmail.com";
+  const copyEmail = async () => {    const email = "rakhaputrapebriyandra272@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
     } catch {
@@ -44,6 +45,18 @@ export const GetInTouch = () => {
     }
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const sendViaEmail = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(
+      `Portfolio inquiry from ${formName.trim() || "a visitor"}`
+    );
+    const body = encodeURIComponent(
+      `Hi Rakha,\n\n${formMessage.trim()}\n\n— ${formName.trim()}`
+    );
+    window.location.href =
+      `mailto:rakhaputrapebriyandra272@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const socialLinks = [
@@ -165,6 +178,30 @@ export const GetInTouch = () => {
           <p className={styles.responseNote}>
             Prefer LinkedIn or email — I usually respond within 24h (UTC+7).
           </p>
+
+          <form className={styles.contactForm} onSubmit={sendViaEmail}>
+            <input
+              type="text"
+              value={formName}
+              onChange={(e) => setFormName(e.target.value)}
+              placeholder="Your name"
+              aria-label="Your name"
+              className={styles.formInput}
+              required
+            />
+            <textarea
+              value={formMessage}
+              onChange={(e) => setFormMessage(e.target.value)}
+              placeholder="What role or project do you have in mind?"
+              aria-label="Your message"
+              className={styles.formTextarea}
+              rows={3}
+              required
+            />
+            <button type="submit" className={styles.primaryButton}>
+              <span>Send via Email</span>
+            </button>
+          </form>
         </div>
 
         {/* Contact Methods Grid */}

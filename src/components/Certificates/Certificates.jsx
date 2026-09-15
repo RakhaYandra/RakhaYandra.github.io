@@ -6,6 +6,7 @@ import certificates from "../../data/certificates.json";
 export const Certificates = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef(null);
 
   // Sort certificates by date (newest first)
@@ -57,6 +58,10 @@ export const Certificates = () => {
     setSelectedCertificate(null);
   };
 
+  const visibleCertificates = showAll
+    ? sortedCertificates
+    : sortedCertificates.filter((c) => c.featured);
+
   return (
     <section className={styles.container} id="certificates" ref={sectionRef}>
       {/* Background Elements */}
@@ -86,7 +91,7 @@ export const Certificates = () => {
         </div>
 
         <div className={styles.certificatesGrid}>
-          {sortedCertificates.map((certificate, id) => (
+          {visibleCertificates.map((certificate, id) => (
             <div
               key={id}
               className={`${styles.certificateCard} ${
@@ -145,6 +150,21 @@ export const Certificates = () => {
             </div>
           ))}
         </div>
+
+        {sortedCertificates.length > visibleCertificates.length ||
+        showAll ? (
+          <div className={styles.showMoreContainer}>
+            <button
+              type="button"
+              className={styles.showMoreButton}
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll
+                ? "Show less"
+                : `Show all ${sortedCertificates.length} credentials`}
+            </button>
+          </div>
+        ) : null}
       </div>
 
       {/* Certificate Modal */}

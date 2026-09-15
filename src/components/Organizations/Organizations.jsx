@@ -6,6 +6,7 @@ import organizations from "../../data/organizations.json";
 export const Organizations = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedOrg, setSelectedOrg] = useState(null);
+  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef(null);
 
   // Sort organizations by date (newest first)
@@ -68,6 +69,10 @@ export const Organizations = () => {
     return endDate.toLowerCase() === "present";
   };
 
+  const visibleOrganizations = showAll
+    ? sortedOrganizations
+    : sortedOrganizations.slice(0, 4);
+
   return (
     <section className={styles.container} id="organizations" ref={sectionRef}>
       {/* Background Elements */}
@@ -102,7 +107,7 @@ export const Organizations = () => {
         </div>
 
         <div className={styles.timeline}>
-          {sortedOrganizations.map((org, id) => (
+          {visibleOrganizations.map((org, id) => (
             <div
               key={id}
               className={`${styles.timelineItem} ${isVisible ? styles.slideIn : ""}`}
@@ -205,6 +210,21 @@ export const Organizations = () => {
             </div>
           ))}
         </div>
+
+        {(sortedOrganizations.length > visibleOrganizations.length ||
+          showAll) && (
+          <div className={styles.showMoreContainer}>
+            <button
+              type="button"
+              className={styles.showMoreButton}
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll
+                ? "Show less"
+                : `Show all ${sortedOrganizations.length} roles`}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Organization Modal */}

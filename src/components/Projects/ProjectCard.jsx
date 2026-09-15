@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import styles from "./ProjectCard.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -30,10 +32,12 @@ export const ProjectCard = ({
     advisor,
     archived,
     links = {},
+    subProjects = [],
   },
 }) => {
   // Hide effort-based durations (days/weeks) — keep them only in data.
   const showDuration = duration && !/day|week/i.test(duration);
+  const [showRepos, setShowRepos] = useState(false);
   return (
     <div className={`${styles.container} ${archived ? styles.archivedCard : ""}`}>
       {/* Liquid Glass Layers */}
@@ -52,6 +56,11 @@ export const ProjectCard = ({
         />
         <div className={styles.imageGlow}></div>
         {archived && <div className={styles.archivedBadge}>Archived</div>}
+        {subProjects.length > 0 && (
+          <div className={styles.repoCountBadge}>
+            {subProjects.length} repos
+          </div>
+        )}
       </div>
 
       <div className={styles.content}>
@@ -137,6 +146,15 @@ export const ProjectCard = ({
           >
             View Code
           </LinkButton>
+          {subProjects.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setShowRepos(true)}
+              className={`${styles.secondaryAction} ${styles.reposButton}`}
+            >
+              View {subProjects.length} Repos
+            </button>
+          )}
           {links.docs && (
             <a
               href={links.docs}
@@ -149,6 +167,61 @@ export const ProjectCard = ({
           )}
         </div>
       </div>
+
+      {/* Platform repos modal — portaled to body so card transform/overflow can't clip it */}
+      {showRepos &&
+        subProjects.length > 0 &&
+        createPortal(
+          <div
+            className={styles.modalOverlay}
+            onClick={() => setShowRepos(false)}
+          >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.modalCloseButton}
+              onClick={() => setShowRepos(false)}
+              aria-label="Close repositories"
+            >
+              ×
+            </button>
+            <div className={styles.modalHeader}>
+              <h3 className={styles.modalTitle}>{title}</h3>
+              <p className={styles.modalSubtitle}>
+                {subProjects.length} repositories — solo-built
+              </p>
+            </div>
+            <div className={styles.modalBody}>
+              {subProjects.map((sub) => (
+                <div key={sub.title} className={styles.subRepo}>
+                  <div className={styles.subRepoInfo}>
+                    <h4 className={styles.subRepoTitle}>{sub.title}</h4>
+                    <p className={styles.subRepoBlurb}>{sub.blurb}</p>
+                    <div className={styles.subRepoStack}>
+                      {sub.stack.map((tech) => (
+                        <span key={tech} className={styles.skill}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <a
+                    href={sub.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.subRepoLink}
+                  >
+                    Open repo
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };

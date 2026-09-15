@@ -382,6 +382,30 @@
   transform: translateY(-2px);
 }
 
+.showMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.showMoreButton {
+  background: transparent;
+  color: #e2e8f0;
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.showMoreButton:hover {
+  background: rgba(34, 197, 94, 0.12);
+  transform: translateY(-2px);
+}
+
 /* Modal */
 .modalOverlay {
   position: fixed;

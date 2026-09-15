@@ -12,8 +12,10 @@ export const Projects = () => {
   const [sortBy, setSortBy] = useState("default");
   const sectionRef = useRef(null);
 
-  // Get all projects from all categories
-  const allProjects = Object.values(projectsData.categories).flat();
+  // Get all visible projects from all categories (hidden = folded into a platform parent)
+  const allProjects = Object.values(projectsData.categories)
+    .flat()
+    .filter((project) => !project.hidden);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,7 +40,9 @@ export const Projects = () => {
     // Apply category filter
     if (filter !== "all") {
       if (["Solo", "Group", "Final Project"].includes(filter)) {
-        filtered = projectsData.categories[filter] || [];
+        filtered = (projectsData.categories[filter] || []).filter(
+          (project) => !project.hidden
+        );
       } else {
         // Filter by technology/skill
         filtered = allProjects.filter((project) =>
@@ -51,14 +55,16 @@ export const Projects = () => {
 
     // Apply search filter
     if (searchTerm) {
+      const term = searchTerm.toLowerCase();
       filtered = filtered.filter(
         (project) =>
-          project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          project.description
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase()) ||
+          project.title.toLowerCase().includes(term) ||
+          project.description.toLowerCase().includes(term) ||
           project.skills.some((skill) =>
-            skill.toLowerCase().includes(searchTerm.toLowerCase())
+            skill.toLowerCase().includes(term)
+          ) ||
+          (project.subProjects || []).some((sub) =>
+            sub.title.toLowerCase().includes(term)
           )
       );
     }
@@ -90,8 +96,8 @@ export const Projects = () => {
             className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}
           >
             Innovative solutions crafted with passion and precision — Shiftbase
-            and LifeOS are multi-repo platform case studies (API + Web + QA +
-            Data + Ops), each card links its repo
+            and LifeOS are 5-repo platform case studies, open the card for the
+            full breakdown
           </p>
 
           <div className={styles.searchAndSort}>
