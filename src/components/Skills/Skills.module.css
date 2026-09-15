@@ -466,6 +466,12 @@
   font-weight: 600;
 }
 
+.proficiencyDescription {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
 .proficiencyBar {
   width: 100%;
   height: 8px;

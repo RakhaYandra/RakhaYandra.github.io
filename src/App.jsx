@@ -28,9 +28,9 @@ function App() {
           <Education />
           <Skills />
           <Experience />
+          <Publications />
           <Certificates />
           <Organizations />
-          <Publications />
           <Projects />
           <Writing />
           <GetInTouch />

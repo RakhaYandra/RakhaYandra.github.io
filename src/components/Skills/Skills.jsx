@@ -131,7 +131,13 @@ export const Skills = () => {
                           ></div>
                         </div>
                         <span className={styles.skillPercentage}>
-                          {skill.proficiency}%
+                          {skill.proficiency >= 80
+                            ? "Expert"
+                            : skill.proficiency >= 60
+                            ? "Advanced"
+                            : skill.proficiency >= 40
+                            ? "Intermediate"
+                            : "Beginner"}
                         </span>
                       </div>
                       {hoveredSkill === skill.title && (
@@ -209,10 +215,10 @@ export const Skills = () => {
                     {skill.description}
                   </p>
                   <div className={styles.learningProgress}>
-                    <div className={styles.progressHeader}>
-                      <span>Progress</span>
-                      <span>{skill.progress}%</span>
-                    </div>
+                      <div className={styles.progressHeader}>
+                        <span>Progress</span>
+                        <span>{skill.status}</span>
+                      </div>
                     <div className={styles.progressBar}>
                       <div
                         className={styles.progressFill}
@@ -241,13 +247,12 @@ export const Skills = () => {
           isVisible ? styles.fadeInUp : ""
         }`}
       >
-        <h3 className={styles.proficiencyTitle}>Proficiency Overview</h3>
+        <h3 className={styles.proficiencyTitle}>What I&apos;m Hired For</h3>
         <div className={styles.proficiencyBars}>
           {skillsData.proficiencyOverview.map((item, index) => (
             <div key={index} className={styles.proficiencyItem}>
               <div className={styles.proficiencyHeader}>
                 <span>{item.category}</span>
-                <span>{item.percentage}%</span>
               </div>
               <div className={styles.proficiencyBar}>
                 <div
@@ -255,6 +260,7 @@ export const Skills = () => {
                   style={{ "--width": `${item.percentage}%` }}
                 ></div>
               </div>
+              <p className={styles.proficiencyDescription}>{item.description}</p>
             </div>
           ))}
         </div>

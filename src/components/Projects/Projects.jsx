@@ -72,7 +72,10 @@ export const Projects = () => {
       case "skills":
         return filtered.sort((a, b) => b.skills.length - a.skills.length);
       default:
-        return filtered;
+        // Featured first so flagship case studies lead; data order preserved otherwise.
+        return [...filtered].sort(
+          (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0)
+        );
     }
   };
 
@@ -86,7 +89,9 @@ export const Projects = () => {
           <p
             className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}
           >
-            Innovative solutions crafted with passion and precision
+            Innovative solutions crafted with passion and precision — Shiftbase
+            and LifeOS are multi-repo platform case studies (API + Web + QA +
+            Data + Ops), each card links its repo
           </p>
 
           <div className={styles.searchAndSort}>

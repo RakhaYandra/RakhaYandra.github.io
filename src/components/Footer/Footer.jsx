@@ -12,7 +12,7 @@ export const Footer = () => {
         <div className={styles.topSection}>
           <div className={styles.brand}>
             <h3>Rakha Putra Pebri Yandra</h3>
-            <p>Information Systems Professional</p>
+            <p>Information Systems Generalist</p>
           </div>
 
           <div className={styles.status}>
@@ -46,14 +46,6 @@ export const Footer = () => {
             </a>
             <a href="mailto:rakhaputrapebriyandra272@gmail.com" className={styles.link}>
               Email
-            </a>
-            <a
-              href="https://wa.me/6285385032274"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >
-              WhatsApp
             </a>
           </div>
         </div>

@@ -32,6 +32,8 @@ export const ProjectCard = ({
     links = {},
   },
 }) => {
+  // Hide effort-based durations (days/weeks) — keep them only in data.
+  const showDuration = duration && !/day|week/i.test(duration);
   return (
     <div className={`${styles.container} ${archived ? styles.archivedCard : ""}`}>
       {/* Liquid Glass Layers */}
@@ -58,7 +60,7 @@ export const ProjectCard = ({
             <h3 className={styles.title}>{title}</h3>
             <div className={styles.projectMeta}>
               <span className={styles.workType}>{workType}</span>
-              {duration && <span className={styles.duration}>{duration}</span>}
+              {showDuration && <span className={styles.duration}>{duration}</span>}
             </div>
           </div>
         </div>

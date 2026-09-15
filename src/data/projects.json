@@ -97,12 +97,12 @@
    {
     "title": "Shiftbase Ops — Compose, Backup & Support Tickets",
     "imageSrc": "projects/project.png",
-    "description": "Operasional Shiftbase: runbook compose, backup/restore MySQL teruji roundtrip (5 employees kembali), troubleshooting 15 entri terverifikasi (port bentrok asli, distroless tanpa shell, seed 1062, 409/404 attendance), 10 tiket + XLSX SLA, FAQ.",
-    "myRole": "Solo Support/Ops — compose, MySQL, troubleshooting",
-    "outcome": [
-     "Backup roundtrip + compose full stack Up (api/adminer/mysql)",
-     "15/15 perintah matrix dijalankan beneran",
-     "10 tiket (9 closed), XLSX generate via openpyxl"
+     "description": "Shiftbase operations: compose runbook, tested MySQL backup/restore roundtrip (5 employees recovered), verified 15-entry troubleshooting matrix (real port conflicts, shell-less distroless, seed 1062, 409/404 attendance), 10 support tickets + XLSX SLA report, FAQ.",
+     "myRole": "Solo Support/Ops — compose, MySQL, troubleshooting",
+     "outcome": [
+      "Backup roundtrip + full-stack compose Up (api/adminer/mysql)",
+      "15/15 troubleshooting matrix commands executed for real",
+      "10 tickets (9 closed), XLSX generated via openpyxl"
     ],
     "skills": [
      "Linux",
@@ -125,12 +125,12 @@
    {
     "title": "LifeOS Ops — Runbook, Backup & Support Tickets",
     "imageSrc": "projects/project.png",
-    "description": "Operasional LifeOS: runbook install/backup/restore, skrip bash teruji roundtrip (backup→hapus→restore 25 tasks kembali, guard tolak saat API jalan), troubleshooting matrix 15 entri terverifikasi perintah, 10 tiket simulasi + XLSX (COUNTIF SLA), SLA mini, FAQ.",
-    "myRole": "Solo Support/Ops — runbook, bash, troubleshooting",
-    "outcome": [
-     "Backup roundtrip teruji; guard restore terbukti menolak",
-     "15/15 perintah matrix dijalankan beneran",
-     "10 tiket (9 closed), XLSX generate via openpyxl"
+     "description": "LifeOS operations: install/backup/restore runbook, tested bash roundtrip scripts (backup → delete → restore recovers 25 tasks, restore guard refuses while API runs), verified 15-entry troubleshooting matrix, 10 simulated tickets + XLSX (COUNTIF SLA), mini SLA, FAQ.",
+     "myRole": "Solo Support/Ops — runbook, bash, troubleshooting",
+     "outcome": [
+      "Tested backup roundtrip; restore guard proven to refuse",
+      "15/15 troubleshooting matrix commands executed for real",
+      "10 tickets (9 closed), XLSX generated via openpyxl"
     ],
     "skills": [
      "Linux",
@@ -152,12 +152,12 @@
    {
     "title": "Shiftbase Data — HR Analytics Pipeline",
     "imageSrc": "projects/project.png",
-    "description": "Pipeline analitik HR untuk database Shiftbase: extract read-only MySQL, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), cross-check overtime vs API identik (GREATEST(jam-8,0)), 4 grafik. Python + pandas + DuckDB + matplotlib.",
-    "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
-    "outcome": [
-     "Cross-check pipeline vs /reports/overtime: MATCH (<0.01)",
-     "Demo data deterministik 101 shift + 101 absensi (lembur/telat)",
-     "Quality gates + runbook MySQL scratch terdokumentasi"
+     "description": "HR analytics pipeline for the Shiftbase database: read-only MySQL extract, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), overtime cross-checked identical vs API (GREATEST(hours-8,0)), 4 charts. Python + pandas + DuckDB + matplotlib.",
+     "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
+     "outcome": [
+      "Cross-check pipeline vs /reports/overtime: MATCH (<0.01)",
+      "Deterministic demo data: 101 shifts + 101 attendance rows (overtime/late)",
+      "Quality gates + documented MySQL scratch runbook"
     ],
     "skills": [
      "Python",
@@ -180,12 +180,12 @@
    {
     "title": "LifeOS Data — ETL & Analytics Pipeline",
     "imageSrc": "projects/project.png",
-    "description": "Pipeline analitik untuk database LifeOS: extract 8 tabel (read-only snapshot), quality gates (orphan FK, nominal, tanggal, duplikat), 5 marts (DuckDB + parquet), 4 grafik Nexus-style, insight tertulis dari angka beneran. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
-    "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
-    "outcome": [
-     "Quality gates gagalkan run bila kotor; quality_report.json tiap run",
-     "Marts = angka API dashboard (net 7.334.001 tertelusur)",
-     "Deterministik: snapshot seed bootstrap otomatis, nol data pribadi di repo"
+     "description": "Analytics pipeline for the LifeOS database: 8-table extract (read-only snapshot), quality gates (orphan FKs, amounts, dates, duplicates), 5 marts (DuckDB + parquet), 4 Nexus-style charts, written insights derived from real numbers. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
+     "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
+     "outcome": [
+      "Quality gates fail the run on dirty data; quality_report.json every run",
+      "Marts reconcile with API dashboard figures (net 7,334,001 traceable)",
+      "Deterministic: auto bootstrap seed snapshot, zero personal data in repo"
     ],
     "skills": [
      "Python",
@@ -207,12 +207,12 @@
    {
     "title": "Shiftbase QA — RBAC, Import & Reports Testing",
     "imageSrc": "projects/project.png",
-    "description": "QA portfolio untuk Shiftbase: test plan, 38 test cases 100% Pass, fokus matriks RBAC admin/manager/staff, konflik shift 409, import CSV (header/aturan/2MB), overtime >8 jam & coverage, roster per peran. Newman 15/15, Playwright e2e 6/6, laporan Excel generate via openpyxl.",
-    "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
-    "outcome": [
-     "38/38 Pass; Newman 15/15; e2e 6/6; go test 79.8% + swagger valid",
-     "2 bug UX Low: dropdown tak refresh setelah import, tab tak persist",
-     "MySQL 8.4 docker env terisolasi + urutan run terdokumentasi"
+     "description": "QA portfolio for Shiftbase: test plan, 38 test cases 100% Pass, admin/manager/staff RBAC matrix, shift-conflict 409s, CSV import (headers/rules/2MB), >8h overtime & coverage, per-role roster. Newman 15/15, Playwright e2e 6/6, Excel report generated via openpyxl.",
+     "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
+     "outcome": [
+      "38/38 Pass; Newman 15/15; e2e 6/6; go test 79.8% + swagger valid",
+      "2 Low UX bugs: dropdown not refreshing after import, tab not persisting",
+      "Isolated MySQL 8.4 docker env + documented run order"
     ],
     "skills": [
      "QA",
@@ -235,12 +235,12 @@
    {
     "title": "LifeOS QA — Test Plan, Cases & Reports",
     "imageSrc": "projects/project.png",
-    "description": "QA portfolio untuk LifeOS: test plan, 56 test cases tereksekusi 100% ber-evidence, 4 bug report nyata dengan repro, Newman API suite 75/75, Playwright e2e 21/21 (Chromium headless), laporan Excel 5 sheet (generate via openpyxl, COUNTIF + grafik). Env uji terisolasi, urutan run terdokumentasi.",
-    "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
-    "outcome": [
-     "56/56 test cases Pass; Newman 75/75; e2e 21/21; go test + swagger valid",
-     "4 bug nyata: PUT full-replace, dashboard _ts leak, pesan gin mentah, label tanpa htmlFor",
-     "LifeOS-QA-Report.xlsx: Cover, Cases, Execution Log, Bugs, Summary otomatis"
+     "description": "QA portfolio for LifeOS: test plan, 56 evidenced test cases executed at 100%, 4 real bug reports with repro steps, Newman API suite 75/75, Playwright e2e 21/21 (Chromium headless), 5-sheet Excel report (generated via openpyxl, COUNTIF + charts). Isolated test env, documented run order.",
+     "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
+     "outcome": [
+      "56/56 test cases Pass; Newman 75/75; e2e 21/21; go test + swagger valid",
+      "4 real bugs: PUT full-replace, dashboard _ts leak, raw gin messages, label missing htmlFor",
+      "LifeOS-QA-Report.xlsx: auto-generated Cover, Cases, Execution Log, Bugs, Summary"
     ],
     "skills": [
      "QA",

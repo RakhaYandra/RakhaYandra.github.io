@@ -5,6 +5,7 @@ import { getImageUrl } from "../../utils";
 export const GetInTouch = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -29,6 +30,22 @@ export const GetInTouch = () => {
     return text && text.length > 25; // Adjust threshold as needed
   };
 
+  const copyEmail = async () => {
+    const email = "rakhaputrapebriyandra272@gmail.com";
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = email;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
   const socialLinks = [
     {
       id: "email",
@@ -39,16 +56,6 @@ export const GetInTouch = () => {
       url: "mailto:rakhaputrapebriyandra272@gmail.com",
       color: "#22c55e",
       bgGradient: "from-green-500/20 to-emerald-500/20",
-    },
-    {
-      id: "whatsapp",
-      platform: "WhatsApp",
-      handle: "+62 853-5803-2274",
-      description: "Let's chat instantly",
-      icon: "contact/whatsappIcon.svg",
-      url: "https://wa.me/6285385032274",
-      color: "#3b82f6",
-      bgGradient: "from-blue-500/20 to-cyan-500/20",
     },
     {
       id: "linkedin",
@@ -139,14 +146,25 @@ export const GetInTouch = () => {
             </a>
 
             <a
-              href="https://wa.me/6285385032274"
+              href="https://www.linkedin.com/in/rakhaputrapebriyandra"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.secondaryButton}
             >
-              <span>Quick Chat</span>
+              <span>Connect on LinkedIn</span>
             </a>
+
+            <button
+              type="button"
+              onClick={copyEmail}
+              className={`${styles.secondaryButton} ${styles.copyButton}`}
+            >
+              <span>{copiedEmail ? "Email Copied ✓" : "Copy Email"}</span>
+            </button>
           </div>
+          <p className={styles.responseNote}>
+            Prefer LinkedIn or email — I usually respond within 24h (UTC+7).
+          </p>
         </div>
 
         {/* Contact Methods Grid */}

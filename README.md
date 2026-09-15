@@ -150,7 +150,8 @@ All text content is decoupled from components. To update content, modify the cor
 *   📧 Email: [rakhaputrapebriyandra272@gmail.com](mailto:rakhaputrapebriyandra272@gmail.com)
 *   💼 LinkedIn: [linkedin.com/in/rakhaputrapebriyandra](https://www.linkedin.com/in/rakhaputrapebriyandra)
 *   🐱 GitHub: [github.com/RakhaYandra](https://github.com/RakhaYandra)
-*   🟢 WhatsApp: [wa.me/6285385032274](https://wa.me/6285385032274)
+
+> 📱 Phone/WhatsApp available on request (via LinkedIn or email) to reduce spam.
 
 ---
 

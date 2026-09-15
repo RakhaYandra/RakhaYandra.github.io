@@ -876,3 +876,14 @@
     font-size: 1rem;
   }
 }
+
+.copyButton {
+  cursor: pointer;
+  font: inherit;
+}
+
+.responseNote {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
