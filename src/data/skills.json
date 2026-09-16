@@ -17,6 +17,16 @@
         "proficiency": 70
       },
       {
+        "title": "Gin",
+        "imageSrc": "skills/go.png",
+        "proficiency": 70
+      },
+      {
+        "title": "Blazor/.NET",
+        "imageSrc": "skills/csharp.png",
+        "proficiency": 75
+      },
+      {
         "title": "PHP",
         "imageSrc": "skills/php.png",
         "proficiency": 85
@@ -40,6 +50,11 @@
         "title": "CSS",
         "imageSrc": "skills/css.png",
         "proficiency": 85
+      },
+      {
+        "title": "Tailwind CSS",
+        "imageSrc": "skills/css.png",
+        "proficiency": 80
       }
     ],
     "Databases & DevOps": [
@@ -71,6 +86,21 @@
         "proficiency": 75
       },
       {
+        "title": "Playwright",
+        "imageSrc": "skills/cypress.png",
+        "proficiency": 70
+      },
+      {
+        "title": "Newman",
+        "imageSrc": "skills/swagger.png",
+        "proficiency": 75
+      },
+      {
+        "title": "JWT",
+        "imageSrc": "skills/jwt.png",
+        "proficiency": 70
+      },
+      {
         "title": "Swagger (API Docs)",
         "imageSrc": "skills/swagger.png",
         "proficiency": 80
@@ -86,6 +116,11 @@
         "title": "Git",
         "imageSrc": "skills/git.png",
         "proficiency": 85
+      },
+      {
+        "title": "GitHub Actions",
+        "imageSrc": "skills/github-actions.png",
+        "proficiency": 65
       }
     ]
   },
@@ -103,7 +138,7 @@
     {
       "category": "QA & Test Automation",
       "percentage": 75,
-      "description": "Writing end-to-end testing scripts and ensuring product stability."
+      "description": "Writing end-to-end testing scripts (Cypress, Playwright, Newman) and ensuring product stability."
     },
     {
       "category": "Database Management",
@@ -116,16 +151,24 @@
     "JavaScript",
     "Node.js",
     "Golang",
+    "Gin",
+    "Blazor",
+    ".NET",
     "Laravel",
     "PHP",
     "Python",
+    "Tailwind CSS",
     "PostgreSQL",
     "MySQL",
     "SQL Server",
     "Docker",
+    "JWT",
     "Cypress",
+    "Playwright",
+    "Newman",
     "Swagger",
     "Git",
+    "GitHub Actions",
     "Figma"
   ],
   "currentlyLearning": [

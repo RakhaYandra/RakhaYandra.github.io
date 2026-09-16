@@ -47,7 +47,7 @@ export const About = () => {
               I have professional experience in full-stack development, API engineering, systems documentation, and QA testing. Having worked across corporate environments like Telkomsel and startups like Technova, I adapt quickly to different tools, methodologies, and cross-functional team structures.
             </p>
             <p>
-              My goal is to leverage my analytical training and software development experience to deliver value across diverse IT functions, whether in software engineering, systems analysis, QA, or technology consulting.
+              My goal is to deliver value across diverse IT functions — strongest in backend APIs and test automation — whether in software engineering, systems analysis, QA, or technology consulting.
             </p>
           </div>
 
@@ -105,6 +105,8 @@ export const About = () => {
                   <span>React</span>
                   <span>Laravel</span>
                   <span>Golang</span>
+                  <span>Gin/JWT</span>
+                  <span>Blazor/.NET</span>
                   <span>Node.js</span>
                   <span>PostgreSQL</span>
                   <span>MySQL</span>
@@ -146,6 +148,8 @@ export const About = () => {
                 </p>
                 <div className={styles.skills}>
                   <span>Cypress (QA)</span>
+                  <span>Playwright</span>
+                  <span>Newman</span>
                   <span>Agile/Scrum</span>
                   <span>Git & Version Control</span>
                   <span>UAT Support</span>
