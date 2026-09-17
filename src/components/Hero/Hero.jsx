@@ -70,7 +70,7 @@ export const Hero = () => {
             <span className={styles.titleRole}>Information Systems Generalist</span>
           </h1>
           <p className={styles.subtitle}>
-            Generalist — backend-leaning (Go/Gin, Blazor/.NET) + QA-aware (Cypress, Newman, Playwright). Build · Analyze · Assure. An honors graduate (Cum Laude) delivering value across diverse IT functions. Based in Indonesia, open to remote roles.
+            Generalist — backend-leaning (Go/Gin, Blazor/.NET) + QA-aware (Cypress, Newman, Playwright). Build · Analyze · Assure. An honors graduate (Cum Laude) delivering value across diverse IT functions. Based in Medan, Indonesia, open to remote roles and relocation.
           </p>
         </div>
 

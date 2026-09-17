@@ -63,7 +63,7 @@ export const About = () => {
               </div>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Location</span>
-                <span className={styles.infoValue}>Bandung, Indonesia</span>
+                <span className={styles.infoValue}>Medan, Indonesia</span>
               </div>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Education</span>
