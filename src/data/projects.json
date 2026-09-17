@@ -97,11 +97,11 @@
    {
     "title": "Shiftbase — Workforce Scheduling Platform",
     "imageSrc": "projects/project.png",
-    "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 5 repos, solo-built — open the card for the full repo breakdown.",
-    "myRole": "Solo Full-stack + QA/Data/Ops — 5 repos",
+     "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
      "RBAC admin/manager/staff, shift-conflict 409s, CSV import, overtime & coverage reports",
-     "38/38 QA Pass; Newman 15/15; e2e 6/6; pipeline overtime cross-check MATCH vs API",
+     "38/38 QA Pass; Newman 15/15; e2e 8/8; pipeline overtime cross-check MATCH vs API",
      "Compose full-stack Up + tested MySQL backup roundtrip"
     ],
     "skills": [
@@ -129,16 +129,16 @@
      "openpyxl"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase",
-    "links": {
-     "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase",
-     "docs": null
-    },
-    "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true,
-    "subProjects": [
+     "source": "https://github.com/RakhaYandra/shiftbase",
+     "links": {
+      "live": null,
+      "repo": "https://github.com/RakhaYandra/shiftbase",
+      "docs": "https://github.com/RakhaYandra/shiftbase-docs/releases"
+     },
+     "workType": "Solo",
+     "duration": "Sep 2026",
+     "featured": true,
+     "subProjects": [
      {
       "title": "Shiftbase API",
       "blurb": "Scheduling & attendance REST API — RBAC, conflict 409s, CSV import, overtime & coverage reports.",
@@ -164,21 +164,27 @@
       "stack": ["Python", "pandas", "DuckDB"]
      },
      {
-      "title": "Shiftbase Ops",
-      "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting, 10 tickets.",
-      "repo": "https://github.com/RakhaYandra/shiftbase-ops",
-      "stack": ["Docker", "MySQL", "Bash"]
-     }
-    ]
+       "title": "Shiftbase Ops",
+       "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting, 10 tickets.",
+       "repo": "https://github.com/RakhaYandra/shiftbase-ops",
+       "stack": ["Docker", "MySQL", "Bash"]
+      },
+      {
+       "title": "Shiftbase Docs",
+       "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
+       "repo": "https://github.com/RakhaYandra/shiftbase-docs",
+       "stack": ["Docs", "SRS", "Pandoc"]
+      }
+     ]
    },
    {
     "title": "LifeOS — Personal Life Operating System",
     "imageSrc": "projects/project.png",
-    "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 5 repos, solo-built — open the card for the full repo breakdown.",
-    "myRole": "Solo Full-stack + QA/Data/Ops — 5 repos",
+     "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
      "12 modules CRUD + computed fields; Newman 41 checks; ~80% service tests",
-     "56/56 QA Pass; Newman 75/75; e2e 21/21; marts reconcile with dashboard figures",
+     "61/61 QA Pass; Newman 75/75; e2e 26/26; marts reconcile with dashboard figures",
      "Tested backup roundtrip + restore guard"
     ],
     "skills": [
@@ -205,16 +211,16 @@
      "Troubleshooting"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos",
-    "links": {
-     "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos",
-     "docs": null
-    },
-    "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true,
-    "subProjects": [
+     "source": "https://github.com/RakhaYandra/lifeos",
+     "links": {
+      "live": null,
+      "repo": "https://github.com/RakhaYandra/lifeos",
+      "docs": "https://github.com/RakhaYandra/lifeos-docs/releases"
+     },
+     "workType": "Solo",
+     "duration": "Sep 2026",
+     "featured": true,
+     "subProjects": [
      {
       "title": "LifeOS API",
       "blurb": "Personal OS REST API — tasks, goals, habits, finance, health, reviews, dashboard.",
@@ -229,7 +235,7 @@
      },
      {
       "title": "LifeOS QA",
-      "blurb": "56 cases 100% Pass, 4 real bugs, Newman 75/75, Playwright 21/21, Excel report.",
+       "blurb": "61 cases 100% Pass, 4 real bugs, Newman 75/75, Playwright 26/26, Excel report.",
       "repo": "https://github.com/RakhaYandra/lifeos-qa",
       "stack": ["QA", "Newman", "Playwright"]
      },
@@ -240,12 +246,18 @@
       "stack": ["Python", "pandas", "DuckDB"]
      },
      {
-      "title": "LifeOS Ops",
-      "blurb": "Runbook + bash scripts, tested backup roundtrip, 15-entry troubleshooting, 10 tickets.",
-      "repo": "https://github.com/RakhaYandra/lifeos-ops",
-      "stack": ["Linux", "Bash", "SQLite"]
-     }
-    ]
+       "title": "LifeOS Ops",
+       "blurb": "Runbook + bash scripts, tested backup roundtrip, 15-entry troubleshooting, 10 tickets.",
+       "repo": "https://github.com/RakhaYandra/lifeos-ops",
+       "stack": ["Linux", "Bash", "SQLite"]
+      },
+      {
+       "title": "LifeOS Docs",
+       "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
+       "repo": "https://github.com/RakhaYandra/lifeos-docs",
+       "stack": ["Docs", "SRS", "Pandoc"]
+      }
+     ]
    },
    {
     "title": "Shiftbase Ops — Compose, Backup & Support Tickets",
