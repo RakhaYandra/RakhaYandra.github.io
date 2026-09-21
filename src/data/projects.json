@@ -96,7 +96,7 @@
    "Solo": [
    {
      "title": "Shiftbase — Workforce Scheduling Platform",
-     "imageSrc": "projects/shiftbase-arch.svg",
+     "imageSrc": "projects/shiftbase-ui.png",
      "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
@@ -179,7 +179,7 @@
    },
    {
      "title": "LifeOS — Personal Life Operating System",
-     "imageSrc": "projects/lifeos-arch.svg",
+     "imageSrc": "projects/lifeos-ui.png",
      "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
