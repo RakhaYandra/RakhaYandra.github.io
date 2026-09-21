@@ -95,8 +95,8 @@
   ],
    "Solo": [
    {
-    "title": "Shiftbase — Workforce Scheduling Platform",
-    "imageSrc": "projects/project.png",
+     "title": "Shiftbase — Workforce Scheduling Platform",
+     "imageSrc": "projects/shiftbase-arch.svg",
      "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
@@ -153,7 +153,7 @@
      },
      {
       "title": "Shiftbase QA",
-      "blurb": "38 cases 100% Pass, RBAC matrix, Newman 15/15, Playwright 6/6, Excel report.",
+      "blurb": "38 cases 100% Pass, RBAC matrix, Newman 15/15, Playwright 8/8, Excel report.",
       "repo": "https://github.com/RakhaYandra/shiftbase-qa",
       "stack": ["QA", "Newman", "Playwright"]
      },
@@ -178,8 +178,8 @@
      ]
    },
    {
-    "title": "LifeOS — Personal Life Operating System",
-    "imageSrc": "projects/project.png",
+     "title": "LifeOS — Personal Life Operating System",
+     "imageSrc": "projects/lifeos-arch.svg",
      "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
@@ -382,10 +382,10 @@
     "hidden": true,
     "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
-     "description": "QA portfolio for Shiftbase: test plan, 38 test cases 100% Pass, admin/manager/staff RBAC matrix, shift-conflict 409s, CSV import (headers/rules/2MB), >8h overtime & coverage, per-role roster. Newman 15/15, Playwright e2e 6/6, Excel report generated via openpyxl.",
+     "description": "QA portfolio for Shiftbase: test plan, 38 test cases 100% Pass, admin/manager/staff RBAC matrix, shift-conflict 409s, CSV import (headers/rules/2MB), >8h overtime & coverage, per-role roster. Newman 15/15, Playwright e2e 8/8, Excel report generated via openpyxl.",
      "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
      "outcome": [
-      "38/38 Pass; Newman 15/15; e2e 6/6; go test 79.8% + swagger valid",
+      "38/38 Pass; Newman 15/15; e2e 8/8; go test + swagger valid",
       "2 Low UX bugs: dropdown not refreshing after import, tab not persisting",
       "Isolated MySQL 8.4 docker env + documented run order"
     ],
@@ -412,10 +412,10 @@
     "hidden": true,
     "partOf": "lifeos",
     "imageSrc": "projects/project.png",
-     "description": "QA portfolio for LifeOS: test plan, 56 evidenced test cases executed at 100%, 4 real bug reports with repro steps, Newman API suite 75/75, Playwright e2e 21/21 (Chromium headless), 5-sheet Excel report (generated via openpyxl, COUNTIF + charts). Isolated test env, documented run order.",
+     "description": "QA portfolio for LifeOS: test plan, 61 evidenced test cases executed at 100%, 4 real bug reports with repro steps, Newman API suite 75/75, Playwright e2e 26/26 (Chromium headless), 5-sheet Excel report (generated via openpyxl, COUNTIF + charts). Isolated test env, documented run order.",
      "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
      "outcome": [
-      "56/56 test cases Pass; Newman 75/75; e2e 21/21; go test + swagger valid",
+      "61/61 test cases Pass; Newman 75/75; e2e 26/26; go test + swagger valid",
       "4 real bugs: PUT full-replace, dashboard _ts leak, raw gin messages, label missing htmlFor",
       "LifeOS-QA-Report.xlsx: auto-generated Cover, Cases, Execution Log, Bugs, Summary"
     ],

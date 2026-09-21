@@ -12,6 +12,15 @@ export const Projects = () => {
   const [sortBy, setSortBy] = useState("default");
   const sectionRef = useRef(null);
 
+  // Stable anchor ids so the CV can deep-link flagship case studies.
+  const projectSlug = (title) => {
+    if (title.startsWith("Shiftbase —")) return "project-shiftbase";
+    if (title.startsWith("LifeOS —")) return "project-lifeos";
+    if (title.startsWith("Air Quality")) return "project-thesis";
+    if (title.startsWith("Horticultural")) return "project-capstone";
+    return undefined;
+  };
+
   // Get all visible projects from all categories (hidden = folded into a platform parent)
   const allProjects = Object.values(projectsData.categories)
     .flat()
@@ -96,7 +105,7 @@ export const Projects = () => {
             className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}
           >
             Innovative solutions crafted with passion and precision — Shiftbase
-            and LifeOS are 5-repo platform case studies, open the card for the
+            and LifeOS are 6-repo platform case studies, open the card for the
             full breakdown
           </p>
 
@@ -215,6 +224,7 @@ export const Projects = () => {
             {filteredProjects().map((project, id) => (
               <div
                 key={`${project.title}-${id}`}
+                id={projectSlug(project.title)}
                 className={styles.projectWrapper}
                 style={{ "--delay": `${id * 0.1}s` }}
               >
