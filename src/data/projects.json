@@ -95,6 +95,84 @@
   ],
    "Solo": [
    {
+     "title": "KosManager — Boarding House Billing Platform",
+     "imageSrc": "projects/kosmanager-ui.png",
+     "description": "Kos billing platform: ASP.NET Core 8 Clean Architecture-lite API (EF Core, MySQL, JWT, BackgroundService) plus Blazor Server roster board, backed by QA automation, a DuckDB analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
+     "outcome": [
+      "RBAC owner/penghuni, auto-generate tagihan, CSV import, verifikasi bayar, dashboard tunggakan",
+      "47/47 QA Pass; Newman 22/22; e2e 12/12; Telegram reminder verified-real",
+      "Compose full-stack Up + tested MySQL backup roundtrip"
+     ],
+     "skills": [
+      "C#",
+      "ASP.NET Core",
+      "EF Core",
+      "MySQL",
+      "JWT",
+      "Blazor",
+      "MudBlazor",
+      "Clean Architecture",
+      "Telegram",
+      "Newman",
+      "QA",
+      "Playwright",
+      "Python",
+      "DuckDB",
+      "Docker",
+      "Swagger",
+      "openpyxl"
+     ],
+     "demo": null,
+     "source": null,
+     "links": {
+      "live": null,
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
+      "docs": null
+     },
+     "workType": "Solo",
+     "duration": "Sep 2026",
+     "featured": true,
+     "subProjects": [
+      {
+       "title": "KosManager API",
+       "blurb": "Billing REST API — Clean Architecture-lite, RBAC, scheduler H-3/H-1/H+1, CSV import.",
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
+       "stack": ["C#", "ASP.NET Core", "EF Core", "MySQL", "JWT"]
+      },
+      {
+       "title": "KosManager Web",
+       "blurb": "Board kamar + billing UI — Blazor Server, MudBlazor, Synapse light theme.",
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-web",
+       "stack": ["Blazor", "MudBlazor", "C#"]
+      },
+      {
+       "title": "KosManager QA",
+       "blurb": "47 cases 100% Pass, RBAC matrix, Newman 22/22, Playwright 12/12, Excel report.",
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-qa",
+       "stack": ["QA", "Newman", "Playwright"]
+      },
+      {
+       "title": "KosManager Data",
+       "blurb": "Occupancy + arrears marts, quality gates, DuckDB pipeline.",
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-data",
+       "stack": ["Python", "DuckDB"]
+      },
+      {
+       "title": "KosManager Ops",
+       "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting.",
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-ops",
+       "stack": ["Docker", "MySQL", "Bash"]
+      },
+      {
+       "title": "KosManager Docs",
+       "blurb": "BRD, PRD, FSD, SRS in Indonesian + ADR-002/003.",
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-docs",
+       "stack": ["Docs", "SRS"]
+      }
+     ]
+    },
+   {
      "title": "Shiftbase — Workforce Scheduling Platform",
      "imageSrc": "projects/shiftbase-ui.png",
      "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",

@@ -17,6 +17,7 @@ export const Projects = () => {
     if (title.startsWith("Shiftbase —")) return "project-shiftbase";
     if (title.startsWith("LifeOS —")) return "project-lifeos";
     if (title.startsWith("Air Quality")) return "project-thesis";
+    if (title.startsWith("KosManager —")) return "project-kosmanager-dotnet";
     if (title.startsWith("Horticultural")) return "project-capstone";
     return undefined;
   };
@@ -104,9 +105,9 @@ export const Projects = () => {
           <p
             className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}
           >
-            Innovative solutions crafted with passion and precision — Shiftbase
-            and LifeOS are 6-repo platform case studies, open the card for the
-            full breakdown
+            Innovative solutions crafted with passion and precision — Shiftbase,
+            LifeOS, and KosManager are 6-repo platform case studies, open the
+            card for the full breakdown
           </p>
 
           <div className={styles.searchAndSort}>
