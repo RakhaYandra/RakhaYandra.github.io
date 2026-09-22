@@ -97,7 +97,7 @@
    {
      "title": "KosManager — Boarding House Billing Platform",
      "imageSrc": "projects/kosmanager-ui.png",
-     "description": "Kos billing platform: ASP.NET Core 8 Clean Architecture-lite API (EF Core, MySQL, JWT, BackgroundService) plus Blazor Server roster board, backed by QA automation, a DuckDB analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+     "description": "Kos billing platform: ASP.NET Core 8 Clean Architecture-lite API (EF Core, MySQL, JWT, BackgroundService, read-cache + MiniProfiler) plus Blazor Server board (full 17/17 API coverage, Synapse theme), backed by QA automation, a DuckDB analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
      "outcome": [
       "RBAC owner/penghuni, auto-generate tagihan, CSV import, verifikasi bayar, dashboard tunggakan",
