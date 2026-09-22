@@ -101,7 +101,8 @@
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
      "outcome": [
       "RBAC owner/penghuni, auto-generate tagihan, CSV import, verifikasi bayar, dashboard tunggakan",
-      "47/47 QA Pass; Newman 22/22; e2e 12/12; Telegram reminder verified-real",
+      "50/50 QA Pass; Newman 25/25; e2e 12/12; Telegram reminder verified-real",
+      "Struk PDF per tagihan + grafik kas 6 bulan; web full 17/17 API coverage",
       "Compose full-stack Up + tested MySQL backup roundtrip"
      ],
      "skills": [
