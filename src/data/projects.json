@@ -124,16 +124,16 @@
       "Swagger",
       "openpyxl"
      ],
-     "demo": null,
-     "source": null,
-     "links": {
-      "live": null,
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
-      "docs": null
-     },
-     "workType": "Solo",
-     "duration": "Sep 2026",
-     "featured": true,
+      "demo": null,
+      "source": null,
+      "links": {
+       "live": null,
+       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
+       "docs": "https://github.com/RakhaYandra/kosmanager-dotnet-docs/releases"
+      },
+      "workType": "Solo",
+      "duration": "Sep 2026",
+      "featured": true,
      "subProjects": [
       {
        "title": "KosManager API",
