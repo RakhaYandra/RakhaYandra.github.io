@@ -161,6 +161,7 @@
     "PostgreSQL",
     "MySQL",
     "SQL Server",
+    "Redis",
     "Docker",
     "JWT",
     "Cypress",
@@ -169,7 +170,9 @@
     "Swagger",
     "Git",
     "GitHub Actions",
-    "Figma"
+    "Figma",
+    "Prometheus",
+    "Grafana"
   ],
   "currentlyLearning": [
     {

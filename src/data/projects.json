@@ -94,6 +94,66 @@
    }
   ],
    "Solo": [
+    {
+     "title": "Pulse — API Monitoring & Incident Platform",
+     "imageSrc": "projects/pulse-ui.png",
+     "description": "API monitoring & incident platform: Go/Gin REST API (PostgreSQL, Redis, JWT, Docker) with async worker checks plus React dashboard, backed by QA automation, a DuckDB reliability analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
+     "outcome": [
+      "Threshold incident lifecycle (OPEN/RESOLVED), Telegram notifications, Prometheus/Grafana observability",
+      "22/22 QA Pass; Newman 22/22; e2e 7/7; pipeline uptime/MTTR cross-check MATCH vs API",
+      "Benchmarked 1,000 monitors on 4 workers (peak 28/s, zero queue backlog, 50/50 timeouts detected)"
+     ],
+     "skills": ["Go", "Gin", "PostgreSQL", "Redis", "JWT", "Docker", "Swagger", "Newman", "React", "Vite", "Tailwind CSS", "QA", "Playwright", "Python", "DuckDB", "Prometheus", "Grafana", "Linux", "Bash", "Troubleshooting"],
+     "demo": null,
+     "source": "https://github.com/RakhaYandra/pulse",
+     "links": {
+      "live": null,
+      "repo": "https://github.com/RakhaYandra/pulse",
+      "docs": "https://github.com/RakhaYandra/pulse-docs/releases"
+     },
+     "workType": "Solo",
+     "duration": "Sep 2026",
+     "featured": true,
+     "subProjects": [
+      {
+       "title": "Pulse API",
+       "blurb": "Monitoring & incident REST API — JWT, per-user isolation, threshold engine, Redis queue.",
+       "repo": "https://github.com/RakhaYandra/pulse",
+       "stack": ["Go", "Gin", "PostgreSQL", "Redis", "JWT", "Docker"]
+      },
+      {
+       "title": "Pulse Web",
+       "blurb": "Monitoring dashboard — status board, response-time charts, incident history, reliability reports.",
+       "repo": "https://github.com/RakhaYandra/pulse-web",
+       "stack": ["React", "Vite", "Tailwind CSS"]
+      },
+      {
+       "title": "Pulse QA",
+       "blurb": "22 cases 100% Pass, per-user isolation, Newman 22/22, Playwright 7/7, bench rig with validity gates.",
+       "repo": "https://github.com/RakhaYandra/pulse-qa",
+       "stack": ["QA", "Newman", "Playwright"]
+      },
+      {
+       "title": "Pulse Data",
+       "blurb": "Reliability analytics pipeline — 4 marts, MTTR cross-check MATCH, 4 charts.",
+       "repo": "https://github.com/RakhaYandra/pulse-data",
+       "stack": ["Python", "DuckDB"]
+      },
+      {
+       "title": "Pulse Ops",
+       "blurb": "Compose runbook, tested backup/restore, Prometheus + Grafana + alerts.",
+       "repo": "https://github.com/RakhaYandra/pulse-ops",
+       "stack": ["Docker", "PostgreSQL", "Bash"]
+      },
+      {
+       "title": "Pulse Docs",
+       "blurb": "BRD, PRD, FSD, SRS + ADRs and postmortems, PDFs auto-built as release assets.",
+       "repo": "https://github.com/RakhaYandra/pulse-docs",
+       "stack": ["Docs", "SRS"]
+      }
+     ]
+    },
    {
      "title": "KosManager — Boarding House Billing Platform",
      "imageSrc": "projects/kosmanager-ui.png",
