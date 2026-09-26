@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="sans-serif">
+  <rect width="1200" height="520" fill="#0b1220"/>
+  <text x="600" y="40" fill="#22c55e" font-size="26" font-weight="bold" text-anchor="middle">Shiftbase — Scheduling &amp; Attendance API (Go/Gin + MySQL)</text>
+  <g font-size="17" text-anchor="middle">
+    <rect x="40" y="90" width="200" height="80" rx="10" fill="#13233f" stroke="#22c55e" stroke-width="2"/>
+    <text x="140" y="120" fill="#fff">Client / shiftbase-web</text>
+    <text x="140" y="145" fill="#9fb3c8">React + Tailwind</text>
+    <rect x="290" y="90" width="200" height="80" rx="10" fill="#13233f" stroke="#22c55e" stroke-width="2"/>
+    <text x="390" y="120" fill="#fff">POST /v1/auth/login</text>
+    <text x="390" y="145" fill="#9fb3c8">JWT 24h</text>
+    <rect x="540" y="90" width="220" height="80" rx="10" fill="#13233f" stroke="#22c55e" stroke-width="2"/>
+    <text x="650" y="120" fill="#fff">RBAC middleware</text>
+    <text x="650" y="145" fill="#9fb3c8">admin / manager / staff</text>
+    <rect x="810" y="90" width="200" height="80" rx="10" fill="#13233f" stroke="#22c55e" stroke-width="2"/>
+    <text x="910" y="120" fill="#fff">Modules</text>
+    <text x="910" y="145" fill="#9fb3c8">employees · shifts</text>
+    <rect x="810" y="200" width="200" height="60" rx="10" fill="#13233f" stroke="#22c55e" stroke-width="2"/>
+    <text x="910" y="225" fill="#fff">attendance · reports</text>
+    <text x="910" y="248" fill="#9fb3c8">CSV import</text>
+  </g>
+  <g stroke="#22c55e" stroke-width="2" fill="none" marker-end="url(#ah)">
+    <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#22c55e"/></marker></defs>
+    <line x1="240" y1="130" x2="288" y2="130"/>
+    <line x1="490" y1="130" x2="538" y2="130"/>
+    <line x1="760" y1="130" x2="808" y2="130"/>
+    <line x1="910" y1="170" x2="910" y2="198"/>
+  </g>
+  <g font-size="17" text-anchor="middle">
+    <rect x="290" y="300" width="250" height="90" rx="10" fill="#3f1d12" stroke="#f59e0b" stroke-width="2"/>
+    <text x="415" y="330" fill="#fff">Conflict check</text>
+    <text x="415" y="355" fill="#fcd34d">overlap = 409</text>
+    <text x="415" y="376" fill="#fcd34d">overtime &gt; 8h/day (WIB)</text>
+    <rect x="590" y="300" width="220" height="90" rx="10" fill="#13233f" stroke="#22c55e" stroke-width="2"/>
+    <text x="700" y="330" fill="#fff">MySQL 8.4</text>
+    <text x="700" y="355" fill="#9fb3c8">goose migrations</text>
+    <text x="700" y="376" fill="#9fb3c8">seed demo data</text>
+  </g>
+  <g stroke="#22c55e" stroke-width="2" fill="none" marker-end="url(#ah)">
+    <line x1="850" y1="260" x2="700" y2="298"/>
+    <line x1="910" y1="260" x2="500" y2="300"/>
+  </g>
+  <rect x="40" y="420" width="1120" height="70" rx="10" fill="#0f2a1d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="600" y="448" fill="#bbf7d0" font-size="17" text-anchor="middle">Evidence: Newman 15/15 · QA 38/38 Pass · Playwright e2e 8/8 · Swagger valid · CI green</text>
+  <text x="600" y="472" fill="#6ee7b7" font-size="15" text-anchor="middle">Seed login: admin@shiftbase.local / manager@shiftbase.local / staff@shiftbase.local</text>
+</svg>
