@@ -31,6 +31,7 @@ export const Navbar = () => {
     { href: "#organizations", label: "Organizations", icon: "🏢" },
     { href: "#publications", label: "Publications", icon: "📚" },
     { href: "#writing", label: "Writing", icon: "✍️" },
+    { href: "#faq", label: "FAQ", icon: "❓" },
   ];
 
   return (
@@ -44,7 +45,8 @@ export const Navbar = () => {
               className={styles.logoImage}
             />
           </div>
-          <span className={styles.logoText}>Rakha Putra Pebri Yandra</span>
+          <span className={styles.logoText}>Rakha Yandra</span>
+          <span className={styles.logoPill}>DEV // SYSTEMS</span>
         </a>
 
         <div className={styles.menu}>
@@ -131,11 +133,13 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className={styles.navActions}>
-          <a
-            href="mailto:rakhaputrapebriyandra272@gmail.com"
-            className={styles.ctaButton}
-          >
-            Let&apos;s Talk
+          <span className={styles.availBadge}>
+            <span className={styles.availDot}></span>
+            AVAILABLE FOR HIRE
+          </span>
+          <a href="#contact" className={styles.ctaButton}>
+            GET IN TOUCH
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

@@ -3,30 +3,19 @@ import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 
 export const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const techStack = [
-    { name: "React", icon: "⚛️" },
-    { name: "JavaScript", icon: "🟨" },
-    { name: "Golang", icon: "🐹" },
-    { name: "Laravel", icon: "🔷" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "Cypress", icon: "🌲" },
+    "Go / Gin",
+    "ASP.NET Core",
+    "React",
+    "Newman",
+    "Playwright",
+    "PostgreSQL",
   ];
 
   // Track screen size for responsive scroll indicator
@@ -39,25 +28,13 @@ export const Hero = () => {
 
   return (
     <section className={styles.container}>
-      {/* Simplified Background */}
-      <div className={styles.backgroundAnimation}>
-        <div className={styles.gradientOrbs}></div>
-        <div
-          className={styles.mouseFollower}
-          style={{
-            "--mouse-x": `${mousePosition.x}%`,
-            "--mouse-y": `${mousePosition.y}%`,
-          }}
-        ></div>
-      </div>
-
       <div className={styles.content}>
         {/* Status Badge */}
         <div
           className={`${styles.statusBadge} ${isLoaded ? styles.fadeInUp : ""}`}
         >
           <div className={styles.statusDot}></div>
-          <span>Open to Work · Remote / Hybrid / On-site</span>
+          <span>• VERIFIED ARCHITECTURES &amp; SYSTEMS</span>
         </div>
 
         {/* Hero Heading */}
@@ -65,30 +42,40 @@ export const Hero = () => {
           className={`${styles.heroHeading} ${isLoaded ? styles.fadeInUp : ""}`}
         >
           <h1 className={styles.title}>
-            Hi, I&apos;m <span className={styles.titleName}>Rakha Putra</span>
-            <br />
-            <span className={styles.titleRole}>Information Systems Generalist</span>
+            Maximizing Backend{" "}
+            <span className={styles.titleAccent}>Reliability</span> &amp;
+            Verified Systems.
           </h1>
           <p className={styles.subtitle}>
-            Generalist — backend-leaning (Go/Gin, Blazor/.NET) + QA-aware (Cypress, Newman, Playwright). Build · Analyze · Assure. An honors graduate (Cum Laude) delivering value across diverse IT functions. Based in Medan, Indonesia, open to remote roles and relocation.
+            Information Systems Generalist &amp; Backend Engineer bridging
+            robust domain modeling (Go/Gin, ASP.NET Core, Blazor) with
+            empirical test harnesses (Newman, Cypress, Playwright) to eliminate
+            runtime uncertainty before deployment.
           </p>
         </div>
 
-        {/* Quick Stats */}
+        {/* Telemetry Ticker */}
         <div
           className={`${styles.quickStats} ${isLoaded ? styles.fadeInUp : ""}`}
         >
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>Cum Laude</div>
-            <div className={styles.statLabel}>Telkom University</div>
+            <div className={styles.statLabel}>GPA / MERIT</div>
+            <div className={styles.statNumber}>3.81</div>
+            <div className={styles.statSub}>Cum Laude</div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>5+</div>
-            <div className={styles.statLabel}>Deployed Solutions</div>
+            <div className={styles.statLabel}>TEST PASS RATE</div>
+            <div className={styles.statNumber}>100%</div>
+            <div className={styles.statSub}>267+ Assertions</div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>1.5+ Yrs</div>
-            <div className={styles.statLabel}>Combined Experience</div>
+            <div className={`${styles.statLabel} ${styles.statLabelOk}`}>
+              STATUS
+            </div>
+            <div className={`${styles.statNumber} ${styles.statNumberOk}`}>
+              ACTIVE
+            </div>
+            <div className={styles.statSub}>Remote / Relocate</div>
           </div>
         </div>
 
@@ -96,23 +83,12 @@ export const Hero = () => {
         <div
           className={`${styles.ctaGroup} ${isLoaded ? styles.fadeInUp : ""}`}
         >
-          <a
-            href="mailto:rakhaputrapebriyandra272@gmail.com"
-            className={styles.primaryCta}
-          >
-            <span>Let&apos;s Collaborate</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M7 17L17 7M17 7H7M17 7V17"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <a href="#projects" className={styles.primaryCta}>
+            <span>EXPLORE FLAGSHIP WORK</span>
+            <span aria-hidden="true">→</span>
           </a>
-          <a href="#projects" className={styles.secondaryCta}>
-            <span>View Portfolio</span>
+          <a href="#project-thesis" className={styles.secondaryCta}>
+            <span>VIEW IEEE PUBLICATION</span>
           </a>
           <a
             href="https://drive.google.com/file/d/1TaKJOdJJHmVEeZt7Ck2CnjJ7GLS531g-/view?usp=sharing"
@@ -242,36 +218,63 @@ export const Hero = () => {
         </div>
       )}
 
-      {/* Enhanced Image Section */}
+      {/* Executive Card */}
       <div
         className={`${styles.imageSection} ${
           isLoaded ? styles.fadeInRight : ""
         }`}
       >
-        <div className={styles.imageContainer + " " + styles.animatedImage}>
+        <div className={styles.imageContainer}>
+          <div className={styles.cardHead}>
+            <span className={styles.cardHeadLeft}>
+              <span className={styles.cardHeadDot}></span>
+              TELKOM UNIVERSITY
+            </span>
+            <span className={styles.cardHeadRight}>NODE // RPK-2025</span>
+          </div>
           <div className={styles.imageFrame}>
             <img
-              src={getImageUrl("hero/heroImage1.jpg")}
+              src={getImageUrl("about/aboutImage.jpg")}
               alt="Rakha Putra Pebri Yandra - Information Systems Graduate"
               className={styles.heroImage}
             />
-            <div className={styles.imageOverlay}></div>
+            <div className={styles.namePlate}>
+              <div>
+                <h3 className={styles.namePlateName}>
+                  Rakha Putra Pebri Yandra
+                </h3>
+                <p className={styles.namePlateRole}>
+                  S.Kom • Backend &amp; Verification Lead
+                </p>
+              </div>
+              <div className={styles.namePlateMeta}>
+                <span>Medan, ID</span>
+                <span className={styles.relocatePill}>Relocate: Jakarta · Bandung</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.telemetryRow}>
+            <div className={styles.telemetryCard}>
+              <span className={styles.telemetryLabel}>Primary Runtime</span>
+              <span className={styles.telemetryValue}>
+                Go / Gin &amp; ASP.NET
+              </span>
+            </div>
+            <div className={styles.telemetryCard}>
+              <span className={styles.telemetryLabel}>E2E Verification</span>
+              <span className={`${styles.telemetryValue} ${styles.telemetryValueBlue}`}>
+                Newman / Playwright
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Modern Tech Stack */}
+        {/* Core Stack */}
         <div className={styles.techStackContainer}>
-          <h3 className={styles.techStackTitle}>Tech Stack</h3>
           <div className={styles.techGrid}>
-            {techStack.map((tech, index) => (
-              <div
-                key={tech.name}
-                className={styles.techBadge}
-                style={{ "--delay": `${0.2 + index * 0.1}s` }}
-                title={tech.name}
-              >
-                <span className={styles.techIcon}>{tech.icon}</span>
-                <span className={styles.techName}>{tech.name}</span>
+            {techStack.map((tech) => (
+              <div key={tech} className={styles.techBadge} title={tech}>
+                <span className={styles.techName}>{tech}</span>
               </div>
             ))}
           </div>

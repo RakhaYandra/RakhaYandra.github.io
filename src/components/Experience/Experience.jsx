@@ -15,7 +15,7 @@ export const Experience = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -27,71 +27,69 @@ export const Experience = () => {
 
   return (
     <section className={styles.container} id="experience" ref={sectionRef}>
-      <div className={styles.content}>
-        <div className={styles.sectionHeader}>
-          <h2 className={`${styles.title} ${isVisible ? styles.slideUp : ""}`}>
-            Professional Journey
-          </h2>
-          <p className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}>
-            Crafting digital experiences through meaningful collaborations
-          </p>
+      <div className={styles.sectionHeader}>
+        <div className={styles.eyebrow}>
+          <span className={styles.eyebrowDot}></span>
+          <span>• CHRONOLOGY &amp; LEADERSHIP</span>
         </div>
-        <div className={styles.experienceGrid}>
-          {history.map((historyItem, id) => {
-            return (
-              <div
-                key={id}
-                className={`${styles.experienceCard} ${
-                  isVisible ? styles.slideUp : ""
-                }`}
-                style={{ "--delay": `${id * 0.2}s` }}
-              >
-                {/* Liquid Glass Layers */}
-                <div className={styles.liquidLayer1}></div>
-                <div className={styles.liquidLayer2}></div>
-                <div className={styles.liquidLayer3}></div>
-
-                {/* Card Glow Effect */}
-                <div className={styles.cardGlow}></div>
-
-                <div className={styles.cardContent}>
-                  <div className={styles.cardHeader}>
-                    <div className={styles.logoContainer}>
-                      <img
-                        src={getImageUrl(historyItem.imageSrc)}
-                        alt={`${historyItem.organisation} Logo`}
-                        className={styles.companyLogo}
-                      />
-                    </div>
-                    <div className={styles.cardInfo}>
-                      <h3 className={styles.position}>{historyItem.role}</h3>
-                      <h4 className={styles.company}>
-                        {historyItem.organisation}
-                      </h4>
+        <h2 className={`${styles.title} ${isVisible ? styles.slideUp : ""}`}>
+          Career Track, Professional Deployments &amp; Academic Leadership
+        </h2>
+        <p className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}>
+          A track record spanning freelance backend and frontend production
+          deliveries, corporate internships, and university laboratory
+          leadership.
+        </p>
+      </div>
+      <span className={styles.timelineLabel}>
+        PRODUCTION TIMELINE // {history.length} TENURES
+      </span>
+      <div className={styles.experienceGrid}>
+        {history.map((historyItem, id) => {
+          return (
+            <div
+              key={id}
+              className={`${styles.experienceCard} ${
+                isVisible ? styles.slideUp : ""
+              }`}
+              style={{ "--delay": `${id * 0.1}s` }}
+            >
+              <div className={styles.cardContent}>
+                <div className={styles.cardHeader}>
+                  <div className={styles.logoContainer}>
+                    <img
+                      src={getImageUrl(historyItem.imageSrc)}
+                      alt={`${historyItem.organisation} Logo`}
+                      className={styles.companyLogo}
+                    />
+                  </div>
+                  <div className={styles.cardInfo}>
+                    <div className={styles.cardTopRow}>
+                      <h3 className={styles.position}>{historyItem.organisation}</h3>
                       <span className={styles.duration}>
-                        {`${historyItem.startDate} - ${historyItem.endDate}`}
+                        {`${historyItem.startDate} – ${historyItem.endDate}`}
                       </span>
                     </div>
-                  </div>
-                  <ul className={styles.responsibilities}>
-                    {historyItem.experiences.map((experience, id) => {
-                      return <li key={id}>{experience}</li>;
-                    })}
-                  </ul>
-                  <div className={styles.techStack}>
-                    {/* Add tech stack if available in data */}
-                    {historyItem.techStack &&
-                      historyItem.techStack.map((tech, id) => (
-                        <span key={id} className={styles.techPill}>
-                          {tech}
-                        </span>
-                      ))}
+                    <h4 className={styles.company}>{historyItem.role}</h4>
                   </div>
                 </div>
+                <ul className={styles.responsibilities}>
+                  {historyItem.experiences.map((experience, expId) => {
+                    return <li key={expId}>{experience}</li>;
+                  })}
+                </ul>
+                <div className={styles.techStack}>
+                  {historyItem.techStack &&
+                    historyItem.techStack.map((tech, techId) => (
+                      <span key={techId} className={styles.techPill}>
+                        {tech}
+                      </span>
+                    ))}
+                </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

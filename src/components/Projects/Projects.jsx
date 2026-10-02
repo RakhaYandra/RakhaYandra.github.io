@@ -99,15 +99,19 @@ export const Projects = () => {
     <section className={styles.container} id="projects" ref={sectionRef}>
       <div className={styles.contentWrapper}>
         <div className={styles.sectionHeader}>
+          <div className={styles.eyebrow}>
+            <span className={styles.eyebrowDot}></span>
+            <span>• PROPOSITIONS &amp; FLAGSHIP SYSTEMS</span>
+          </div>
           <h2 className={`${styles.title} ${isVisible ? styles.slideUp : ""}`}>
-            Featured Projects
+            Deterministic Systems Built with Rigorous Test Contracts
           </h2>
           <p
             className={`${styles.subtitle} ${isVisible ? styles.slideUp : ""}`}
           >
-            Innovative solutions crafted with passion and precision — Shiftbase,
-            LifeOS, and KosManager are 6-repo platform case studies, open the
-            card for the full breakdown
+            Every platform built by Rakha is engineered with automated API test
+            harnesses, deterministic database states, and live production
+            auditability.
           </p>
 
           <div className={styles.searchAndSort}>
@@ -229,7 +233,7 @@ export const Projects = () => {
                 className={styles.projectWrapper}
                 style={{ "--delay": `${id * 0.1}s` }}
               >
-                <ProjectCard project={project} />
+                <ProjectCard project={project} index={id} />
               </div>
             ))}
           </div>

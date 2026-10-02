@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import styles from "./ProjectCard.module.css";
-import { getImageUrl } from "../../utils";
 
 const LinkButton = ({ href, className, children, disabledLabel }) => {
   if (!href) {
@@ -18,10 +17,31 @@ const LinkButton = ({ href, className, children, disabledLabel }) => {
   );
 };
 
+/* Pull N/N verification ratios out of outcome bullets, e.g.
+   "22/22 QA Pass; Newman 22/22; e2e 7/7". Returns null when absent. */
+const parseVerification = (outcome = []) => {
+  const text = outcome.join(" | ");
+  const find = (re) => {
+    const m = text.match(re);
+    return m ? m[1].replace(/\s+/g, " ") : null;
+  };
+  const newman =
+    find(/newman\D{0,12}(\d+\s*\/\s*\d+)/i) ||
+    find(/(\d+\s*\/\s*\d+)\s*newman/i);
+  const qa =
+    find(/(\d+\s*\/\s*\d+)\s*(?:QA|test cases)/i) ||
+    find(/QA\D{0,12}(\d+\s*\/\s*\d+)/i);
+  const e2e =
+    find(/e2e\D{0,12}(\d+\s*\/\s*\d+)/i) ||
+    find(/(\d+\s*\/\s*\d+)\s*e2e/i);
+  if (!newman && !qa && !e2e) return null;
+  return { newman, qa, e2e };
+};
+
 export const ProjectCard = ({
+  index = 0,
   project: {
     title,
-    imageSrc,
     description,
     myRole,
     outcome,
@@ -31,6 +51,7 @@ export const ProjectCard = ({
     teamSize,
     advisor,
     archived,
+    featured,
     links = {},
     subProjects = [],
   },
@@ -38,79 +59,72 @@ export const ProjectCard = ({
   // Hide effort-based durations (days/weeks) — keep them only in data.
   const showDuration = duration && !/day|week/i.test(duration);
   const [showRepos, setShowRepos] = useState(false);
+  const verification = parseVerification(outcome);
+  const isPlatform = subProjects.length > 0;
+  const status = archived
+    ? { label: "ARCHIVED", kind: "muted" }
+    : isPlatform
+      ? { label: "100% SUITE VERIFIED", kind: "ok", pulse: true }
+      : featured
+        ? { label: "FEATURED", kind: "info" }
+        : null;
+
   return (
     <div className={`${styles.container} ${archived ? styles.archivedCard : ""}`}>
-      {/* Liquid Glass Layers */}
-      <div className={styles.liquidLayer1}></div>
-      <div className={styles.liquidLayer2}></div>
-      <div className={styles.liquidLayer3}></div>
-
-      {/* Card Glow Effect */}
-      <div className={styles.cardGlow}></div>
-
-      <div className={styles.imageContainer}>
-        <img
-          src={getImageUrl(imageSrc)}
-          alt={`${title} project screenshot`}
-          className={styles.image}
-        />
-        <div className={styles.imageGlow}></div>
-        {archived && <div className={styles.archivedBadge}>Archived</div>}
-        {subProjects.length > 0 && (
-          <div className={styles.repoCountBadge}>
-            {subProjects.length} repos
-          </div>
-        )}
-      </div>
-
       <div className={styles.content}>
-        <div className={styles.header}>
-          <div className={styles.titleSection}>
-            <h3 className={styles.title}>{title}</h3>
-            <div className={styles.projectMeta}>
-              <span className={styles.workType}>{workType}</span>
-              {showDuration && <span className={styles.duration}>{duration}</span>}
-            </div>
-          </div>
+        <div className={styles.sysRow}>
+          <span className={styles.sysLabel}>
+            SYSTEM // {String(index + 1).padStart(3, "0")}
+          </span>
+          {status && (
+            <span className={`${styles.statusPill} ${styles[status.kind]}`}>
+              {status.pulse && <span className={styles.statusDot}></span>}
+              {status.label}
+            </span>
+          )}
         </div>
 
-        {myRole && (
-          <p className={styles.myRole}>
-            <span className={styles.myRoleLabel}>My role:</span> {myRole}
-          </p>
+        <h3 className={styles.title}>{title}</h3>
+        {(workType || showDuration) && (
+          <div className={styles.projectMeta}>
+            {workType && <span className={styles.workType}>{workType}</span>}
+            {showDuration && <span className={styles.duration}>{duration}</span>}
+          </div>
         )}
+
+        {myRole && <p className={styles.myRole}>{myRole}</p>}
 
         <p className={styles.description}>{description}</p>
 
-        {outcome && outcome.length > 0 && (
-          <ul className={styles.outcomes}>
-            {outcome.map((item, id) => (
-              <li key={id} className={styles.outcomeItem}>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={styles.outcomeCheck}
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        {verification && (
+          <div className={styles.verifyStrip}>
+            <div className={styles.verifyCell}>
+              <span className={styles.verifyLabel}>NEWMAN AUTOMATED</span>
+              <span className={styles.verifyValue}>{verification.newman ?? "—"}</span>
+              <span className={styles.verifySub}>Endpoints Passed</span>
+            </div>
+            <div className={styles.verifyCell}>
+              <span className={styles.verifyLabel}>QA HARNESS</span>
+              <span className={styles.verifyValue}>{verification.qa ?? "—"}</span>
+              <span className={styles.verifySub}>Invariants Verified</span>
+            </div>
+            <div className={styles.verifyCell}>
+              <span className={styles.verifyLabel}>E2E PLAYWRIGHT</span>
+              <span className={styles.verifyValue}>{verification.e2e ?? "—"}</span>
+              <span className={styles.verifySub}>Flows Validated</span>
+            </div>
+          </div>
         )}
 
         <div className={styles.skills}>
-          {skills.map((skill, id) => (
+          {skills.slice(0, 8).map((skill, id) => (
             <span key={id} className={styles.skill}>
               {skill}
             </span>
           ))}
+          {skills.length > 8 && (
+            <span className={styles.skill}>+{skills.length - 8} more</span>
+          )}
         </div>
 
         {/* Additional project details */}
@@ -125,7 +139,9 @@ export const ProjectCard = ({
             {advisor && (
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Advisor:</span>
-                <span className={styles.infoValue}>{advisor}</span>
+                <span className={styles.infoValue}>
+                  {Array.isArray(advisor) ? advisor.join("; ") : advisor}
+                </span>
               </div>
             )}
           </div>

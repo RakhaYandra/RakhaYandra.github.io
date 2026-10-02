@@ -3,65 +3,79 @@
    ========================================================================== */
 
 :root {
-  /* Colors - Atom Minimalist Palette */
-  --color-primary: #3B82F6;          /* Accent Blue */
-  --color-primary-light: #60A5FA;
-  --color-primary-dark: #2563EB;
-  
-  --color-secondary: #27272A;        /* Monochromatic Dark Zinc */
-  --color-secondary-light: #3F3F46;
-  --color-secondary-dark: #18181B;
-  
-  --color-accent: #3B82F6;           /* Accent Blue */
-  --color-accent-light: #60A5FA;
-  --color-accent-dark: #2563EB;
-  
-  --color-success: #3B82F6;          /* Standardized on accent blue */
-  --color-warning: #D97706;          /* Minimal warning */
-  --color-error: #EF4444;            /* Red for error states */
-  --color-info: #3B82F6;
-  
-  /* Text Colors */
-  --color-text-primary: #F5F5F5;
-  --color-text-secondary: #A1A1AA;
-  --color-text-muted: #52525B;
-  --color-text-accent: #3B82F6;
-  --color-text-highlight: #3B82F6;
-  
-  /* Background Colors */
-  --color-bg-primary: #08090A;
-  --color-bg-secondary: rgba(8, 9, 10, 0.6);  /* Surface token */
-  --color-bg-tertiary: #141416;
-  --color-bg-quaternary: #18181B;
-  
-  --color-bg-card: rgba(255, 255, 255, 0.01);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.02);
-  --color-bg-glass: rgba(8, 9, 10, 0.6);
-  --color-bg-glass-hover: rgba(255, 255, 255, 0.02);
-  --color-bg-glass-strong: rgba(8, 9, 10, 0.8);
-  --color-bg-overlay: rgba(8, 9, 10, 0.9);
-  
-  /* Border Colors */
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-glass: rgba(255, 255, 255, 0.08);
-  --color-border-muted: rgba(255, 255, 255, 0.05);
-  --color-border-strong: rgba(255, 255, 255, 0.15);
-  --color-border-accent: rgba(59, 130, 246, 0.2);
-  
-  /* Monochromatic Gradients */
-  --gradient-primary: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 100%);
-  --gradient-secondary: linear-gradient(135deg, #A1A1AA 0%, #52525B 100%);
-  --gradient-accent: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-  --gradient-hero: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 50%, #3B82F6 100%);
-  --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --gradient-text: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 100%);
-  --gradient-rainbow: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 50%, #3B82F6 100%);
+  /* Kyoto Slate — light editorial (Tahap 1 fondasi) */
+  --color-primary: #0f172a;
+  --color-primary-light: #334155;
+  --color-primary-dark: #020617;
+
+  --color-secondary: #475569;
+  --color-secondary-light: #64748b;
+  --color-secondary-dark: #334155;
+
+  --color-accent: #2563eb;
+  --color-accent-light: #60a5fa;
+  --color-accent-dark: #1d4ed8;
+  --color-link: #2563eb;
+
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-error: #ba1a1a;
+  --color-info: #2563eb;
+
+  /* Text */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-text-accent: #2563eb;
+  --color-text-highlight: #0f172a;
+
+  /* Background */
+  --color-bg-primary: #fbfbfb;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f4f4f5;
+  --color-bg-quaternary: #eeeeee;
+
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f4f4f5;
+  --color-bg-glass: rgba(251, 251, 251, 0.85);
+  --color-bg-glass-hover: #f4f4f5;
+  --color-bg-glass-strong: rgba(251, 251, 251, 0.95);
+  --color-bg-overlay: rgba(15, 23, 42, 0.5);
+
+  /* Border hairline */
+  --color-border: #e4e4e7;
+  --color-border-glass: #e4e4e7;
+  --color-border-muted: #f1f1f4;
+  --color-border-strong: #cbd5e1;
+  --color-border-accent: rgba(37, 99, 235, 0.35);
+
+  /* Badges */
+  --badge-qa-bg: #fdf2f4;
+  --badge-qa-border: #f3d5db;
+  --badge-qa-text: #6b1d2f;
+  --badge-pass-bg: #f0fdf4;
+  --badge-pass-border: #dcfce7;
+  --badge-pass-text: #15803d;
+  --badge-tech-bg: #f4f4f5;
+  --badge-tech-border: #e4e4e7;
+  --badge-tech-text: #475569;
+
+  /* Gradients — flat, no glow */
+  --gradient-primary: none;
+  --gradient-secondary: none;
+  --gradient-accent: none;
+  --gradient-hero: none;
+  --gradient-card: none;
+  --gradient-text: none;
+  --gradient-rainbow: none;
   
   /* Legacy Variables for Compatibility */
-  --text-primary: #F5F5F5;
-  --text-secondary: #A1A1AA;
-  --background-dark: #08090A;
-  --section-padding-y: 6rem;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --background-dark: #fbfbfb;
+  --section-padding-y: 4rem;
+  --content-max: 1280px;
+  --content-narrow: 680px;
   
   /* Spacing System - Base 8px scale */
   --spacing-xs: 4px;
@@ -74,14 +88,14 @@
   --spacing-4xl: 80px;
   --spacing-5xl: 96px;       /* Hero/Vertical Padding */
   
-  /* Border Radius - Sharp Architectural Aesthetic */
-  --border-radius-xs: 0px;
-  --border-radius-sm: 2px;
+  /* Border Radius - Kyoto Soft L1 */
+  --border-radius-xs: 2px;
+  --border-radius-sm: 3px;
   --border-radius-md: 4px;
-  --border-radius-lg: 4px;
-  --border-radius-xl: 4px;
-  --border-radius-2xl: 4px;
-  --border-radius-3xl: 4px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 8px;
+  --border-radius-2xl: 8px;
+  --border-radius-3xl: 8px;
   --border-radius-full: 999px; /* Reserved for status dots / badges */
   
   /* Transitions */
@@ -91,9 +105,9 @@
   --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --transition-smooth: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
-  /* Typography */
+  /* Typography — Geist editorial + JetBrains Mono meta */
   --font-family-primary: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-mono: 'Inter', 'JetBrains Mono', Consolas, monospace;
+  --font-family-mono: 'JetBrains Mono', Consolas, monospace;
   --font-family-heading: 'Geist', 'Inter', system-ui, sans-serif;
   
   --font-size-xs: 0.75rem;
@@ -123,15 +137,15 @@
   --line-height-relaxed: 1.625;
   --line-height-loose: 2;
   
-  /* Shadows - Minimalist design relies on borders and blurs, not shadows */
+  /* Shadows — flat editorial, no glow */
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: none;
   --shadow-xl: none;
   --shadow-2xl: none;
   --shadow-inner: none;
-  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.1);
-  --shadow-glow-lg: 0 0 40px rgba(59, 130, 246, 0.15);
+  --shadow-glow: none;
+  --shadow-glow-lg: none;
   
   /* Z-Index Scale */
   --z-dropdown: 100;
@@ -152,8 +166,8 @@
 /* Navigation */
 .navbar {
   --navbar-height: 64px;
-  --navbar-bg: rgba(8, 9, 10, 0.6);
-  --navbar-border: rgba(255, 255, 255, 0.1);
+  --navbar-bg: rgba(251, 251, 251, 0.85);
+  --navbar-border: #e4e4e7;
   --navbar-backdrop-blur: 12px;
   --navbar-shadow: none;
 }
@@ -162,17 +176,17 @@
 .card {
   --card-padding: 48px;
   --card-radius: var(--border-radius-md);
-  --card-bg: rgba(8, 9, 10, 0.6);
+  --card-bg: #ffffff;
   --card-border: var(--color-border);
-  --card-backdrop-blur: 12px;
+  --card-backdrop-blur: 0px;
   --card-shadow: none;
   --card-hover-transform: translateY(-2px);
-  --card-transition: all 300ms ease;
+  --card-transition: all 150ms ease;
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #f4f4f5 !important;
+  border-color: #cbd5e1;
   transform: var(--card-hover-transform);
   box-shadow: none;
 }
@@ -191,7 +205,7 @@
 
 .btn-primary {
   --btn-bg: var(--color-primary);
-  --btn-color: #F5F5F5;
+  --btn-color: #ffffff;
   --btn-border: transparent;
   --btn-shadow-hover: none;
 }
@@ -204,29 +218,29 @@
 }
 
 .btn-accent {
-  --btn-bg: #3B82F6;
-  --btn-color: #F5F5F5;
+  --btn-bg: #2563eb;
+  --btn-color: #ffffff;
   --btn-border: transparent;
   --btn-shadow-hover: none;
 }
 
 /* Glass Effects */
 .glass {
-  background: rgba(8, 9, 10, 0.6);
+  background: rgba(251, 251, 251, 0.85);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e4e4e7;
   border-radius: var(--border-radius-md);
 }
 
 .glass:hover {
-  background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #f4f4f5;
+  border-color: #cbd5e1;
 }
 
 .glass-strong {
-  background: rgba(8, 9, 10, 0.8);
+  background: rgba(251, 251, 251, 0.95);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #e4e4e7;
 }
 
 /* Gradient Text Utility */
@@ -303,7 +317,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.05), transparent);
   animation: shimmer 2s infinite;
 }
 
@@ -313,8 +327,8 @@
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #f4f4f5;
+  border-color: #cbd5e1;
   transform: translateY(-2px);
   box-shadow: none;
 }
