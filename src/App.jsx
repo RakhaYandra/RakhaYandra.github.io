@@ -9,6 +9,7 @@ import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Organizations } from "./components/Organizations/Organizations";
 import { Projects } from "./components/Projects/Projects";
+import { Faq } from "./components/Faq/Faq";
 import { Publications } from "./components/Publications/Publications";
 import { Skills } from "./components/Skills/Skills";
 import { Footer } from "./components/Footer/Footer";
@@ -33,6 +34,7 @@ function App() {
           <Organizations />
           <Projects />
           <Writing />
+          <Faq />
           <GetInTouch />
         </main>
         
