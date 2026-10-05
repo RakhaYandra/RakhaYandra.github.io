@@ -150,14 +150,14 @@ export const ProjectCard = ({
         <div className={styles.actions}>
           <LinkButton
             href={links.live}
-            className={styles.primaryAction}
+            className={styles.action}
             disabledLabel={`${title} has no live demo`}
           >
             Live Demo
           </LinkButton>
           <LinkButton
             href={links.repo}
-            className={styles.secondaryAction}
+            className={styles.action}
             disabledLabel={`${title} has no source repository`}
           >
             View Code
@@ -166,7 +166,7 @@ export const ProjectCard = ({
             <button
               type="button"
               onClick={() => setShowRepos(true)}
-              className={`${styles.secondaryAction} ${styles.reposButton}`}
+              className={styles.action}
             >
               View {subProjects.length} Repos
             </button>
@@ -176,7 +176,7 @@ export const ProjectCard = ({
               href={links.docs}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.docsAction}
+              className={styles.action}
             >
               Docs / Paper
             </a>

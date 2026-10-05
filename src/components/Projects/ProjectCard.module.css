@@ -245,28 +245,11 @@
   border-top: 1px solid var(--color-border-muted);
 }
 
-.primaryAction {
-  padding: 0.625rem 1.25rem;
-  background: var(--color-accent);
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: var(--border-radius-md);
-  font-family: var(--font-family-mono);
-  font-weight: var(--font-weight-semibold);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: center;
-  transition: background 0.3s ease;
-}
-
-.primaryAction:hover {
-  background: var(--color-accent-dark);
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.secondaryAction {
+/* Aksi card — satu gaya seragam untuk <a>, <button>, <span> */
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.625rem 1.25rem;
   background: transparent;
   color: var(--color-text-primary);
@@ -279,10 +262,16 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.secondaryAction:hover {
+button.action {
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+}
+
+.action:hover {
   background: var(--color-bg-tertiary);
   border-color: var(--color-border-strong);
   color: var(--color-text-primary);
@@ -302,32 +291,9 @@
   cursor: not-allowed;
 }
 
-.docsAction {
-  padding: 0.625rem 1.25rem;
+.disabledAction:hover {
   background: transparent;
-  color: var(--color-accent-dark);
-  text-decoration: none;
-  border: 1px solid var(--color-border-accent);
-  border-radius: var(--border-radius-md);
-  font-family: var(--font-family-mono);
-  font-weight: var(--font-weight-semibold);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.docsAction:hover {
-  background: var(--color-tint-bg);
-  color: var(--color-accent-dark);
-  text-decoration: none;
-}
-
-/* Platform badge + repos modal */
-.reposButton {
-  cursor: pointer;
-  font: inherit;
+  border-color: var(--color-border);
 }
 
 .modalOverlay {
