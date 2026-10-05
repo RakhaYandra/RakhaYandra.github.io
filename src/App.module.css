@@ -49,3 +49,9 @@ footer {
 .skipLink:focus {
   top: 6px;
 }
+
+/* Dark: bg terang → teks gelap */
+:global([data-theme="dark"]) .skipLink {
+  background: #ffffff;
+  color: #000000;
+}

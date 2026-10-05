@@ -3,6 +3,8 @@
    ========================================================================== */
 
 :root {
+  color-scheme: light dark;
+
   /* Kyoto Slate — light editorial (Tahap 1 fondasi) */
   --color-primary: #0f172a;
   --color-primary-light: #334155;
@@ -157,6 +159,83 @@
   --z-tooltip: 700;
   --z-toast: 800;
   --z-maximum: 9999;
+
+  /* Tint — light blue wash (tech chips, badges) */
+  --color-tint-bg: #eff6ff;
+  --color-tint-border: #bfdbfe;
+}
+
+/* ==========================================================================
+   Dark theme — Obsidian Reserve (OLED, Stitch guide)
+   System-first: dipasang via <html data-theme="dark"> + .dark
+   ========================================================================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #ffffff;
+  --color-primary-light: #e2e2e2;
+  --color-primary-dark: #ffffff;
+
+  --color-secondary: #e2e2e2;
+  --color-secondary-light: #94a3b8;
+  --color-secondary-dark: #cbd5e1;
+
+  --color-accent: #60a5fa;
+  --color-accent-light: #93c5fd;
+  --color-accent-dark: #3b82f6;
+  --color-link: #7aa5ff;
+
+  --color-success: #4adea3;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+
+  /* Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e2e2e2;
+  --color-text-muted: #94a3b8;
+  --color-text-accent: #7aa5ff;
+  --color-text-highlight: #ffffff;
+
+  /* Background — OLED tier L0 → L3 */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #08090c;
+  --color-bg-tertiary: #0e1015;
+  --color-bg-quaternary: #12151d;
+
+  --color-bg-card: #0e1015;
+  --color-bg-card-hover: #0e1118;
+  --color-bg-glass: rgba(8, 9, 12, 0.85);
+  --color-bg-glass-hover: #0e1118;
+  --color-bg-glass-strong: rgba(8, 9, 12, 0.95);
+  --color-bg-overlay: rgba(8, 9, 12, 0.8);
+
+  /* Border */
+  --color-border: #1f242f;
+  --color-border-glass: #1f242f;
+  --color-border-muted: #131720;
+  --color-border-strong: #28303f;
+  --color-border-accent: rgba(59, 130, 246, 0.4);
+
+  /* Tint — OLED flat */
+  --color-tint-bg: #0a0d14;
+  --color-tint-border: #1f242f;
+
+  /* Badges — OLED */
+  --badge-qa-bg: #0a0d14;
+  --badge-qa-border: #1f242f;
+  --badge-qa-text: #f0abfc;
+  --badge-pass-bg: #0a0d14;
+  --badge-pass-border: #1f242f;
+  --badge-pass-text: #4adea3;
+  --badge-tech-bg: #0a0d14;
+  --badge-tech-border: #1f242f;
+  --badge-tech-text: #e2e2e2;
+
+  /* Legacy */
+  --text-primary: #ffffff;
+  --text-secondary: #e2e2e2;
+  --background-dark: #000000;
 }
 
 /* ==========================================================================
@@ -241,6 +320,32 @@
   background: rgba(251, 251, 251, 0.95);
   backdrop-filter: blur(16px);
   border: 1px solid #e4e4e7;
+}
+
+/* Dark component surfaces — Obsidian Reserve */
+[data-theme="dark"] .navbar {
+  --navbar-bg: rgba(8, 9, 12, 0.85);
+  --navbar-border: #1f242f;
+}
+[data-theme="dark"] .card {
+  --card-bg: #0e1015;
+  --card-border: #1f242f;
+}
+[data-theme="dark"] .card:hover {
+  background: #0e1118 !important;
+  border-color: #3b82f6;
+}
+[data-theme="dark"] .glass {
+  background: rgba(8, 9, 12, 0.85);
+  border-color: #1f242f;
+}
+[data-theme="dark"] .glass:hover {
+  background: #0e1118;
+  border-color: #3b82f6;
+}
+[data-theme="dark"] .glass-strong {
+  background: rgba(8, 9, 12, 0.95);
+  border-color: #1f242f;
 }
 
 /* Gradient Text Utility */
@@ -332,6 +437,10 @@
   transform: translateY(-2px);
   box-shadow: none;
 }
+[data-theme="dark"] .card:hover {
+  background: #0e1118;
+  border-color: #3b82f6;
+}
 
 /* Buttons */
 .button-primary {
@@ -340,6 +449,10 @@
   border: none;
   transition: all var(--transition-base);
   border-radius: var(--border-radius-md);
+}
+[data-theme="dark"] .button-primary {
+  background: #ffffff;
+  color: #000000;
 }
 
 .button-secondary {

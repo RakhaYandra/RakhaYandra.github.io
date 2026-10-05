@@ -61,6 +61,25 @@
     </script>
     
     <title>Rakha Putra Pebri Yandra - Information Systems Generalist</title>
+    <!-- Cegah FOUC tema: system dulu, override localStorage -->
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("porto-theme");
+          var t =
+            s === "dark" || s === "light"
+              ? s
+              : window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.classList.toggle("dark", t === "dark");
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", t === "dark" ? "#000000" : "#fbfbfb");
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <!-- Skip Navigation for Accessibility -->

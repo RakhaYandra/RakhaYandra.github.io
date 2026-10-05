@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
@@ -15,7 +15,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--color-bg-glass-strong);
   box-shadow: none;
 }
 
@@ -190,7 +190,7 @@
   top: 100%;
   left: 0;
   min-width: 200px;
-  background: #ffffff;
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   padding: 0.5rem 0;
@@ -291,6 +291,38 @@
   text-decoration: none;
 }
 
+/* Dark: tombol terang → teks gelap agar terbaca */
+:global([data-theme="dark"]) .ctaButton {
+  background: #ffffff;
+  color: #000000;
+}
+:global([data-theme="dark"]) .ctaButton:hover {
+  background: #e2e2e2;
+  color: #000000;
+}
+
+/* Theme toggle — Stitch shape (32px circle), warna ikut var */
+.themeToggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 0.25rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.themeToggle:hover {
+  border-color: var(--color-border-accent);
+  color: var(--color-text-primary);
+}
+
 /* Mobile Styles */
 @media screen and (max-width: 1150px) {
   .availBadge {
@@ -329,7 +361,7 @@
     bottom: 0;
     width: 300px;
     max-width: 80vw;
-    background: #ffffff;
+    background: var(--color-bg-secondary);
     border-left: 1px solid var(--color-border);
     flex-direction: column;
     align-items: stretch;

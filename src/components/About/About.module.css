@@ -46,7 +46,7 @@
 }
 
 .quickInfo {
-  background: #ffffff;
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   padding: 1.25rem;
@@ -108,7 +108,7 @@
 }
 
 .personalInfo {
-  background: #ffffff;
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   padding: 1.5rem;
@@ -169,7 +169,7 @@
 .aboutItem {
   display: flex;
   gap: 1rem;
-  background: #ffffff;
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   padding: 1.5rem;
