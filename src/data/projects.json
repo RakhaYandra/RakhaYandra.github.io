@@ -95,6 +95,28 @@
   ],
    "Solo": [
     {
+     "title": "Fukurou — Floating Linux System Dashboard",
+     "imageSrc": "projects/fukurou-panel.png",
+     "description": "Lightweight floating system dashboard for Wayland/Hyprland: Go + GTK4 HUD over layer-shell showing live CPU, GPU, memory, storage, network, system, and battery metrics. Read-only by design — observe, don't control. No root, no telemetry.",
+     "myRole": "Solo — Go, GTK4, Wayland layer-shell, sysfs/NVML collectors, testing",
+     "outcome": [
+      "Panel appears in ~166ms, idle CPU ~0.45%, graceful per-collector degradation (GPU/battery show unavailable, never crash)",
+      "NVIDIA via native NVML (purego dlopen, no cgo) with nvidia-smi and AMD sysfs fallbacks",
+      "go vet + test -race + staticcheck + govulncheck green in CI; v0.1.0 released with Linux binary"
+     ],
+     "skills": ["Go", "GTK4", "Wayland", "layer-shell", "NVML", "sysfs", "purego", "cgo", "Linux", "Hyprland", "GitHub Actions"],
+     "demo": null,
+     "source": "https://github.com/RakhaYandra/fukurou",
+     "links": {
+      "live": null,
+      "repo": "https://github.com/RakhaYandra/fukurou",
+      "docs": "https://github.com/RakhaYandra/fukurou/releases/tag/v0.1.0"
+     },
+     "workType": "Solo",
+     "duration": "Oct 2026",
+     "featured": true
+    },
+    {
      "title": "Pulse — API Monitoring & Incident Platform",
      "imageSrc": "projects/pulse-ui.png",
      "description": "API monitoring & incident platform: Go/Gin REST API (PostgreSQL, Redis, JWT, Docker) with async worker checks plus React dashboard, backed by QA automation, a DuckDB reliability analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
