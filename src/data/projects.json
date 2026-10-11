@@ -112,12 +112,120 @@
       "repo": "https://github.com/RakhaYandra/fukurou",
       "docs": "https://github.com/RakhaYandra/fukurou/releases/tag/v0.1.0"
      },
-     "workType": "Solo",
-     "duration": "Oct 2026",
-     "featured": true
-    },
+      "workType": "Solo",
+      "duration": "Oct 2026",
+      "featured": true
+     },
     {
-     "title": "Pulse — API Monitoring & Incident Platform",
+      "title": "Tora — Developer Process Orchestrator",
+      "imageSrc": "projects/project.png",
+      "description": "Local dev process orchestrator: one tora.yaml drives dependency-ordered startup, live status, logs, restart, and coordinated graceful shutdown for API, frontend, worker, and helper services. Linux-first; TUI dashboard, file-watch restart, and foreground daemon supervision included.",
+      "myRole": "Solo — Go, Linux process groups, /proc-verified state, testing",
+      "outcome": [
+       "Released up to v0.5.0; up/ps/logs/restart/down plus TUI, watch, and daemon",
+       "40 test functions; gofmt + vet + race + e2e green in CI",
+       "Each service in its own process group; ownership via PID + starttime + PGID"
+      ],
+      "skills": ["Go", "Linux", "Bash", "CLI", "TUI", "YAML", "GitHub Actions"],
+      "demo": null,
+      "source": "https://github.com/RakhaYandra/tora",
+      "links": {
+       "live": null,
+       "repo": "https://github.com/RakhaYandra/tora",
+       "docs": "https://github.com/RakhaYandra/tora/releases"
+      },
+      "workType": "Solo",
+      "duration": "Oct 2026",
+      "featured": true
+     },
+    {
+      "title": "Ookami — Developer Machine Doctor",
+      "imageSrc": "projects/project.png",
+      "description": "Linux machine readiness checker: inspects system, development toolchain, storage, services, network, and GPU, then reports what is healthy, what needs attention, and what is missing — with remediation hints.",
+      "myRole": "Solo — Go, sysinfo collectors, weighted scoring, testing",
+      "outcome": [
+       "v0.1.0 released; 18 checks with weighted scoring and stable --json for automation",
+       "143 test functions; go test -race green in CI",
+       "Opt-in --fix for safe service restarts plus shell completion"
+      ],
+      "skills": ["Go", "Linux", "Bash", "CLI", "JSON", "GitHub Actions"],
+      "demo": null,
+      "source": "https://github.com/RakhaYandra/ookami",
+      "links": {
+       "live": null,
+       "repo": "https://github.com/RakhaYandra/ookami",
+       "docs": "https://github.com/RakhaYandra/ookami/releases"
+      },
+      "workType": "Solo",
+      "duration": "Oct 2026",
+      "featured": true
+     },
+    {
+      "title": "Kitsune — Linux Environment Bootstrapper",
+      "imageSrc": "projects/project.png",
+      "description": "Profile-based first-boot environment manager for Arch Linux: detects the system, plans installs per profile (minimal, developer, backend, frontend, power-user, omarchy), previews with dry-run, then installs safely with per-package transactions.",
+      "myRole": "Solo — Go, Cobra CLI, Bubble Tea TUI, testing",
+      "outcome": [
+       "v0.1.0 released; CLI plus keyboard-first TUI with stable JSON output",
+       "85 test functions plus integration fixtures and a TUI smoke script",
+       "Explicit confirm (default N) with sudo pre-check; never touches ~/.bashrc, services, repos, or AUR"
+      ],
+      "skills": ["Go", "Cobra", "Bubble Tea", "Linux", "Arch", "TUI", "Bash"],
+      "demo": null,
+      "source": "https://github.com/RakhaYandra/kitsune",
+      "links": {
+       "live": null,
+       "repo": "https://github.com/RakhaYandra/kitsune",
+       "docs": "https://github.com/RakhaYandra/kitsune/releases"
+      },
+      "workType": "Solo",
+      "duration": "Oct 2026",
+      "featured": true
+     },
+    {
+      "title": "Tanuki — Development Environment Manager",
+      "imageSrc": "projects/project.png",
+      "description": "One-command local environment manager: a single tanuki.yaml starts PostgreSQL, Redis, and the API with doctor pre-checks, config validation, live status, logs, and owned-resource teardown (volumes kept).",
+      "myRole": "Solo — Go, Docker orchestration, health checks, testing",
+      "outcome": [
+       "v0.1.0 released; doctor/validate/up/status/logs/down lifecycle",
+       "74 test functions; gofmt + vet + race green in CI",
+       "Dual-arch release binaries with SHA256SUMS"
+      ],
+      "skills": ["Go", "Docker", "PostgreSQL", "Redis", "Linux", "Bash"],
+      "demo": null,
+      "source": "https://github.com/RakhaYandra/tanuki",
+      "links": {
+       "live": null,
+       "repo": "https://github.com/RakhaYandra/tanuki",
+       "docs": "https://github.com/RakhaYandra/tanuki/releases"
+      },
+      "workType": "Solo",
+      "duration": "Oct 2026"
+     },
+    {
+      "title": "LANBox — Local-First File Sharing",
+      "imageSrc": "projects/project.png",
+      "description": "LAN file sharing with HTTPS always on (per-boot self-signed cert, console fingerprint verify) and token + PIN auth — no cloud, no account, no internet. Go server plus React web UI with chunked uploads and resume support.",
+      "myRole": "Solo Full-stack + QA — Go server, React UI, Playwright e2e",
+      "outcome": [
+       "1 GB loopback upload in 2.4s (~440 MB/s); parallel and rate-limit behavior verified",
+       "Deterministic Playwright e2e including a 100 MB resume fixture",
+       "Docs repo (EN guides + PDF releases) and web UI repo; goreleaser snapshots"
+      ],
+      "skills": ["Go", "React", "Vite", "Tailwind CSS", "Playwright", "Docker", "Linux", "HTTPS"],
+      "demo": null,
+      "source": "https://github.com/RakhaYandra/lanbox",
+      "links": {
+       "live": null,
+       "repo": "https://github.com/RakhaYandra/lanbox",
+       "docs": "https://github.com/RakhaYandra/lanbox-docs/releases"
+      },
+      "workType": "Solo",
+      "duration": "Sep 2026"
+     },
+    {
+      "title": "Pulse — API Monitoring & Incident Platform",
      "imageSrc": "projects/pulse-ui.png",
      "description": "API monitoring & incident platform: Go/Gin REST API (PostgreSQL, Redis, JWT, Docker) with async worker checks plus React dashboard, backed by QA automation, a DuckDB reliability analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
      "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
