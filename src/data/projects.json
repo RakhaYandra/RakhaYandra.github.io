@@ -62,8 +62,7 @@
     },
     "workType": "Group",
     "teamSize": "3 members",
-    "duration": "4 months",
-    "featured": true
+    "duration": "4 months"
    },
    {
     "title": "AI & ML based Health Diagnosis System",
@@ -93,281 +92,584 @@
     "duration": "4 months"
    }
   ],
-   "Solo": [
-    {
-     "title": "Fukurou — Floating Linux System Dashboard",
-     "imageSrc": "projects/fukurou-panel.png",
-     "description": "Lightweight floating system dashboard for Wayland/Hyprland: Go + GTK4 HUD over layer-shell showing live CPU, GPU, memory, storage, network, system, and battery metrics. Read-only by design — observe, don't control. No root, no telemetry.",
-     "myRole": "Solo — Go, GTK4, Wayland layer-shell, sysfs/NVML collectors, testing",
-     "outcome": [
-      "Panel appears in ~166ms, idle CPU ~0.45%, graceful per-collector degradation (GPU/battery show unavailable, never crash)",
-      "NVIDIA via native NVML (purego dlopen, no cgo) with nvidia-smi and AMD sysfs fallbacks",
-      "go vet + test -race + staticcheck + govulncheck green in CI; v0.1.0 released with Linux binary"
-     ],
-     "skills": ["Go", "GTK4", "Wayland", "layer-shell", "NVML", "sysfs", "purego", "cgo", "Linux", "Hyprland", "GitHub Actions"],
-     "demo": null,
-     "source": "https://github.com/RakhaYandra/fukurou",
-     "links": {
-      "live": null,
-      "repo": "https://github.com/RakhaYandra/fukurou",
-      "docs": "https://github.com/RakhaYandra/fukurou/releases/tag/v0.1.0"
+  "Solo": [
+   {
+    "title": "Hand — Coding-Agent Supervisor",
+    "description": "Personal supervisor layer for coding agents: talk to one supervisor, it captures every request as a task and fans out to Claude Code, Codex, or opencode workers in isolated git worktrees, then reports back and asks only through decisions. One SQLite state per fleet, one board for all.",
+    "myRole": "Solo — Go, git worktrees, SQLite state, testing",
+    "outcome": [
+     "Single supervisor + SQLite state per fleet with zero-token waiting workers",
+     "Isolated git worktrees per attempt; one hand board shows every fleet"
+    ],
+    "skills": [
+     "Go",
+     "Linux",
+     "CLI",
+     "SQLite",
+     "Git Worktrees"
+    ],
+    "source": "https://github.com/RakhaYandra/hand",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/hand",
+     "docs": null
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Kage — Configuration State Manager",
+    "description": "Linux-first CLI that snapshots dotfiles and configs into a local Git repo, diffs drift, restores selectively with checkpoints and conflict checks, and audits secrets. Local-only, secrets blocked by default.",
+    "myRole": "Solo — Go, Cobra CLI, Bubble Tea TUI, testing",
+    "outcome": [
+     "snapshot/diff/restore/audit plus interactive TUI and opt-in watcher",
+     "Exit-coded drift detection (0 ok, 2 drift, 3 conflict/secret-block) for scripting"
+    ],
+    "skills": [
+     "Go",
+     "Cobra",
+     "Bubble Tea",
+     "Linux",
+     "Git",
+     "TUI"
+    ],
+    "source": "https://github.com/RakhaYandra/kage",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/kage",
+     "docs": "https://github.com/RakhaYandra/kage/releases"
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Mamori — Local Security Auditor",
+    "description": "Read-only, local-first security hygiene for Linux developer machines: secret hints, Git exposure, file permissions, SSH config. No network, no raw secrets in output. Custom rules, baseline, and pre-commit hook included.",
+    "myRole": "Solo — Go, CLI, rule engine, testing",
+    "outcome": [
+     "v0.1.0: full audit + custom rules + baseline + pre-commit hook",
+     "Hints never print raw secrets; Git history and staged checks included"
+    ],
+    "skills": [
+     "Go",
+     "Linux",
+     "Security",
+     "CLI",
+     "Git"
+    ],
+    "source": "https://github.com/RakhaYandra/mamori",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/mamori",
+     "docs": "https://github.com/RakhaYandra/mamori/releases"
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Neko — OpenCode Desktop Companion",
+    "description": "Local-first desktop companion that mirrors OpenCode session state — working, waiting for permission, completed, error — so there is no need to switch back to the terminal. Answer permission requests from the desktop. Unix socket, no telemetry, no cloud.",
+    "myRole": "Solo — Rust, Tauri, Unix socket IPC, testing",
+    "outcome": [
+     "Live session state with allow-once/always/deny replies from the desktop",
+     "Notify-only-what-matters; agent unaffected if Neko is closed"
+    ],
+    "skills": [
+     "Rust",
+     "Tauri",
+     "Linux",
+     "OpenCode"
+    ],
+    "source": "https://github.com/RakhaYandra/neko",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/neko",
+     "docs": "https://github.com/RakhaYandra/neko/releases"
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Omarchy-neko — Bar Widget for Neko",
+    "description": "Omarchy bar widget + panel for Neko: worst-state dot, waiting-request badge, and a companion panel with session, permission, and question cards. Replies run through the neko binary on PATH.",
+    "myRole": "Solo — QML, Omarchy bar API, testing",
+    "outcome": [
+     "One-tap install via omarchy plugin; movable bar slot",
+     "Permission and multi-select question cards answered from the panel"
+    ],
+    "skills": [
+     "QML",
+     "Hyprland",
+     "Omarchy",
+     "Linux"
+    ],
+    "source": "https://github.com/RakhaYandra/omarchy-neko",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/omarchy-neko",
+     "docs": null
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Dotfiles — Omarchy Daily Driver",
+    "description": "Bare-repo managed Omarchy dotfiles: Hyprland, shell, and editor configs with tracked package lists for reproducible setups. Secrets and machine-local files deliberately untracked.",
+    "myRole": "Solo — Linux, Hyprland, shell",
+    "outcome": [
+     "One-command bare-clone bootstrap with pacman/AUR package lists",
+     "~/.bashrc intentionally untouched; auth via gh CLI"
+    ],
+    "skills": [
+     "Lua",
+     "Hyprland",
+     "Omarchy",
+     "Linux",
+     "Bash"
+    ],
+    "source": "https://github.com/RakhaYandra/dotfiles",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/dotfiles",
+     "docs": null
+    },
+    "duration": "Rolling",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Fukurou — Floating Linux System Dashboard",
+    "imageSrc": "projects/fukurou-panel.png",
+    "description": "Lightweight floating system dashboard for Wayland/Hyprland: Go + GTK4 HUD over layer-shell showing live CPU, GPU, memory, storage, network, system, and battery metrics. Read-only by design — observe, don't control. No root, no telemetry.",
+    "myRole": "Solo — Go, GTK4, Wayland layer-shell, sysfs/NVML collectors, testing",
+    "outcome": [
+     "Panel appears in ~166ms, idle CPU ~0.45%, graceful per-collector degradation (GPU/battery show unavailable, never crash)",
+     "NVIDIA via native NVML (purego dlopen, no cgo) with nvidia-smi and AMD sysfs fallbacks",
+     "go vet + test -race + staticcheck + govulncheck green in CI; v0.1.0 released with Linux binary"
+    ],
+    "skills": [
+     "Go",
+     "GTK4",
+     "Wayland",
+     "layer-shell",
+     "NVML",
+     "sysfs",
+     "purego",
+     "cgo",
+     "Linux",
+     "Hyprland",
+     "GitHub Actions"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/fukurou",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/fukurou",
+     "docs": "https://github.com/RakhaYandra/fukurou/releases/tag/v0.1.0"
+    },
+    "workType": "Solo",
+    "duration": "Oct 2026"
+   },
+   {
+    "title": "Tora — Developer Process Orchestrator",
+    "imageSrc": "projects/project.png",
+    "description": "Local dev process orchestrator: one tora.yaml drives dependency-ordered startup, live status, logs, restart, and coordinated graceful shutdown for API, frontend, worker, and helper services. Linux-first; TUI dashboard, file-watch restart, and foreground daemon supervision included.",
+    "myRole": "Solo — Go, Linux process groups, /proc-verified state, testing",
+    "outcome": [
+     "Released up to v0.5.0; up/ps/logs/restart/down plus TUI, watch, and daemon",
+     "40 test functions; gofmt + vet + race + e2e green in CI",
+     "Each service in its own process group; ownership via PID + starttime + PGID"
+    ],
+    "skills": [
+     "Go",
+     "Linux",
+     "Bash",
+     "CLI",
+     "TUI",
+     "YAML",
+     "GitHub Actions"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/tora",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/tora",
+     "docs": "https://github.com/RakhaYandra/tora/releases"
+    },
+    "workType": "Solo",
+    "duration": "Oct 2026"
+   },
+   {
+    "title": "Ookami — Developer Machine Doctor",
+    "imageSrc": "projects/project.png",
+    "description": "Linux machine readiness checker: inspects system, development toolchain, storage, services, network, and GPU, then reports what is healthy, what needs attention, and what is missing — with remediation hints.",
+    "myRole": "Solo — Go, sysinfo collectors, weighted scoring, testing",
+    "outcome": [
+     "v0.1.0 released; 18 checks with weighted scoring and stable --json for automation",
+     "143 test functions; go test -race green in CI",
+     "Opt-in --fix for safe service restarts plus shell completion"
+    ],
+    "skills": [
+     "Go",
+     "Linux",
+     "Bash",
+     "CLI",
+     "JSON",
+     "GitHub Actions"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/ookami",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/ookami",
+     "docs": "https://github.com/RakhaYandra/ookami/releases"
+    },
+    "workType": "Solo",
+    "duration": "Oct 2026"
+   },
+   {
+    "title": "Kitsune — Linux Environment Bootstrapper",
+    "imageSrc": "projects/project.png",
+    "description": "Profile-based first-boot environment manager for Arch Linux: detects the system, plans installs per profile (minimal, developer, backend, frontend, power-user, omarchy), previews with dry-run, then installs safely with per-package transactions.",
+    "myRole": "Solo — Go, Cobra CLI, Bubble Tea TUI, testing",
+    "outcome": [
+     "v0.1.0 released; CLI plus keyboard-first TUI with stable JSON output",
+     "85 test functions plus integration fixtures and a TUI smoke script",
+     "Explicit confirm (default N) with sudo pre-check; never touches ~/.bashrc, services, repos, or AUR"
+    ],
+    "skills": [
+     "Go",
+     "Cobra",
+     "Bubble Tea",
+     "Linux",
+     "Arch",
+     "TUI",
+     "Bash"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/kitsune",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/kitsune",
+     "docs": "https://github.com/RakhaYandra/kitsune/releases"
+    },
+    "workType": "Solo",
+    "duration": "Oct 2026",
+    "featured": true
+   },
+   {
+    "title": "Tanuki — Development Environment Manager",
+    "imageSrc": "projects/project.png",
+    "description": "One-command local environment manager: a single tanuki.yaml starts PostgreSQL, Redis, and the API with doctor pre-checks, config validation, live status, logs, and owned-resource teardown (volumes kept).",
+    "myRole": "Solo — Go, Docker orchestration, health checks, testing",
+    "outcome": [
+     "v0.1.0 released; doctor/validate/up/status/logs/down lifecycle",
+     "74 test functions; gofmt + vet + race green in CI",
+     "Dual-arch release binaries with SHA256SUMS"
+    ],
+    "skills": [
+     "Go",
+     "Docker",
+     "PostgreSQL",
+     "Redis",
+     "Linux",
+     "Bash"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/tanuki",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/tanuki",
+     "docs": "https://github.com/RakhaYandra/tanuki/releases"
+    },
+    "workType": "Solo",
+    "duration": "Oct 2026"
+   },
+   {
+    "title": "LANBox — Local-First File Sharing",
+    "imageSrc": "projects/project.png",
+    "description": "LAN file sharing with HTTPS always on (per-boot self-signed cert, console fingerprint verify) and token + PIN auth — no cloud, no account, no internet. Go server plus React web UI with chunked uploads and resume support.",
+    "myRole": "Solo Full-stack + QA — Go server, React UI, Playwright e2e",
+    "outcome": [
+     "1 GB loopback upload in 2.4s (~440 MB/s); parallel and rate-limit behavior verified",
+     "Deterministic Playwright e2e including a 100 MB resume fixture",
+     "Docs repo (EN guides + PDF releases) and web UI repo; goreleaser snapshots"
+    ],
+    "skills": [
+     "Go",
+     "React",
+     "Vite",
+     "Tailwind CSS",
+     "Playwright",
+     "Docker",
+     "Linux",
+     "HTTPS"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/lanbox",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lanbox",
+     "docs": "https://github.com/RakhaYandra/lanbox-docs/releases"
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "subProjects": [
+     {
+      "title": "LANBox Server",
+      "blurb": "Go file server — always-HTTPS, token + PIN auth, chunked uploads with resume.",
+      "repo": "https://github.com/RakhaYandra/lanbox",
+      "stack": [
+       "Go",
+       "HTTPS",
+       "Linux"
+      ]
      },
-      "workType": "Solo",
-      "duration": "Oct 2026",
-      "featured": true
+     {
+      "title": "LANBox Web",
+      "blurb": "React + Vite UI consuming the lanbox API; served by the server or standalone.",
+      "repo": "https://github.com/RakhaYandra/lanbox-web",
+      "stack": [
+       "React",
+       "Vite",
+       "TypeScript"
+      ]
      },
-    {
-      "title": "Tora — Developer Process Orchestrator",
-      "imageSrc": "projects/project.png",
-      "description": "Local dev process orchestrator: one tora.yaml drives dependency-ordered startup, live status, logs, restart, and coordinated graceful shutdown for API, frontend, worker, and helper services. Linux-first; TUI dashboard, file-watch restart, and foreground daemon supervision included.",
-      "myRole": "Solo — Go, Linux process groups, /proc-verified state, testing",
-      "outcome": [
-       "Released up to v0.5.0; up/ps/logs/restart/down plus TUI, watch, and daemon",
-       "40 test functions; gofmt + vet + race + e2e green in CI",
-       "Each service in its own process group; ownership via PID + starttime + PGID"
-      ],
-      "skills": ["Go", "Linux", "Bash", "CLI", "TUI", "YAML", "GitHub Actions"],
-      "demo": null,
-      "source": "https://github.com/RakhaYandra/tora",
-      "links": {
-       "live": null,
-       "repo": "https://github.com/RakhaYandra/tora",
-       "docs": "https://github.com/RakhaYandra/tora/releases"
-      },
-      "workType": "Solo",
-      "duration": "Oct 2026",
-      "featured": true
-     },
-    {
-      "title": "Ookami — Developer Machine Doctor",
-      "imageSrc": "projects/project.png",
-      "description": "Linux machine readiness checker: inspects system, development toolchain, storage, services, network, and GPU, then reports what is healthy, what needs attention, and what is missing — with remediation hints.",
-      "myRole": "Solo — Go, sysinfo collectors, weighted scoring, testing",
-      "outcome": [
-       "v0.1.0 released; 18 checks with weighted scoring and stable --json for automation",
-       "143 test functions; go test -race green in CI",
-       "Opt-in --fix for safe service restarts plus shell completion"
-      ],
-      "skills": ["Go", "Linux", "Bash", "CLI", "JSON", "GitHub Actions"],
-      "demo": null,
-      "source": "https://github.com/RakhaYandra/ookami",
-      "links": {
-       "live": null,
-       "repo": "https://github.com/RakhaYandra/ookami",
-       "docs": "https://github.com/RakhaYandra/ookami/releases"
-      },
-      "workType": "Solo",
-      "duration": "Oct 2026",
-      "featured": true
-     },
-    {
-      "title": "Kitsune — Linux Environment Bootstrapper",
-      "imageSrc": "projects/project.png",
-      "description": "Profile-based first-boot environment manager for Arch Linux: detects the system, plans installs per profile (minimal, developer, backend, frontend, power-user, omarchy), previews with dry-run, then installs safely with per-package transactions.",
-      "myRole": "Solo — Go, Cobra CLI, Bubble Tea TUI, testing",
-      "outcome": [
-       "v0.1.0 released; CLI plus keyboard-first TUI with stable JSON output",
-       "85 test functions plus integration fixtures and a TUI smoke script",
-       "Explicit confirm (default N) with sudo pre-check; never touches ~/.bashrc, services, repos, or AUR"
-      ],
-      "skills": ["Go", "Cobra", "Bubble Tea", "Linux", "Arch", "TUI", "Bash"],
-      "demo": null,
-      "source": "https://github.com/RakhaYandra/kitsune",
-      "links": {
-       "live": null,
-       "repo": "https://github.com/RakhaYandra/kitsune",
-       "docs": "https://github.com/RakhaYandra/kitsune/releases"
-      },
-      "workType": "Solo",
-      "duration": "Oct 2026",
-      "featured": true
-     },
-    {
-      "title": "Tanuki — Development Environment Manager",
-      "imageSrc": "projects/project.png",
-      "description": "One-command local environment manager: a single tanuki.yaml starts PostgreSQL, Redis, and the API with doctor pre-checks, config validation, live status, logs, and owned-resource teardown (volumes kept).",
-      "myRole": "Solo — Go, Docker orchestration, health checks, testing",
-      "outcome": [
-       "v0.1.0 released; doctor/validate/up/status/logs/down lifecycle",
-       "74 test functions; gofmt + vet + race green in CI",
-       "Dual-arch release binaries with SHA256SUMS"
-      ],
-      "skills": ["Go", "Docker", "PostgreSQL", "Redis", "Linux", "Bash"],
-      "demo": null,
-      "source": "https://github.com/RakhaYandra/tanuki",
-      "links": {
-       "live": null,
-       "repo": "https://github.com/RakhaYandra/tanuki",
-       "docs": "https://github.com/RakhaYandra/tanuki/releases"
-      },
-      "workType": "Solo",
-      "duration": "Oct 2026"
-     },
-    {
-      "title": "LANBox — Local-First File Sharing",
-      "imageSrc": "projects/project.png",
-      "description": "LAN file sharing with HTTPS always on (per-boot self-signed cert, console fingerprint verify) and token + PIN auth — no cloud, no account, no internet. Go server plus React web UI with chunked uploads and resume support.",
-      "myRole": "Solo Full-stack + QA — Go server, React UI, Playwright e2e",
-      "outcome": [
-       "1 GB loopback upload in 2.4s (~440 MB/s); parallel and rate-limit behavior verified",
-       "Deterministic Playwright e2e including a 100 MB resume fixture",
-       "Docs repo (EN guides + PDF releases) and web UI repo; goreleaser snapshots"
-      ],
-      "skills": ["Go", "React", "Vite", "Tailwind CSS", "Playwright", "Docker", "Linux", "HTTPS"],
-      "demo": null,
-      "source": "https://github.com/RakhaYandra/lanbox",
-      "links": {
-       "live": null,
-       "repo": "https://github.com/RakhaYandra/lanbox",
-       "docs": "https://github.com/RakhaYandra/lanbox-docs/releases"
-      },
-      "workType": "Solo",
-      "duration": "Sep 2026"
-     },
-    {
-      "title": "Pulse — API Monitoring & Incident Platform",
-     "imageSrc": "projects/pulse-ui.png",
-     "description": "API monitoring & incident platform: Go/Gin REST API (PostgreSQL, Redis, JWT, Docker) with async worker checks plus React dashboard, backed by QA automation, a DuckDB reliability analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
-     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
-     "outcome": [
-      "Threshold incident lifecycle (OPEN/RESOLVED), Telegram notifications, Prometheus/Grafana observability",
-      "22/22 QA Pass; Newman 22/22; e2e 7/7; pipeline uptime/MTTR cross-check MATCH vs API",
-      "Benchmarked 1,000 monitors on 4 workers (peak 28/s, zero queue backlog, 50/50 timeouts detected)"
-     ],
-     "skills": ["Go", "Gin", "PostgreSQL", "Redis", "JWT", "Docker", "Swagger", "Newman", "React", "Vite", "Tailwind CSS", "QA", "Playwright", "Python", "DuckDB", "Prometheus", "Grafana", "Linux", "Bash", "Troubleshooting"],
-     "demo": null,
-     "source": "https://github.com/RakhaYandra/pulse",
-     "links": {
-      "live": null,
+     {
+      "title": "LANBox Docs",
+      "blurb": "Requirements, architecture, and guides (EN) + PDF releases.",
+      "repo": "https://github.com/RakhaYandra/lanbox-docs",
+      "stack": [
+       "Docs"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Pulse — API Monitoring & Incident Platform",
+    "imageSrc": "projects/pulse-ui.png",
+    "description": "API monitoring & incident platform: Go/Gin REST API (PostgreSQL, Redis, JWT, Docker) with async worker checks plus React dashboard, backed by QA automation, a DuckDB reliability analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+    "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
+    "outcome": [
+     "Threshold incident lifecycle (OPEN/RESOLVED), Telegram notifications, Prometheus/Grafana observability",
+     "22/22 QA Pass; Newman 22/22; e2e 7/7; pipeline uptime/MTTR cross-check MATCH vs API",
+     "Benchmarked 1,000 monitors on 4 workers (peak 28/s, zero queue backlog, 50/50 timeouts detected)"
+    ],
+    "skills": [
+     "Go",
+     "Gin",
+     "PostgreSQL",
+     "Redis",
+     "JWT",
+     "Docker",
+     "Swagger",
+     "Newman",
+     "React",
+     "Vite",
+     "Tailwind CSS",
+     "QA",
+     "Playwright",
+     "Python",
+     "DuckDB",
+     "Prometheus",
+     "Grafana",
+     "Linux",
+     "Bash",
+     "Troubleshooting"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/pulse",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/pulse",
+     "docs": "https://github.com/RakhaYandra/pulse-docs/releases"
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true,
+    "subProjects": [
+     {
+      "title": "Pulse API",
+      "blurb": "Monitoring & incident REST API — JWT, per-user isolation, threshold engine, Redis queue.",
       "repo": "https://github.com/RakhaYandra/pulse",
-      "docs": "https://github.com/RakhaYandra/pulse-docs/releases"
+      "stack": [
+       "Go",
+       "Gin",
+       "PostgreSQL",
+       "Redis",
+       "JWT",
+       "Docker"
+      ]
      },
-     "workType": "Solo",
-     "duration": "Sep 2026",
-     "featured": true,
-     "subProjects": [
-      {
-       "title": "Pulse API",
-       "blurb": "Monitoring & incident REST API — JWT, per-user isolation, threshold engine, Redis queue.",
-       "repo": "https://github.com/RakhaYandra/pulse",
-       "stack": ["Go", "Gin", "PostgreSQL", "Redis", "JWT", "Docker"]
-      },
-      {
-       "title": "Pulse Web",
-       "blurb": "Monitoring dashboard — status board, response-time charts, incident history, reliability reports.",
-       "repo": "https://github.com/RakhaYandra/pulse-web",
-       "stack": ["React", "Vite", "Tailwind CSS"]
-      },
-      {
-       "title": "Pulse QA",
-       "blurb": "22 cases 100% Pass, per-user isolation, Newman 22/22, Playwright 7/7, bench rig with validity gates.",
-       "repo": "https://github.com/RakhaYandra/pulse-qa",
-       "stack": ["QA", "Newman", "Playwright"]
-      },
-      {
-       "title": "Pulse Data",
-       "blurb": "Reliability analytics pipeline — 4 marts, MTTR cross-check MATCH, 4 charts.",
-       "repo": "https://github.com/RakhaYandra/pulse-data",
-       "stack": ["Python", "DuckDB"]
-      },
-      {
-       "title": "Pulse Ops",
-       "blurb": "Compose runbook, tested backup/restore, Prometheus + Grafana + alerts.",
-       "repo": "https://github.com/RakhaYandra/pulse-ops",
-       "stack": ["Docker", "PostgreSQL", "Bash"]
-      },
-      {
-       "title": "Pulse Docs",
-       "blurb": "BRD, PRD, FSD, SRS + ADRs and postmortems, PDFs auto-built as release assets.",
-       "repo": "https://github.com/RakhaYandra/pulse-docs",
-       "stack": ["Docs", "SRS"]
-      }
-     ]
-    },
+     {
+      "title": "Pulse Web",
+      "blurb": "Monitoring dashboard — status board, response-time charts, incident history, reliability reports.",
+      "repo": "https://github.com/RakhaYandra/pulse-web",
+      "stack": [
+       "React",
+       "Vite",
+       "Tailwind CSS"
+      ]
+     },
+     {
+      "title": "Pulse QA",
+      "blurb": "22 cases 100% Pass, per-user isolation, Newman 22/22, Playwright 7/7, bench rig with validity gates.",
+      "repo": "https://github.com/RakhaYandra/pulse-qa",
+      "stack": [
+       "QA",
+       "Newman",
+       "Playwright"
+      ]
+     },
+     {
+      "title": "Pulse Data",
+      "blurb": "Reliability analytics pipeline — 4 marts, MTTR cross-check MATCH, 4 charts.",
+      "repo": "https://github.com/RakhaYandra/pulse-data",
+      "stack": [
+       "Python",
+       "DuckDB"
+      ]
+     },
+     {
+      "title": "Pulse Ops",
+      "blurb": "Compose runbook, tested backup/restore, Prometheus + Grafana + alerts.",
+      "repo": "https://github.com/RakhaYandra/pulse-ops",
+      "stack": [
+       "Docker",
+       "PostgreSQL",
+       "Bash"
+      ]
+     },
+     {
+      "title": "Pulse Docs",
+      "blurb": "BRD, PRD, FSD, SRS + ADRs and postmortems, PDFs auto-built as release assets.",
+      "repo": "https://github.com/RakhaYandra/pulse-docs",
+      "stack": [
+       "Docs",
+       "SRS"
+      ]
+     }
+    ]
+   },
    {
-     "title": "KosManager — Boarding House Billing Platform",
-     "imageSrc": "projects/kosmanager-ui.png",
-     "description": "Kos billing platform: ASP.NET Core 8 Clean Architecture-lite API (EF Core, MySQL, JWT, BackgroundService, read-cache + MiniProfiler) plus Blazor Server board (full 17/17 API coverage, Synapse theme), backed by QA automation, a DuckDB analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
-     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
-     "outcome": [
-      "RBAC owner/penghuni, auto-generate tagihan, CSV import, verifikasi bayar, dashboard tunggakan",
-      "50/50 QA Pass; Newman 25/25; e2e 12/12; Telegram reminder verified-real",
-      "Struk PDF per tagihan + grafik kas 6 bulan; web full 17/17 API coverage",
-      "Compose full-stack Up + tested MySQL backup roundtrip"
-     ],
-     "skills": [
-      "C#",
-      "ASP.NET Core",
-      "EF Core",
-      "MySQL",
-      "JWT",
-      "Blazor",
-      "MudBlazor",
-      "Clean Architecture",
-      "Telegram",
-      "Newman",
-      "QA",
-      "Playwright",
-      "Python",
-      "DuckDB",
-      "Docker",
-      "Swagger",
-      "openpyxl"
-     ],
-      "demo": null,
-      "source": null,
-      "links": {
-       "live": null,
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
-       "docs": "https://github.com/RakhaYandra/kosmanager-dotnet-docs/releases"
-      },
-      "workType": "Solo",
-      "duration": "Sep 2026",
-      "featured": true,
-     "subProjects": [
-      {
-       "title": "KosManager API",
-       "blurb": "Billing REST API — Clean Architecture-lite, RBAC, scheduler H-3/H-1/H+1, CSV import.",
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
-       "stack": ["C#", "ASP.NET Core", "EF Core", "MySQL", "JWT"]
-      },
-      {
-       "title": "KosManager Web",
-       "blurb": "Board kamar + billing UI — Blazor Server, MudBlazor, Synapse light theme.",
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-web",
-       "stack": ["Blazor", "MudBlazor", "C#"]
-      },
-      {
-       "title": "KosManager QA",
-       "blurb": "47 cases 100% Pass, RBAC matrix, Newman 22/22, Playwright 12/12, Excel report.",
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-qa",
-       "stack": ["QA", "Newman", "Playwright"]
-      },
-      {
-       "title": "KosManager Data",
-       "blurb": "Occupancy + arrears marts, quality gates, DuckDB pipeline.",
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-data",
-       "stack": ["Python", "DuckDB"]
-      },
-      {
-       "title": "KosManager Ops",
-       "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting.",
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-ops",
-       "stack": ["Docker", "MySQL", "Bash"]
-      },
-      {
-       "title": "KosManager Docs",
-       "blurb": "BRD, PRD, FSD, SRS in Indonesian + ADR-002/003.",
-       "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-docs",
-       "stack": ["Docs", "SRS"]
-      }
-     ]
+    "title": "KosManager — Boarding House Billing Platform",
+    "imageSrc": "projects/kosmanager-ui.png",
+    "description": "Kos billing platform: ASP.NET Core 8 Clean Architecture-lite API (EF Core, MySQL, JWT, BackgroundService, read-cache + MiniProfiler) plus Blazor Server board (full 17/17 API coverage, Synapse theme), backed by QA automation, a DuckDB analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+    "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
+    "outcome": [
+     "RBAC owner/penghuni, auto-generate tagihan, CSV import, verifikasi bayar, dashboard tunggakan",
+     "50/50 QA Pass; Newman 25/25; e2e 12/12; Telegram reminder verified-real",
+     "Struk PDF per tagihan + grafik kas 6 bulan; web full 17/17 API coverage",
+     "Compose full-stack Up + tested MySQL backup roundtrip"
+    ],
+    "skills": [
+     "C#",
+     "ASP.NET Core",
+     "EF Core",
+     "MySQL",
+     "JWT",
+     "Blazor",
+     "MudBlazor",
+     "Clean Architecture",
+     "Telegram",
+     "Newman",
+     "QA",
+     "Playwright",
+     "Python",
+     "DuckDB",
+     "Docker",
+     "Swagger",
+     "openpyxl"
+    ],
+    "demo": null,
+    "source": "https://github.com/RakhaYandra/kosmanager-dotnet",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
+     "docs": "https://github.com/RakhaYandra/kosmanager-dotnet-docs/releases"
     },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true,
+    "subProjects": [
+     {
+      "title": "KosManager API",
+      "blurb": "Billing REST API — Clean Architecture-lite, RBAC, scheduler H-3/H-1/H+1, CSV import.",
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
+      "stack": [
+       "C#",
+       "ASP.NET Core",
+       "EF Core",
+       "MySQL",
+       "JWT"
+      ]
+     },
+     {
+      "title": "KosManager Web",
+      "blurb": "Board kamar + billing UI — Blazor Server, MudBlazor, Synapse light theme.",
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-web",
+      "stack": [
+       "Blazor",
+       "MudBlazor",
+       "C#"
+      ]
+     },
+     {
+      "title": "KosManager QA",
+      "blurb": "47 cases 100% Pass, RBAC matrix, Newman 22/22, Playwright 12/12, Excel report.",
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-qa",
+      "stack": [
+       "QA",
+       "Newman",
+       "Playwright"
+      ]
+     },
+     {
+      "title": "KosManager Data",
+      "blurb": "Occupancy + arrears marts, quality gates, DuckDB pipeline.",
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-data",
+      "stack": [
+       "Python",
+       "DuckDB"
+      ]
+     },
+     {
+      "title": "KosManager Ops",
+      "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting.",
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-ops",
+      "stack": [
+       "Docker",
+       "MySQL",
+       "Bash"
+      ]
+     },
+     {
+      "title": "KosManager Docs",
+      "blurb": "BRD, PRD, FSD, SRS in Indonesian + ADR-002/003.",
+      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-docs",
+      "stack": [
+       "Docs",
+       "SRS"
+      ]
+     }
+    ]
+   },
    {
-     "title": "Shiftbase — Workforce Scheduling Platform",
-     "imageSrc": "projects/shiftbase-ui.png",
-     "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
-     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
+    "title": "Shiftbase — Workforce Scheduling Platform",
+    "imageSrc": "projects/shiftbase-ui.png",
+    "description": "Workforce scheduling & attendance platform: Go/Gin REST API (MySQL, JWT, Docker) plus React roster board, backed by QA automation, an HR analytics pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+    "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
      "RBAC admin/manager/staff, shift-conflict 409s, CSV import, overtime & coverage reports",
      "38/38 QA Pass; Newman 15/15; e2e 8/8; pipeline overtime cross-check MATCH vs API",
@@ -398,59 +700,86 @@
      "openpyxl"
     ],
     "demo": null,
-     "source": "https://github.com/RakhaYandra/shiftbase",
-     "links": {
-      "live": null,
-      "repo": "https://github.com/RakhaYandra/shiftbase",
-      "docs": "https://github.com/RakhaYandra/shiftbase-docs/releases"
-     },
-     "workType": "Solo",
-     "duration": "Sep 2026",
-     "featured": true,
-     "subProjects": [
+    "source": "https://github.com/RakhaYandra/shiftbase",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiftbase",
+     "docs": "https://github.com/RakhaYandra/shiftbase-docs/releases"
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true,
+    "subProjects": [
      {
       "title": "Shiftbase API",
       "blurb": "Scheduling & attendance REST API — RBAC, conflict 409s, CSV import, overtime & coverage reports.",
       "repo": "https://github.com/RakhaYandra/shiftbase",
-      "stack": ["Go", "Gin", "MySQL", "JWT", "Docker"]
+      "stack": [
+       "Go",
+       "Gin",
+       "MySQL",
+       "JWT",
+       "Docker"
+      ]
      },
      {
       "title": "Shiftbase Web",
       "blurb": "Roster board UI — schedule timeline, shift CRUD, attendance + CSV import, reports.",
       "repo": "https://github.com/RakhaYandra/shiftbase-web",
-      "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"]
+      "stack": [
+       "React",
+       "TypeScript",
+       "Vite",
+       "Tailwind CSS"
+      ]
      },
      {
       "title": "Shiftbase QA",
       "blurb": "38 cases 100% Pass, RBAC matrix, Newman 15/15, Playwright 8/8, Excel report.",
       "repo": "https://github.com/RakhaYandra/shiftbase-qa",
-      "stack": ["QA", "Newman", "Playwright"]
+      "stack": [
+       "QA",
+       "Newman",
+       "Playwright"
+      ]
      },
      {
       "title": "Shiftbase Data",
       "blurb": "HR analytics pipeline — 5 marts, overtime cross-check MATCH, 4 charts.",
       "repo": "https://github.com/RakhaYandra/shiftbase-data",
-      "stack": ["Python", "pandas", "DuckDB"]
+      "stack": [
+       "Python",
+       "pandas",
+       "DuckDB"
+      ]
      },
      {
-       "title": "Shiftbase Ops",
-       "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting, 10 tickets.",
-       "repo": "https://github.com/RakhaYandra/shiftbase-ops",
-       "stack": ["Docker", "MySQL", "Bash"]
-      },
-      {
-       "title": "Shiftbase Docs",
-       "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
-       "repo": "https://github.com/RakhaYandra/shiftbase-docs",
-       "stack": ["Docs", "SRS", "Pandoc"]
-      }
-     ]
+      "title": "Shiftbase Ops",
+      "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting, 10 tickets.",
+      "repo": "https://github.com/RakhaYandra/shiftbase-ops",
+      "stack": [
+       "Docker",
+       "MySQL",
+       "Bash"
+      ]
+     },
+     {
+      "title": "Shiftbase Docs",
+      "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
+      "repo": "https://github.com/RakhaYandra/shiftbase-docs",
+      "stack": [
+       "Docs",
+       "SRS",
+       "Pandoc"
+      ]
+     }
+    ]
    },
    {
-     "title": "LifeOS — Personal Life Operating System",
-     "imageSrc": "projects/lifeos-ui.png",
-     "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
-     "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
+    "title": "LifeOS — Personal Life Operating System",
+    "imageSrc": "projects/lifeos-ui.png",
+    "description": "Personal life OS platform: Go/Gin REST API (12 modules, SQLite, JWT) plus React telemetry dashboard, backed by QA automation, an analytics ETL pipeline, and an ops runbook with tested backup/restore. 6 repos, solo-built — open the card for the full repo breakdown.",
+    "myRole": "Solo Full-stack + QA/Data/Ops — 6 repos",
     "outcome": [
      "12 modules CRUD + computed fields; Newman 41 checks; ~80% service tests",
      "61/61 QA Pass; Newman 75/75; e2e 26/26; marts reconcile with dashboard figures",
@@ -480,65 +809,91 @@
      "Troubleshooting"
     ],
     "demo": null,
-     "source": "https://github.com/RakhaYandra/lifeos",
-     "links": {
-      "live": null,
-      "repo": "https://github.com/RakhaYandra/lifeos",
-      "docs": "https://github.com/RakhaYandra/lifeos-docs/releases"
-     },
-     "workType": "Solo",
-     "duration": "Sep 2026",
-     "featured": true,
-     "subProjects": [
+    "source": "https://github.com/RakhaYandra/lifeos",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/lifeos",
+     "docs": "https://github.com/RakhaYandra/lifeos-docs/releases"
+    },
+    "workType": "Solo",
+    "duration": "Sep 2026",
+    "featured": true,
+    "subProjects": [
      {
       "title": "LifeOS API",
       "blurb": "Personal OS REST API — tasks, goals, habits, finance, health, reviews, dashboard.",
       "repo": "https://github.com/RakhaYandra/lifeos",
-      "stack": ["Go", "Gin", "SQLite", "JWT"]
+      "stack": [
+       "Go",
+       "Gin",
+       "SQLite",
+       "JWT"
+      ]
      },
      {
       "title": "LifeOS Web",
       "blurb": "Telemetry dashboard — 30-day habit heatmap, cashflow, goals, weekly reviews.",
       "repo": "https://github.com/RakhaYandra/lifeos-web",
-      "stack": ["React", "TypeScript", "Vite", "Tailwind"]
+      "stack": [
+       "React",
+       "TypeScript",
+       "Vite",
+       "Tailwind"
+      ]
      },
      {
       "title": "LifeOS QA",
-       "blurb": "61 cases 100% Pass, 4 real bugs, Newman 75/75, Playwright 26/26, Excel report.",
+      "blurb": "61 cases 100% Pass, 4 real bugs, Newman 75/75, Playwright 26/26, Excel report.",
       "repo": "https://github.com/RakhaYandra/lifeos-qa",
-      "stack": ["QA", "Newman", "Playwright"]
+      "stack": [
+       "QA",
+       "Newman",
+       "Playwright"
+      ]
      },
      {
       "title": "LifeOS Data",
       "blurb": "ETL & analytics pipeline — 8 tables, quality gates, 5 marts, 4 charts.",
       "repo": "https://github.com/RakhaYandra/lifeos-data",
-      "stack": ["Python", "pandas", "DuckDB"]
+      "stack": [
+       "Python",
+       "pandas",
+       "DuckDB"
+      ]
      },
      {
-       "title": "LifeOS Ops",
-       "blurb": "Runbook + bash scripts, tested backup roundtrip, 15-entry troubleshooting, 10 tickets.",
-       "repo": "https://github.com/RakhaYandra/lifeos-ops",
-       "stack": ["Linux", "Bash", "SQLite"]
-      },
-      {
-       "title": "LifeOS Docs",
-       "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
-       "repo": "https://github.com/RakhaYandra/lifeos-docs",
-       "stack": ["Docs", "SRS", "Pandoc"]
-      }
-     ]
+      "title": "LifeOS Ops",
+      "blurb": "Runbook + bash scripts, tested backup roundtrip, 15-entry troubleshooting, 10 tickets.",
+      "repo": "https://github.com/RakhaYandra/lifeos-ops",
+      "stack": [
+       "Linux",
+       "Bash",
+       "SQLite"
+      ]
+     },
+     {
+      "title": "LifeOS Docs",
+      "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
+      "repo": "https://github.com/RakhaYandra/lifeos-docs",
+      "stack": [
+       "Docs",
+       "SRS",
+       "Pandoc"
+      ]
+     }
+    ]
    },
    {
     "title": "Shiftbase Ops — Compose, Backup & Support Tickets",
     "hidden": true,
     "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
-     "description": "Shiftbase operations: compose runbook, tested MySQL backup/restore roundtrip (5 employees recovered), verified 15-entry troubleshooting matrix (real port conflicts, shell-less distroless, seed 1062, 409/404 attendance), 10 support tickets + XLSX SLA report, FAQ.",
-     "myRole": "Solo Support/Ops — compose, MySQL, troubleshooting",
-     "outcome": [
-      "Backup roundtrip + full-stack compose Up (api/adminer/mysql)",
-      "15/15 troubleshooting matrix commands executed for real",
-      "10 tickets (9 closed), XLSX generated via openpyxl"
+    "description": "Shiftbase operations: compose runbook, tested MySQL backup/restore roundtrip (5 employees recovered), verified 15-entry troubleshooting matrix (real port conflicts, shell-less distroless, seed 1062, 409/404 attendance), 10 support tickets + XLSX SLA report, FAQ.",
+    "myRole": "Solo Support/Ops — compose, MySQL, troubleshooting",
+    "outcome": [
+     "Backup roundtrip + full-stack compose Up (api/adminer/mysql)",
+     "15/15 troubleshooting matrix commands executed for real",
+     "10 tickets (9 closed), XLSX generated via openpyxl"
     ],
     "skills": [
      "Linux",
@@ -555,20 +910,19 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "LifeOS Ops — Runbook, Backup & Support Tickets",
     "hidden": true,
     "partOf": "lifeos",
     "imageSrc": "projects/project.png",
-     "description": "LifeOS operations: install/backup/restore runbook, tested bash roundtrip scripts (backup → delete → restore recovers 25 tasks, restore guard refuses while API runs), verified 15-entry troubleshooting matrix, 10 simulated tickets + XLSX (COUNTIF SLA), mini SLA, FAQ.",
-     "myRole": "Solo Support/Ops — runbook, bash, troubleshooting",
-     "outcome": [
-      "Tested backup roundtrip; restore guard proven to refuse",
-      "15/15 troubleshooting matrix commands executed for real",
-      "10 tickets (9 closed), XLSX generated via openpyxl"
+    "description": "LifeOS operations: install/backup/restore runbook, tested bash roundtrip scripts (backup → delete → restore recovers 25 tasks, restore guard refuses while API runs), verified 15-entry troubleshooting matrix, 10 simulated tickets + XLSX (COUNTIF SLA), mini SLA, FAQ.",
+    "myRole": "Solo Support/Ops — runbook, bash, troubleshooting",
+    "outcome": [
+     "Tested backup roundtrip; restore guard proven to refuse",
+     "15/15 troubleshooting matrix commands executed for real",
+     "10 tickets (9 closed), XLSX generated via openpyxl"
     ],
     "skills": [
      "Linux",
@@ -584,20 +938,19 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "Shiftbase Data — HR Analytics Pipeline",
     "hidden": true,
     "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
-     "description": "HR analytics pipeline for the Shiftbase database: read-only MySQL extract, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), overtime cross-checked identical vs API (GREATEST(hours-8,0)), 4 charts. Python + pandas + DuckDB + matplotlib.",
-     "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
-     "outcome": [
-      "Cross-check pipeline vs /reports/overtime: MATCH (<0.01)",
-      "Deterministic demo data: 101 shifts + 101 attendance rows (overtime/late)",
-      "Quality gates + documented MySQL scratch runbook"
+    "description": "HR analytics pipeline for the Shiftbase database: read-only MySQL extract, quality gates, 5 marts (hours, overtime, coverage, attendance rate, late arrivals), overtime cross-checked identical vs API (GREATEST(hours-8,0)), 4 charts. Python + pandas + DuckDB + matplotlib.",
+    "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
+    "outcome": [
+     "Cross-check pipeline vs /reports/overtime: MATCH (<0.01)",
+     "Deterministic demo data: 101 shifts + 101 attendance rows (overtime/late)",
+     "Quality gates + documented MySQL scratch runbook"
     ],
     "skills": [
      "Python",
@@ -614,20 +967,19 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "LifeOS Data — ETL & Analytics Pipeline",
     "hidden": true,
     "partOf": "lifeos",
     "imageSrc": "projects/project.png",
-     "description": "Analytics pipeline for the LifeOS database: 8-table extract (read-only snapshot), quality gates (orphan FKs, amounts, dates, duplicates), 5 marts (DuckDB + parquet), 4 Nexus-style charts, written insights derived from real numbers. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
-     "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
-     "outcome": [
-      "Quality gates fail the run on dirty data; quality_report.json every run",
-      "Marts reconcile with API dashboard figures (net 7,334,001 traceable)",
-      "Deterministic: auto bootstrap seed snapshot, zero personal data in repo"
+    "description": "Analytics pipeline for the LifeOS database: 8-table extract (read-only snapshot), quality gates (orphan FKs, amounts, dates, duplicates), 5 marts (DuckDB + parquet), 4 Nexus-style charts, written insights derived from real numbers. Python + pandas + DuckDB + matplotlib, schedulable via cron/systemd.",
+    "myRole": "Solo Data — ETL, data quality, DuckDB, matplotlib",
+    "outcome": [
+     "Quality gates fail the run on dirty data; quality_report.json every run",
+     "Marts reconcile with API dashboard figures (net 7,334,001 traceable)",
+     "Deterministic: auto bootstrap seed snapshot, zero personal data in repo"
     ],
     "skills": [
      "Python",
@@ -643,20 +995,19 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "Shiftbase QA — RBAC, Import & Reports Testing",
     "hidden": true,
     "partOf": "shiftbase",
     "imageSrc": "projects/project.png",
-     "description": "QA portfolio for Shiftbase: test plan, 38 test cases 100% Pass, admin/manager/staff RBAC matrix, shift-conflict 409s, CSV import (headers/rules/2MB), >8h overtime & coverage, per-role roster. Newman 15/15, Playwright e2e 8/8, Excel report generated via openpyxl.",
-     "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
-     "outcome": [
-      "38/38 Pass; Newman 15/15; e2e 8/8; go test + swagger valid",
-      "2 Low UX bugs: dropdown not refreshing after import, tab not persisting",
-      "Isolated MySQL 8.4 docker env + documented run order"
+    "description": "QA portfolio for Shiftbase: test plan, 38 test cases 100% Pass, admin/manager/staff RBAC matrix, shift-conflict 409s, CSV import (headers/rules/2MB), >8h overtime & coverage, per-role roster. Newman 15/15, Playwright e2e 8/8, Excel report generated via openpyxl.",
+    "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
+    "outcome": [
+     "38/38 Pass; Newman 15/15; e2e 8/8; go test + swagger valid",
+     "2 Low UX bugs: dropdown not refreshing after import, tab not persisting",
+     "Isolated MySQL 8.4 docker env + documented run order"
     ],
     "skills": [
      "QA",
@@ -673,20 +1024,19 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "LifeOS QA — Test Plan, Cases & Reports",
     "hidden": true,
     "partOf": "lifeos",
     "imageSrc": "projects/project.png",
-     "description": "QA portfolio for LifeOS: test plan, 61 evidenced test cases executed at 100%, 4 real bug reports with repro steps, Newman API suite 75/75, Playwright e2e 26/26 (Chromium headless), 5-sheet Excel report (generated via openpyxl, COUNTIF + charts). Isolated test env, documented run order.",
-     "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
-     "outcome": [
-      "61/61 test cases Pass; Newman 75/75; e2e 26/26; go test + swagger valid",
-      "4 real bugs: PUT full-replace, dashboard _ts leak, raw gin messages, label missing htmlFor",
-      "LifeOS-QA-Report.xlsx: auto-generated Cover, Cases, Execution Log, Bugs, Summary"
+    "description": "QA portfolio for LifeOS: test plan, 61 evidenced test cases executed at 100%, 4 real bug reports with repro steps, Newman API suite 75/75, Playwright e2e 26/26 (Chromium headless), 5-sheet Excel report (generated via openpyxl, COUNTIF + charts). Isolated test env, documented run order.",
+    "myRole": "Solo QA — manual + automation (Newman, Playwright, Python)",
+    "outcome": [
+     "61/61 test cases Pass; Newman 75/75; e2e 26/26; go test + swagger valid",
+     "4 real bugs: PUT full-replace, dashboard _ts leak, raw gin messages, label missing htmlFor",
+     "LifeOS-QA-Report.xlsx: auto-generated Cover, Cases, Execution Log, Bugs, Summary"
     ],
     "skills": [
      "QA",
@@ -703,8 +1053,7 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "LifeOS — Personal Life Operating System API",
@@ -734,8 +1083,7 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "LifeOS Web — Personal OS Dashboard",
@@ -764,8 +1112,7 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "Shiftbase — Scheduling & Attendance REST API",
@@ -796,8 +1143,7 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "Shiftbase Web — Roster Board",
@@ -826,8 +1172,7 @@
      "docs": null
     },
     "workType": "Solo",
-    "duration": "Sep 2026",
-    "featured": true
+    "duration": "Sep 2026"
    },
    {
     "title": "Campkit (Camping E-Commerce & Booking)",

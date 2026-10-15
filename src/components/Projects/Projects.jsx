@@ -15,6 +15,12 @@ export const Projects = () => {
   // Stable anchor ids so the CV can deep-link flagship case studies.
   const projectSlug = (title) => {
     if (title.startsWith("Fukurou —")) return "project-fukurou";
+    if (title.startsWith("Hand —")) return "project-hand";
+    if (title.startsWith("Kage —")) return "project-kage";
+    if (title.startsWith("Mamori —")) return "project-mamori";
+    if (title.startsWith("Neko —")) return "project-neko";
+    if (title.startsWith("Omarchy-neko —")) return "project-omarchy-neko";
+    if (title.startsWith("Dotfiles —")) return "project-dotfiles";
     if (title.startsWith("Tora —")) return "project-tora";
     if (title.startsWith("Ookami —")) return "project-ookami";
     if (title.startsWith("Kitsune —")) return "project-kitsune";
