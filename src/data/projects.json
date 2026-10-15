@@ -94,32 +94,6 @@
   ],
   "Solo": [
    {
-    "title": "Hand — Coding-Agent Supervisor",
-    "description": "Personal supervisor layer for coding agents: talk to one supervisor, it captures every request as a task and fans out to Claude Code, Codex, or opencode workers in isolated git worktrees, then reports back and asks only through decisions. One SQLite state per fleet, one board for all.",
-    "myRole": "Solo — Go, git worktrees, SQLite state, testing",
-    "outcome": [
-     "Single supervisor + SQLite state per fleet with zero-token waiting workers",
-     "Isolated git worktrees per attempt; one hand board shows every fleet"
-    ],
-    "skills": [
-     "Go",
-     "Linux",
-     "CLI",
-     "SQLite",
-     "Git Worktrees"
-    ],
-    "source": "https://github.com/RakhaYandra/hand",
-    "links": {
-     "live": null,
-     "repo": "https://github.com/RakhaYandra/hand",
-     "docs": null
-    },
-    "duration": "Oct 2026",
-    "imageSrc": "projects/project.png",
-    "demo": null,
-    "workType": "Solo"
-   },
-   {
     "title": "Kage — Configuration State Manager",
     "description": "Linux-first CLI that snapshots dotfiles and configs into a local Git repo, diffs drift, restores selectively with checkpoints and conflict checks, and audits secrets. Local-only, secrets blocked by default.",
     "myRole": "Solo — Go, Cobra CLI, Bubble Tea TUI, testing",
