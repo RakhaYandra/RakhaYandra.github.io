@@ -197,32 +197,6 @@
     "workType": "Solo"
    },
    {
-    "title": "Dotfiles — Omarchy Daily Driver",
-    "description": "Bare-repo managed Omarchy dotfiles: Hyprland, shell, and editor configs with tracked package lists for reproducible setups. Secrets and machine-local files deliberately untracked.",
-    "myRole": "Solo — Linux, Hyprland, shell",
-    "outcome": [
-     "One-command bare-clone bootstrap with pacman/AUR package lists",
-     "~/.bashrc intentionally untouched; auth via gh CLI"
-    ],
-    "skills": [
-     "Lua",
-     "Hyprland",
-     "Omarchy",
-     "Linux",
-     "Bash"
-    ],
-    "source": "https://github.com/RakhaYandra/dotfiles",
-    "links": {
-     "live": null,
-     "repo": "https://github.com/RakhaYandra/dotfiles",
-     "docs": null
-    },
-    "duration": "Rolling",
-    "imageSrc": "projects/project.png",
-    "demo": null,
-    "workType": "Solo"
-   },
-   {
     "title": "Fukurou — Floating Linux System Dashboard",
     "imageSrc": "projects/fukurou-panel.png",
     "description": "Lightweight floating system dashboard for Wayland/Hyprland: Go + GTK4 HUD over layer-shell showing live CPU, GPU, memory, storage, network, system, and battery metrics. Read-only by design — observe, don't control. No root, no telemetry.",

@@ -19,7 +19,6 @@ export const Projects = () => {
     if (title.startsWith("Mamori —")) return "project-mamori";
     if (title.startsWith("Neko —")) return "project-neko";
     if (title.startsWith("Omarchy-neko —")) return "project-omarchy-neko";
-    if (title.startsWith("Dotfiles —")) return "project-dotfiles";
     if (title.startsWith("Tora —")) return "project-tora";
     if (title.startsWith("Ookami —")) return "project-ookami";
     if (title.startsWith("Kitsune —")) return "project-kitsune";
