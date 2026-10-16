@@ -1,21 +1,33 @@
 import { useState } from "react";
-import { createPortal } from "react-dom";
 import styles from "./ProjectCard.module.css";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../ui/dialog";
 
-const LinkButton = ({ href, className, children, disabledLabel }) => {
+const LinkButton = ({ href, children, disabledLabel }) => {
   if (!href) {
     return (
-      <span className={`${className} ${styles.disabledAction}`} aria-label={disabledLabel}>
+      <Button type="button" variant="secondary" size="sm" disabled aria-label={disabledLabel} className={actionClass}>
         {children}
-      </span>
+      </Button>
     );
   }
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {children}
-    </a>
+    <Button type="button" variant="secondary" size="sm" asChild className={actionClass}>
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    </Button>
   );
 };
+
+const actionClass =
+  "font-mono text-xs font-semibold tracking-wide uppercase";
 
 /* Pull N/N verification ratios out of outcome bullets, e.g.
    "22/22 QA Pass; Newman 22/22; e2e 7/7". Returns null when absent. */
@@ -118,12 +130,14 @@ export const ProjectCard = ({
 
         <div className={styles.skills}>
           {skills.slice(0, 8).map((skill, id) => (
-            <span key={id} className={styles.skill}>
+            <Badge key={id} asSpan className="font-mono text-[0.6875rem] uppercase">
               {skill}
-            </span>
+            </Badge>
           ))}
           {skills.length > 8 && (
-            <span className={styles.skill}>+{skills.length - 8} more</span>
+            <Badge asSpan className="font-mono text-[0.6875rem] uppercase">
+              +{skills.length - 8} more
+            </Badge>
           )}
         </div>
 
@@ -150,94 +164,77 @@ export const ProjectCard = ({
         <div className={styles.actions}>
           <LinkButton
             href={links.live}
-            className={styles.action}
             disabledLabel={`${title} has no live demo`}
           >
             Live Demo
           </LinkButton>
           <LinkButton
             href={links.repo}
-            className={styles.action}
             disabledLabel={`${title} has no source repository`}
           >
             View Code
           </LinkButton>
           {subProjects.length > 0 && (
-            <button
+            <Button
               type="button"
+              variant="secondary"
+              size="sm"
               onClick={() => setShowRepos(true)}
-              className={styles.action}
+              className={actionClass}
             >
               View {subProjects.length} Repos
-            </button>
+            </Button>
           )}
           {links.docs && (
-            <a
-              href={links.docs}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.action}
-            >
-              Docs / Paper
-            </a>
+            <Button type="button" variant="secondary" size="sm" asChild className={actionClass}>
+              <a
+                href={links.docs}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Docs / Paper
+              </a>
+            </Button>
           )}
         </div>
       </div>
 
-      {/* Platform repos modal — portaled to body so card transform/overflow can't clip it */}
-      {showRepos &&
-        subProjects.length > 0 &&
-        createPortal(
-          <div
-            className={styles.modalOverlay}
-            onClick={() => setShowRepos(false)}
-          >
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className={styles.modalCloseButton}
-              onClick={() => setShowRepos(false)}
-              aria-label="Close repositories"
-            >
-              ×
-            </button>
-            <div className={styles.modalHeader}>
-              <h3 className={styles.modalTitle}>{title}</h3>
-              <p className={styles.modalSubtitle}>
-                {subProjects.length} repositories — solo-built
-              </p>
-            </div>
-            <div className={styles.modalBody}>
-              {subProjects.map((sub) => (
-                <div key={sub.title} className={styles.subRepo}>
-                  <div className={styles.subRepoInfo}>
-                    <h4 className={styles.subRepoTitle}>{sub.title}</h4>
-                    <p className={styles.subRepoBlurb}>{sub.blurb}</p>
-                    <div className={styles.subRepoStack}>
-                      {sub.stack.map((tech) => (
-                        <span key={tech} className={styles.skill}>
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <a
-                    href={sub.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.subRepoLink}
-                  >
-                    Open repo
-                  </a>
-                </div>
-              ))}
-            </div>
+      {/* Platform repos modal */}
+      <Dialog open={showRepos} onOpenChange={(open) => setShowRepos(open)}>
+        <DialogContent className={styles.dialogContent}>
+          <div className={styles.modalHeader}>
+            <DialogTitle className={styles.modalTitle}>{title}</DialogTitle>
+            <DialogDescription className={styles.modalSubtitle}>
+              {subProjects.length} repositories — solo-built
+            </DialogDescription>
           </div>
-        </div>,
-        document.body
-      )}
+          <div className={styles.modalBody}>
+            {subProjects.map((sub) => (
+              <div key={sub.title} className={styles.subRepo}>
+                <div className={styles.subRepoInfo}>
+                  <h4 className={styles.subRepoTitle}>{sub.title}</h4>
+                  <p className={styles.subRepoBlurb}>{sub.blurb}</p>
+                  <div className={styles.subRepoStack}>
+                    {sub.stack.map((tech) => (
+                      <Badge key={tech} asSpan className="font-mono text-[0.6875rem] uppercase">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <a
+                  href={sub.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.subRepoLink}
+                >
+                  Open repo
+                </a>
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

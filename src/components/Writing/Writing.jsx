@@ -1,14 +1,22 @@
 import { useState } from "react";
 import styles from "./Writing.module.css";
 import posts from "../../data/posts.json";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "../ui/collapsible";
 
 const PostCard = ({ post }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <article
+    <Collapsible
+      open={expanded}
+      onOpenChange={setExpanded}
       className={`${styles.postCard} ${expanded ? styles.postCardOpen : ""}`}
     >
+      <article>
       <div className={styles.postHeader}>
         <div className={styles.postMeta}>
           <time className={styles.postDate} dateTime={post.date}>
@@ -35,7 +43,7 @@ const PostCard = ({ post }) => {
 
       <p className={styles.postSummary}>{post.summary}</p>
 
-      {expanded && (
+      <CollapsibleContent>
         <ul className={styles.postPoints}>
           {post.points.map((point, id) => (
             <li key={id} className={styles.postPoint}>
@@ -43,13 +51,12 @@ const PostCard = ({ post }) => {
             </li>
           ))}
         </ul>
-      )}
+      </CollapsibleContent>
 
       <div className={styles.postActions}>
-        <button
+        <CollapsibleTrigger
           className={styles.expandButton}
-          onClick={() => setExpanded(!expanded)}
-          aria-expanded={expanded}
+          aria-label={expanded ? "Show less" : "Read notes"}
         >
           {expanded ? "Show less" : "Read notes"}
           <svg
@@ -65,7 +72,7 @@ const PostCard = ({ post }) => {
           >
             <path d="M6 9l6 6 6-6" />
           </svg>
-        </button>
+        </CollapsibleTrigger>
         {post.links?.repo && (
           <a
             href={post.links.repo}
@@ -87,7 +94,8 @@ const PostCard = ({ post }) => {
           </a>
         )}
       </div>
-    </article>
+      </article>
+    </Collapsible>
   );
 };
 

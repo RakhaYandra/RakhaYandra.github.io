@@ -8,6 +8,20 @@ import { AnimatedCounter } from "../ui/animated-counter";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+
+const SORT_OPTIONS = [
+  { value: "default", label: "Default Order" },
+  { value: "title", label: "Sort by Title" },
+  { value: "newest", label: "Newest First" },
+  { value: "skills", label: "Most Skills" },
+];
 
 export const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -173,17 +187,18 @@ export const Projects = () => {
             </div>
 
             <div className={styles.sortContainer}>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                aria-label="Sort projects"
-                className="h-11 w-full cursor-pointer rounded-(--border-radius-md) border border-(--color-border) bg-(--color-bg-secondary) px-3 text-sm text-(--color-text-primary)"
-              >
-                <option value="default">Default Order</option>
-                <option value="title">Sort by Title</option>
-                <option value="newest">Newest First</option>
-                <option value="skills">Most Skills</option>
-              </select>
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger aria-label="Sort projects">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {SORT_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 

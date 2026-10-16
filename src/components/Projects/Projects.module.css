@@ -126,27 +126,6 @@
   z-index: 2;
 }
 
-.clearSearch {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-bg-tertiary);
-  border: none;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  cursor: pointer;
-}
-
-.clearSearch:hover {
-  color: var(--color-error);
-}
-
 .sortContainer {
   position: relative;
   width: 100%;

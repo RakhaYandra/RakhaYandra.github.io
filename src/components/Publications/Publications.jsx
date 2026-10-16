@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Publications.module.css";
 import publications from "../../data/publications.json";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../ui/dialog";
 
 const FOCUS = [
   "Sub-50ms ingestion latency for distributed IoT sensor packets",
@@ -98,74 +104,70 @@ export const Publications = () => {
       ))}
 
       {/* Publication Modal */}
-      {selectedPublication && (
-        <div
-          className={styles.modalOverlay}
-          onClick={() => setSelectedPublication(null)}
-        >
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className={styles.closeButton}
-              onClick={() => setSelectedPublication(null)}
-              aria-label="Close publication details"
-            >
-              ×
-            </button>
-            <div className={styles.modalHeader}>
-              <span className={styles.venueBadge}>
-                {selectedPublication.venue}
-              </span>
-              <h3 className={styles.modalTitle}>{selectedPublication.title}</h3>
-              <span className={styles.authors}>
-                {selectedPublication.authors.join(", ")} ·{" "}
-                {selectedPublication.publicationDate}
-              </span>
-            </div>
-            <div className={styles.modalBody}>
-              {selectedPublication.takeaway && (
-                <div className={styles.modalTakeaway}>
-                  <h4>Key Takeaway / Technical Impact</h4>
-                  <p>{selectedPublication.takeaway}</p>
+      <Dialog
+        open={selectedPublication !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelectedPublication(null);
+        }}
+      >
+        <DialogContent className={styles.dialogContent}>
+          {selectedPublication && (
+            <>
+              <div className={styles.modalHeader}>
+                <span className={styles.venueBadge}>
+                  {selectedPublication.venue}
+                </span>
+                <DialogTitle className={styles.modalTitle}>
+                  {selectedPublication.title}
+                </DialogTitle>
+                <DialogDescription className={styles.authors}>
+                  {selectedPublication.authors.join(", ")} ·{" "}
+                  {selectedPublication.publicationDate}
+                </DialogDescription>
+              </div>
+              <div className={styles.modalBody}>
+                {selectedPublication.takeaway && (
+                  <div className={styles.modalTakeaway}>
+                    <h4>Key Takeaway / Technical Impact</h4>
+                    <p>{selectedPublication.takeaway}</p>
+                  </div>
+                )}
+                <div className={styles.modalAbstract}>
+                  <h4>Abstract</h4>
+                  <p>{selectedPublication.abstract}</p>
                 </div>
-              )}
-              <div className={styles.modalAbstract}>
-                <h4>Abstract</h4>
-                <p>{selectedPublication.abstract}</p>
-              </div>
-              <div className={styles.keywords}>
-                {selectedPublication.keywords.map((keyword) => (
-                  <span key={keyword} className={styles.keyword}>
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-              <div className={styles.modalActions}>
-                <a
-                  href={selectedPublication.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.primaryButton}
-                >
-                  Access Full Paper
-                </a>
-                {selectedPublication.doi && (
+                <div className={styles.keywords}>
+                  {selectedPublication.keywords.map((keyword) => (
+                    <span key={keyword} className={styles.keyword}>
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
+                <div className={styles.modalActions}>
                   <a
-                    href={selectedPublication.doi}
+                    href={selectedPublication.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.ghostButton}
+                    className={styles.primaryButton}
                   >
-                    DOI
+                    Access Full Paper
                   </a>
-                )}
+                  {selectedPublication.doi && (
+                    <a
+                      href={selectedPublication.doi}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.ghostButton}
+                    >
+                      DOI
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
