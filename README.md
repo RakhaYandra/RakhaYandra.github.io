@@ -60,10 +60,10 @@ RakhaYandra.github.io/
 │   ├── contact/            # Social and platform badges
 │   ├── hero/               # Profile photography
 │   ├── history/            # Company logos
+│   ├── nav/                # Navigation icons
 │   ├── organizations/      # Organizational banners
 │   ├── projects/           # Showcase previews
 │   └── skills/             # Technology icons
-├── docs/                   # Planning and project documentation files
 ├── src/                    # React application source code
 │   ├── components/         # Modular layout components
 │   │   ├── About/          # Info grid & capability-based cards
@@ -71,6 +71,7 @@ RakhaYandra.github.io/
 │   │   ├── Education/      # Honors timeline & focus descriptions
 │   │   ├── ErrorBoundary/  # Crash safety wrapper
 │   │   ├── Experience/     # Job timeline rendering tech stacks
+│   │   ├── Faq/            # FAQ section (RareUI thread)
 │   │   ├── Footer/         # Dedicated copyright & status bar
 │   │   ├── GetInTouch/     # Recruiter-aligned call to action section
 │   │   ├── Hero/           # Greeting, profile image, & stats cards
@@ -78,22 +79,28 @@ RakhaYandra.github.io/
 │   │   ├── OptimizedImage/ # Performance image loader
 │   │   ├── Organizations/  # Activities details modal & lists
 │   │   ├── Projects/       # Dynamic search, sorting, and tag filters
-│   │   └── Skills/         # Active categories grid & learning list
+│   │   ├── Publications/   # Research papers & recruiter summaries
+│   │   ├── Skills/         # Active categories grid & learning list
+│   │   ├── Writing/        # Backend architecture notes
+│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, faq, animated-counter)
 │   ├── data/               # Content databases (JSON files)
 │   │   ├── certificates.json
 │   │   ├── history.json
 │   │   ├── organizations.json
+│   │   ├── posts.json
 │   │   ├── projects.json
 │   │   ├── publications.json
 │   │   └── skills.json
 │   ├── hooks/              # Custom React lifecycle hooks
+│   ├── lib/                # Shared helpers (cn class merger)
 │   ├── App.jsx             # Main layout assembler
-│   ├── index.css           # Global layout adjustments
+│   ├── index.css           # Layered globals (Tailwind + legacy)
 │   ├── main.jsx            # Entry runner
 │   ├── utils.js            # General helper scripts
 │   └── vars.css            # Custom CSS properties and utility classes
 ├── index.html              # HTML shell & SEO meta configuration
 ├── package.json            # Scripts and dependencies declarations
+├── postcss.config.js       # PostCSS with Tailwind v4 plugin
 ├── vite.config.js          # Vite and Rollup packaging configuration
 └── CONTRIBUTING.md         # Development guidelines for developers & AI agents
 ```

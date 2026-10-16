@@ -8,7 +8,7 @@ This document serves as the guide for developers and AI agents contributing to t
 
 The portfolio focuses on:
 *   **Professionalism**: Communicating the candidate's value clearly, authentically, and without generic cliches.
-*   **Simplicity**: Keeping the architecture clean and free from unnecessary third-party libraries.
+*   **Simplicity**: Keeping the architecture clean. Third-party libraries are allowed only when they earn their weight: Tailwind CSS v4 (utilities), shadcn-style primitives in `src/components/ui/`, and Motion (animated components). No global state stores, no UI frameworks on top.
 *   **Performance**: Ensuring fast load times, minimal bundle sizes, and optimal asset loading.
 *   **Accessibility (a11y)**: Adhering to WCAG guidelines for semantic structure, focus indicators, and screen readers.
 *   **Maintainability**: Writing structured, self-documenting code.
@@ -54,8 +54,11 @@ The portfolio focuses on:
 
 ## 5. Styling Guidelines
 
-*   **Design Tokens**: Style rules must reference values from `src/vars.css` (e.g., `var(--color-primary)`, `var(--spacing-md)`, `var(--transition-base)`).
+*   **Design Tokens**: Style rules must reference values from `src/vars.css` (e.g., `var(--color-primary)`, `var(--spacing-md)`, `var(--transition-base)`). Tailwind classes must use the same tokens via arbitrary values (e.g., `bg-(--color-primary)`), never hardcoded hex.
 *   **CSS Modules**: Always use CSS Modules (`*.module.css`) to prevent global style leaks and namespace collisions.
+*   **Shared primitives**: Reusable UI goes in `src/components/ui/` (button, input, badge, faq, animated-counter). Do not duplicate them per section.
+*   **Layer order**: `src/index.css` declares `@layer theme, base, legacy, components, utilities;`. Legacy globals live in `@layer legacy` (above Tailwind preflight, below utilities). CSS Modules are unlayered and beat both — so when migrating an element to Tailwind, delete its module rule instead of stacking classNames.
+*   **Dark mode**: `useTheme` sets both `data-theme` and `.dark`. Tailwind dark styles use the custom variant (`@custom-variant dark`), legacy CSS uses `[data-theme="dark"]`. Keep both in sync.
 *   **Responsive Behavior**: Use mobile-first styles. Implement clamp functions (`clamp()`) for responsive typography rather than hardcoding multiple media-query overrides.
 *   **Color Usage**: Keep to the designated color system:
     *   **Primary Accent**: Green (`#22c55e`, representing growth/technology)
@@ -125,3 +128,4 @@ Future AI agents working on this repository must:
 3.  Analyze existing components before writing code to prevent duplication.
 4.  Do not perform broad code refactoring unless it directly resolves a performance or bugs issue.
 5.  Maintain content tone and personal branding guidelines strictly. Do not rewrite text using generic AI buzzwords.
+6.  Keep the Rare UI credit: the link in the footer and the source-file notices must stay. Any new Rare UI component needs both.
