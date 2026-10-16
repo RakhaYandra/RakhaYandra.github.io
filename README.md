@@ -110,7 +110,7 @@ RakhaYandra.github.io/
 ## 🚀 Quick Start
 
 ### Prerequisites
-*   Node.js (v18 or higher recommended)
+*   Node.js (v20, see `.nvmrc`)
 *   npm (v9 or higher)
 
 ### Installation
