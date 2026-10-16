@@ -77,7 +77,6 @@ RakhaYandra.github.io/
 │   │   ├── GetInTouch/     # Recruiter-aligned call to action section
 │   │   ├── Hero/           # Greeting, profile image, & stats cards
 │   │   ├── Navbar/         # Collapsible responsive navigation bar
-│   │   ├── OptimizedImage/ # Performance image loader
 │   │   ├── Organizations/  # Activities details modal & lists
 │   │   ├── Projects/       # Dynamic search, sorting, and tag filters
 │   │   ├── Publications/   # Research papers & recruiter summaries

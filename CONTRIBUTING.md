@@ -20,7 +20,7 @@ The portfolio focuses on:
 ## 2. Development Principles
 
 *   **Keep it Modular**: Group files by component features.
-*   **Reuse Components**: Avoid repeating layout code. Reuse components like `<OptimizedImage />` where appropriate.
+*   **Reuse Components**: Avoid repeating layout code. Reuse primitives from `src/components/ui/` where appropriate.
 *   **Write Readable Code**: Prefer explicit, clean code over clever or hyper-abstracted patterns.
 *   **Composition over Duplication**: Build large layouts by combining smaller, testable components.
 *   **Keep it Production-Ready**: Keep builds green and ensure all dependencies are properly managed. Do not commit debug logs or experimental code.
