@@ -2,6 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Organizations.module.css";
 import { getImageUrl } from "../../utils";
 import organizations from "../../data/organizations.json";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../ui/dialog";
 
 export const Organizations = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -228,68 +234,73 @@ export const Organizations = () => {
       </div>
 
       {/* Organization Modal */}
-      {selectedOrg && (
-        <div className={styles.modalOverlay} onClick={closeOrgModal}>
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className={styles.closeButton} onClick={closeOrgModal}>
-              ×
-            </button>
-
-            <div className={styles.modalHeader}>
-              <img
-                src={getImageUrl(selectedOrg.imageSrc)}
-                alt={`${selectedOrg.name} logo`}
-                className={styles.modalLogo}
-              />
-              <div className={styles.modalHeaderInfo}>
-                <h3 className={styles.modalTitle}>{selectedOrg.name}</h3>
-                <p className={styles.modalRole}>{selectedOrg.role}</p>
-                <div className={styles.modalDateRange}>
-                  {selectedOrg.startDate} — {selectedOrg.endDate}
-                  {isCurrentRole(selectedOrg.endDate) && (
-                    <span className={styles.modalCurrentBadge}>Current</span>
-                  )}
+      <Dialog
+        open={selectedOrg !== null}
+        onOpenChange={(open) => {
+          if (!open) closeOrgModal();
+        }}
+      >
+        <DialogContent className={styles.dialogContent}>
+          {selectedOrg && (
+            <>
+              <div className={styles.modalHeader}>
+                <img
+                  src={getImageUrl(selectedOrg.imageSrc)}
+                  alt={`${selectedOrg.name} logo`}
+                  className={styles.modalLogo}
+                />
+                <div className={styles.modalHeaderInfo}>
+                  <DialogTitle className={styles.modalTitle}>
+                    {selectedOrg.name}
+                  </DialogTitle>
+                  <DialogDescription className={styles.modalRole}>
+                    {selectedOrg.role} • {selectedOrg.startDate} —{" "}
+                    {selectedOrg.endDate}
+                  </DialogDescription>
+                  <div className={styles.modalDateRange}>
+                    {selectedOrg.startDate} — {selectedOrg.endDate}
+                    {isCurrentRole(selectedOrg.endDate) && (
+                      <span className={styles.modalCurrentBadge}>Current</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.modalBody}>
-              <div className={styles.modalDescription}>
-                <h4>Role Description</h4>
-                <p>{selectedOrg.description}</p>
-              </div>
-
-              <div className={styles.modalAchievements}>
-                <h4>Achievements & Contributions</h4>
-                <ul className={styles.modalAchievementsList}>
-                  {selectedOrg.achievements.map((achievement, id) => (
-                    <li key={id} className={styles.modalAchievementItem}>
-                      <span className={styles.achievementIcon}>✓</span>
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {selectedOrg.website && (
-                <div className={styles.modalActions}>
-                  <a
-                    href={selectedOrg.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.modalWebsiteButton}
-                  >
-                    Visit Organization Website
-                  </a>
+              <div className={styles.modalBody}>
+                <div className={styles.modalDescription}>
+                  <h4>Role Description</h4>
+                  <p>{selectedOrg.description}</p>
                 </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+
+                <div className={styles.modalAchievements}>
+                  <h4>Achievements & Contributions</h4>
+                  <ul className={styles.modalAchievementsList}>
+                    {selectedOrg.achievements.map((achievement, id) => (
+                      <li key={id} className={styles.modalAchievementItem}>
+                        <span className={styles.achievementIcon}>✓</span>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {selectedOrg.website && (
+                  <div className={styles.modalActions}>
+                    <a
+                      href={selectedOrg.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.modalWebsiteButton}
+                    >
+                      Visit Organization Website
+                    </a>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

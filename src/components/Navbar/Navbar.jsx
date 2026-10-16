@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { getImageUrl } from "../../utils";
 import { useTheme } from "../../hooks/useTheme";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "../ui/dropdown-menu";
 import styles from "./Navbar.module.css";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
 
@@ -80,56 +85,47 @@ export const Navbar = () => {
 
             {/* More Dropdown */}
             <li className={styles.dropdownContainer}>
-              <button
-                className={`${styles.menuItem} ${styles.dropdownToggle}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setDropdownOpen(!dropdownOpen);
-                }}
-                onBlur={() => setTimeout(() => setDropdownOpen(false), 150)}
-              >
-                <span className={styles.menuNumber}>•••</span>
-                <span>More</span>
-                <svg
-                  className={`${styles.dropdownArrow} ${
-                    dropdownOpen ? styles.dropdownArrowOpen : ""
-                  }`}
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className={`${styles.menuItem} ${styles.dropdownToggle}`}
                 >
-                  <path
-                    d="M3 4.5L6 7.5L9 4.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+                  <span className={styles.menuNumber}>•••</span>
+                  <span>More</span>
+                  <svg
+                    className={styles.dropdownArrow}
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 4.5L6 7.5L9 4.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </DropdownMenuTrigger>
 
-              <ul
-                className={`${styles.dropdownMenu} ${
-                  dropdownOpen ? styles.dropdownMenuOpen : ""
-                }`}
-              >
-                {moreMenuItems.map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className={styles.dropdownItem}
-                      onClick={() => {
-                        setDropdownOpen(false);
-                        setMenuOpen(false);
-                      }}
-                    >
-                      <span className={styles.dropdownIcon}>{item.icon}</span>
-                      <span>{item.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                <DropdownMenuContent>
+                  {moreMenuItems.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <a
+                        href={item.href}
+                        className={styles.dropdownItem}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <span className={styles.dropdownIcon} aria-hidden="true">
+                          {item.icon}
+                        </span>
+                        <span>{item.label}</span>
+                      </a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </li>
           </ul>
         </div>

@@ -37,6 +37,7 @@ This website acts as a comprehensive resume, demonstrating to HR recruiters, tec
 
 *   **Core**: HTML5, Vanilla CSS3 (Custom Variables), JavaScript (ES6+), React 18.2.0
 *   **Build Tooling**: Vite 4.4.5, Terser Minifier, ESLint
+*   **UI primitives**: Tailwind CSS v4, Radix UI (dialog, dropdown-menu, tabs, slot), Motion, class-variance-authority
 *   **Typography**: Outfit & Roboto (preloaded via Google Fonts)
 *   **Hosting & Deployment**: GitHub Pages
 
@@ -82,7 +83,7 @@ RakhaYandra.github.io/
 │   │   ├── Publications/   # Research papers & recruiter summaries
 │   │   ├── Skills/         # Active categories grid & learning list
 │   │   ├── Writing/        # Backend architecture notes
-│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, faq, animated-counter)
+│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, dialog, dropdown-menu, tabs, faq, animated-counter)
 │   ├── data/               # Content databases (JSON files)
 │   │   ├── certificates.json
 │   │   ├── history.json

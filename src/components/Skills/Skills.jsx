@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Skills.module.css";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
+import { AnimatedCounter } from "../ui/animated-counter";
 
 const MODULES = [
   {
+    id: "runtime",
     index: "MODULE 01 // RUNTIME",
     title: "Backend & API Architecture",
     description:
@@ -10,6 +13,7 @@ const MODULES = [
     chips: ["Go / Golang", "Gin Engine", "ASP.NET Core", "C# / EF Core", "Blazor", "REST OpenAPI"],
   },
   {
+    id: "verification",
     index: "MODULE 02 // VERIFICATION",
     title: "QA & Deterministic Testing",
     description:
@@ -18,6 +22,7 @@ const MODULES = [
     highlight: "100% Assertion",
   },
   {
+    id: "frontend",
     index: "MODULE 03 // FRONTEND",
     title: "Client & Administrative UI",
     description:
@@ -25,6 +30,7 @@ const MODULES = [
     chips: ["React.js SPA", "Tailwind CSS", "Vite", "State Machine", "Semantic HTML"],
   },
   {
+    id: "persistence",
     index: "MODULE 04 // PERSISTENCE",
     title: "Data Persistence & IoT",
     description:
@@ -34,10 +40,10 @@ const MODULES = [
 ];
 
 const TELEMETRY = [
-  { label: "TOTAL ASSERTIONS", value: "267+", sub: "Across 4 Flagships" },
-  { label: "NEWMAN SUITES", value: "112 / 112", sub: "100% Pass Rate", ok: true },
-  { label: "QA SUITES", value: "146 / 146", sub: "Verified Green", ok: true },
-  { label: "CYPRESS & PLAYWRIGHT", value: "46 / 46", sub: "Zero Flake E2E" },
+  { label: "TOTAL ASSERTIONS", value: 267, suffix: "+", sub: "Across 4 Flagships" },
+  { label: "NEWMAN SUITES", value: 112, prefix: "", suffix: " / 112", sub: "100% Pass Rate", ok: true },
+  { label: "QA SUITES", value: 146, suffix: " / 146", sub: "Verified Green", ok: true },
+  { label: "CYPRESS & PLAYWRIGHT", value: 46, suffix: " / 46", sub: "Zero Flake E2E" },
 ];
 
 export const Skills = () => {
@@ -79,9 +85,20 @@ export const Skills = () => {
         </p>
       </div>
 
-      <div className={`${styles.grid} ${isVisible ? styles.fadeInUp : ""}`}>
+      <Tabs
+        defaultValue={MODULES[0].id}
+        className={`${styles.tabs} ${isVisible ? styles.fadeInUp : ""}`}
+      >
+        <TabsList aria-label="Capability modules">
+          {MODULES.map((mod) => (
+            <TabsTrigger key={mod.id} value={mod.id}>
+              {mod.title}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
         {MODULES.map((mod) => (
-          <div key={mod.index} className={styles.card}>
+          <TabsContent key={mod.id} value={mod.id} className={styles.panel}>
             <span className={styles.cardIndex}>{mod.index}</span>
             <h3 className={styles.cardTitle}>{mod.title}</h3>
             <p className={styles.cardDesc}>{mod.description}</p>
@@ -97,9 +114,9 @@ export const Skills = () => {
                 </span>
               )}
             </div>
-          </div>
+          </TabsContent>
         ))}
-      </div>
+      </Tabs>
 
       <div className={`${styles.banner} ${isVisible ? styles.fadeInUp : ""}`}>
         <div className={styles.bannerHead}>
@@ -116,7 +133,9 @@ export const Skills = () => {
           {TELEMETRY.map((t) => (
             <div key={t.label} className={styles.statTile}>
               <span className={styles.statLabel}>{t.label}</span>
-              <span className={styles.statValue}>{t.value}</span>
+              <span className={styles.statValue}>
+                <AnimatedCounter value={t.value} suffix={t.suffix} />
+              </span>
               <span
                 className={`${styles.statSub} ${t.ok ? styles.statSubOk : ""}`}
               >

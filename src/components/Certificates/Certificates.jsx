@@ -2,6 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Certificates.module.css";
 import { getImageUrl } from "../../utils";
 import certificates from "../../data/certificates.json";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../ui/dialog";
 
 export const Certificates = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -168,83 +174,81 @@ export const Certificates = () => {
       </div>
 
       {/* Certificate Modal */}
-      {selectedCertificate && (
-        <div className={styles.modalOverlay} onClick={closeCertificateModal}>
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className={styles.closeButton}
-              onClick={closeCertificateModal}
-            >
-              ×
-            </button>
-
-            <div className={styles.modalHeader}>
-              <img
-                src={getImageUrl(selectedCertificate.imageSrc)}
-                alt={`${selectedCertificate.issuingOrganization} logo`}
-                className={styles.modalLogo}
-              />
-              <div>
-                <h3 className={styles.modalTitle}>
-                  {selectedCertificate.title}
-                </h3>
-                <p className={styles.modalOrg}>
-                  {selectedCertificate.issuingOrganization}
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.modalBody}>
-              <div className={styles.modalInfo}>
-                <div className={styles.infoItem}>
-                  <span className={styles.infoLabel}>Issue Date:</span>
-                  <span className={styles.infoValue}>
+      <Dialog
+        open={selectedCertificate !== null}
+        onOpenChange={(open) => {
+          if (!open) closeCertificateModal();
+        }}
+      >
+        <DialogContent className={styles.dialogContent}>
+          {selectedCertificate && (
+            <>
+              <div className={styles.modalHeader}>
+                <img
+                  src={getImageUrl(selectedCertificate.imageSrc)}
+                  alt={`${selectedCertificate.issuingOrganization} logo`}
+                  className={styles.modalLogo}
+                />
+                <div>
+                  <DialogTitle className={styles.modalTitle}>
+                    {selectedCertificate.title}
+                  </DialogTitle>
+                  <DialogDescription className={styles.modalOrg}>
+                    {selectedCertificate.issuingOrganization} •{" "}
                     {selectedCertificate.date}
-                  </span>
-                </div>
-                <div className={styles.infoItem}>
-                  <span className={styles.infoLabel}>Credential ID:</span>
-                  <span className={styles.infoValue}>
-                    {selectedCertificate.credentialId}
-                  </span>
+                  </DialogDescription>
                 </div>
               </div>
 
-              <div className={styles.modalDescription}>
-                <h4>Description</h4>
-                <p>{selectedCertificate.description}</p>
-              </div>
-
-              <div className={styles.modalSkills}>
-                <h4>Skills Covered</h4>
-                <div className={styles.skillsList}>
-                  {selectedCertificate.skills.map((skill, id) => (
-                    <span key={id} className={styles.modalSkillTag}>
-                      {skill}
+              <div className={styles.modalBody}>
+                <div className={styles.modalInfo}>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Issue Date:</span>
+                    <span className={styles.infoValue}>
+                      {selectedCertificate.date}
                     </span>
-                  ))}
+                  </div>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Credential ID:</span>
+                    <span className={styles.infoValue}>
+                      {selectedCertificate.credentialId}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {selectedCertificate.verificationUrl && (
-                <div className={styles.modalActions}>
-                  <a
-                    href={selectedCertificate.verificationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.modalVerifyButton}
-                  >
-                    Verify Certificate
-                  </a>
+                <div className={styles.modalDescription}>
+                  <h4>Description</h4>
+                  <p>{selectedCertificate.description}</p>
                 </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+
+                <div className={styles.modalSkills}>
+                  <h4>Skills Covered</h4>
+                  <div className={styles.skillsList}>
+                    {selectedCertificate.skills.map((skill, id) => (
+                      <span key={id} className={styles.modalSkillTag}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {selectedCertificate.verificationUrl && (
+                  <div className={styles.modalActions}>
+                    <a
+                      href={selectedCertificate.verificationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.modalVerifyButton}
+                    >
+                      Verify Certificate
+                    </a>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
