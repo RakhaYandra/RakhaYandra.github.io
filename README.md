@@ -75,6 +75,7 @@ RakhaYandra.github.io/
 │   │   ├── Faq/            # FAQ section (RareUI thread)
 │   │   ├── Footer/         # Dedicated copyright & status bar
 │   │   ├── GetInTouch/     # Recruiter-aligned call to action section
+│   │   ├── GitHub/           # Live contribution heatmap section
 │   │   ├── Hero/           # Greeting, profile image, & stats cards
 │   │   ├── Navbar/         # Collapsible responsive navigation bar
 │   │   ├── Organizations/  # Activities details modal & lists
@@ -82,7 +83,7 @@ RakhaYandra.github.io/
 │   │   ├── Publications/   # Research papers & recruiter summaries
 │   │   ├── Skills/         # Active categories grid & learning list
 │   │   ├── Writing/        # Backend architecture notes
-│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, dialog, dropdown-menu, tabs, faq, animated-counter)
+│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, dialog, dropdown-menu, tabs, select, collapsible, sheet, faq, scroll-progress, github-activity, animated-counter)
 │   ├── data/               # Content databases (JSON files)
 │   │   ├── certificates.json
 │   │   ├── history.json
