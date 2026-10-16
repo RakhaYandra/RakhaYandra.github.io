@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Faq.module.css";
+import { Faq as RareFaq } from "../ui/faq";
 
 const FAQS = [
   {
@@ -18,11 +19,14 @@ const FAQS = [
     q: "Are you available for remote, hybrid, or relocation contracts?",
     a: "Yes. Currently based in Medan (UTC+7), I am actively open to institutional full-time software engineering roles, distributed remote contracts across global timezones, as well as on-site positions with relocation to Jakarta / Bandung.",
   },
-];
+].map((item, index) => ({
+  id: `faq-${index + 1}`,
+  question: item.q,
+  answer: item.a,
+}));
 
 export const Faq = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [openIndex, setOpenIndex] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -57,34 +61,12 @@ export const Faq = () => {
         </a>
       </div>
 
-      <div className={`${styles.list} ${isVisible ? styles.slideUp : ""}`}>
-        {FAQS.map((item, id) => {
-          const open = openIndex === id;
-          return (
-            <div key={item.q} className={styles.item}>
-              <button
-                type="button"
-                className={styles.question}
-                onClick={() => setOpenIndex(open ? null : id)}
-                aria-expanded={open}
-              >
-                <span className={styles.qLeft}>
-                  <span className={styles.qNum}>
-                    • {String(id + 1).padStart(2, "0")}
-                  </span>
-                  <span className={styles.qText}>{item.q}</span>
-                </span>
-                <span
-                  className={`${styles.qIcon} ${open ? styles.qIconOpen : ""}`}
-                  aria-hidden="true"
-                >
-                  +
-                </span>
-              </button>
-              {open && <p className={styles.answer}>{item.a}</p>}
-            </div>
-          );
-        })}
+      <div className={isVisible ? styles.slideUp : undefined}>
+        <RareFaq
+          items={FAQS}
+          aria-label="Frequently asked questions"
+          className="max-w-none"
+        />
       </div>
     </section>
   );

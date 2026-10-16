@@ -1,5 +1,12 @@
+@layer theme, base, legacy, components, utilities;
+@import "tailwindcss";
 @import './vars.css';
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Legacy globals sit above Tailwind preflight but below utilities, so Tailwind
+   classes can override them while the existing design stays intact. */
+@layer legacy {
 
 /* Enhanced Reset & Base Styles */
 *,
@@ -419,4 +426,6 @@ img {
     --color-bg-secondary: #ffffff;
     --color-border: #0f172a;
   }
+}
+
 }

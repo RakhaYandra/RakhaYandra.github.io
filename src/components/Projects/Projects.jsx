@@ -4,6 +4,10 @@ import styles from "./Projects.module.css";
 
 import projectsData from "../../data/projects.json";
 import { ProjectCard } from "./ProjectCard";
+import { AnimatedCounter } from "../ui/animated-counter";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 export const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -138,17 +142,22 @@ export const Projects = () => {
                   />
                 </svg>
               </div>
-              <input
+              <Input
                 type="text"
                 placeholder="Search projects, skills, or technologies..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={styles.searchInput}
+                aria-label="Search projects"
+                className="h-11 pr-11 pl-11"
               />
               {searchTerm && (
-                <button
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
                   onClick={() => setSearchTerm("")}
-                  className={styles.clearSearch}
+                  aria-label="Clear search"
+                  className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full text-(--color-text-muted)"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                     <path
@@ -159,7 +168,7 @@ export const Projects = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </button>
+                </Button>
               )}
             </div>
 
@@ -167,7 +176,8 @@ export const Projects = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className={styles.sortSelect}
+                aria-label="Sort projects"
+                className="h-11 w-full cursor-pointer rounded-(--border-radius-md) border border-(--color-border) bg-(--color-bg-secondary) px-3 text-sm text-(--color-text-primary)"
               >
                 <option value="default">Default Order</option>
                 <option value="title">Sort by Title</option>
@@ -180,141 +190,150 @@ export const Projects = () => {
           <div className={styles.projectStats}>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
-                {filteredProjects().length}
+                <AnimatedCounter value={filteredProjects().length} />
               </span>
               <span className={styles.statLabel}>Projects Found</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>{allProjects.length}</span>
+              <span className={styles.statNumber}>
+                <AnimatedCounter value={allProjects.length} />
+              </span>
               <span className={styles.statLabel}>Total Projects</span>
             </div>
+            {filter !== "all" && (
+              <div className={styles.statItem}>
+                <Badge variant="accent" asSpan>
+                  {filter}
+                </Badge>
+                <span className={styles.statLabel}>Active Filter</span>
+              </div>
+            )}
           </div>
 
           <div className={styles.filterContainer}>
             <div className={styles.filters}>
-              <button
-                className={`${styles.filterBtn} ${
-                  filter === "all" ? styles.active : ""
-                }`}
+              <Button
+                type="button"
+                variant={filter === "all" ? "default" : "ghost"}
                 onClick={() => setFilter("all")}
               >
                 All Projects
-              </button>
-            {projectsData.projectTypes.map((type) => (
-              <button
-                key={type.name}
-                className={`${styles.filterBtn} ${
-                  filter === type.name ? styles.active : ""
-                }`}
-                onClick={() => setFilter(type.name)}
-                title={type.description}
-              >
-                <span className={styles.filterIcon}>{type.icon}</span>
-                {type.name}
-              </button>
-            ))}
+              </Button>
+              {projectsData.projectTypes.map((type) => (
+                <Button
+                  key={type.name}
+                  type="button"
+                  variant={filter === type.name ? "default" : "ghost"}
+                  onClick={() => setFilter(type.name)}
+                  title={type.description}
+                >
+                  <span aria-hidden="true">{type.icon}</span>
+                  {type.name}
+                </Button>
+              ))}
 
-            {/* Technology Filters */}
-            <div className={styles.filterDivider}></div>
-            {["react", "javascript", "python", "ai", "ml"].map((tech) => (
-              <button
-                key={tech}
-                className={`${styles.filterBtn} ${styles.techFilter} ${
-                  filter === tech ? styles.active : ""
-                }`}
-                onClick={() => setFilter(tech)}
-              >
-                {tech === "ai"
-                  ? "AI"
-                  : tech === "ml"
-                  ? "ML"
-                  : tech.charAt(0).toUpperCase() + tech.slice(1)}
-              </button>
-            ))}
+              {/* Technology Filters */}
+              <div className={styles.filterDivider}></div>
+              {["react", "javascript", "python", "ai", "ml"].map((tech) => (
+                <Button
+                  key={tech}
+                  type="button"
+                  size="sm"
+                  variant={filter === tech ? "default" : "secondary"}
+                  onClick={() => setFilter(tech)}
+                  className="font-mono text-xs uppercase"
+                >
+                  {tech === "ai"
+                    ? "AI"
+                    : tech === "ml"
+                    ? "ML"
+                    : tech.charAt(0).toUpperCase() + tech.slice(1)}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       <div className={styles.projectsContainer}>
-          <div className={styles.projects}>
-            {filteredProjects().map((project, id) => (
-              <div
-                key={`${project.title}-${id}`}
-                id={projectSlug(project.title)}
-                className={styles.projectWrapper}
-                style={{ "--delay": `${id * 0.1}s` }}
-              >
-                <ProjectCard project={project} index={id} />
-              </div>
-            ))}
-          </div>
-
-          {filteredProjects().length === 0 && (
-            <div className={styles.noProjects}>
-              <div className={styles.noProjectsIcon}>
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M7.5 4.21l4.5 2.6 4.5-2.6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M7.5 19.79V14.6L3 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M21 12l-4.5 2.6v5.19"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M3.27 6.96L12 12.01l8.73-5.05"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 22.08V12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3>No Projects Found</h3>
-              <p>
-                Try adjusting your search terms or filters to find what
-                you&apos;re looking for.
-              </p>
-              <button
-                onClick={() => {
-                  setFilter("all");
-                  setSearchTerm("");
-                  setSortBy("default");
-                }}
-                className={styles.resetFilters}
-              >
-                Reset Filters
-              </button>
+        <div className={styles.projects}>
+          {filteredProjects().map((project, id) => (
+            <div
+              key={`${project.title}-${id}`}
+              id={projectSlug(project.title)}
+              className={styles.projectWrapper}
+              style={{ "--delay": `${id * 0.1}s` }}
+            >
+              <ProjectCard project={project} index={id} />
             </div>
-          )}
+          ))}
         </div>
+
+        {filteredProjects().length === 0 && (
+          <div className={styles.noProjects}>
+            <div className={styles.noProjectsIcon}>
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M7.5 4.21l4.5 2.6 4.5-2.6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M7.5 19.79V14.6L3 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M21 12l-4.5 2.6v5.19"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3.27 6.96L12 12.01l8.73-5.05"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 22.08V12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>No Projects Found</h3>
+            <p>
+              Try adjusting your search terms or filters to find what
+              you&apos;re looking for.
+            </p>
+            <Button
+              type="button"
+              onClick={() => {
+                setFilter("all");
+                setSearchTerm("");
+                setSortBy("default");
+              }}
+            >
+              Reset Filters
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

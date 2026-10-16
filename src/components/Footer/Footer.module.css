@@ -103,6 +103,17 @@
   font-size: 0.75rem;
 }
 
+.credits {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.credits a {
+  color: inherit;
+}
+
 .watermark {
   width: 100%;
   user-select: none;

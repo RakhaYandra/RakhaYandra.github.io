@@ -1,4 +1,4 @@
-/* FAQ — hairline accordion */
+/* FAQ — section header; the thread itself comes from the ui/faq component */
 .container {
   width: 100%;
 }
@@ -49,98 +49,6 @@
   letter-spacing: 0.06em;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  border-radius: 1rem;
-  overflow: hidden;
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-}
-
-.list > .item + .item {
-  border-top: 1px solid var(--color-border-muted);
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  transition: background 0.2s ease;
-}
-
-.item:hover {
-  background: var(--color-bg-tertiary);
-}
-
-.question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-  width: 100%;
-  font: inherit;
-}
-
-.qLeft {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.qNum {
-  border-radius: var(--border-radius-sm);
-  background: var(--color-tint-bg);
-  border: 1px solid var(--color-tint-border);
-  padding: 0.25rem 0.625rem;
-  font-family: var(--font-family-mono);
-  font-size: 0.75rem;
-  color: var(--color-accent-dark);
-  text-transform: uppercase;
-  font-weight: var(--font-weight-bold);
-  white-space: nowrap;
-}
-
-.qText {
-  font-size: 1.125rem;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-}
-
-.qIcon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--color-bg-tertiary);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-secondary);
-  font-size: 1.25rem;
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-
-.qIconOpen {
-  transform: rotate(45deg);
-}
-
-.answer {
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  max-width: 56rem;
-  margin: 1rem 0 0 0;
-  padding-left: 3rem;
-}
-
 .slideUp {
   animation: slideUpFade 0.8s ease-out forwards;
 }
@@ -159,13 +67,5 @@
 @media (max-width: 640px) {
   .title {
     font-size: 1.75rem;
-  }
-
-  .qText {
-    font-size: 1rem;
-  }
-
-  .answer {
-    padding-left: 0;
   }
 }

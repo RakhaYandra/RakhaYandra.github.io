@@ -61,7 +61,17 @@ export const Footer = () => {
           <span>
             © {currentYear} RAKHA PUTRA PEBRI YANDRA • SYSTEM VERIFIED ARCHITECTURE
           </span>
-          <span>RUNTIME: GO // .NET // LINUX</span>
+          <span className={styles.credits}>
+            <span>RUNTIME: GO // .NET // LINUX</span>
+            <span aria-hidden="true">•</span>
+            <a
+              href="https://rareui.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              UI COMPONENTS BY RARE UI
+            </a>
+          </span>
         </div>
       </div>
       <div className={styles.watermark} aria-hidden="true">

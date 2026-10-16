@@ -40,6 +40,14 @@ This website acts as a comprehensive resume, demonstrating to HR recruiters, tec
 *   **Typography**: Outfit & Roboto (preloaded via Google Fonts)
 *   **Hosting & Deployment**: GitHub Pages
 
+### UI components (pilot)
+
+Tailwind CSS v4 + shadcn-style primitives live in `src/components/ui/`, used alongside the existing CSS Modules.
+
+*   `src/index.css` declares `@layer theme, base, legacy, components, utilities;` — Tailwind utilities win over the legacy globals, which in turn win over Tailwind's preflight. CSS Modules stay unlayered and therefore keep beating both.
+*   Tailwind theme values are read from `vars.css` (no duplicated token set).
+*   Animated components are adapted from [Rare UI](https://rareui.com) (MIT + Commons Clause + Attribution). Their credit notice is kept in the source files and the site footer.
+
 ---
 
 ## 📁 Folder Structure
