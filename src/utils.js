@@ -3,8 +3,19 @@
  * @param {string} path - The relative path to the image in assets folder
  * @returns {string} - The resolved image URL
  */
+const assetUrls = import.meta.glob("../assets/**/*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+/**
+ * Utility function to get image URL with proper path resolution
+ * @param {string} path - The relative path to the image in assets folder
+ * @returns {string} - The resolved image URL
+ */
 export const getImageUrl = (path) => {
-  return new URL(`/assets/${path}`, import.meta.url).href;
+  return assetUrls[`../assets/${path}`];
 };
 
 /**
