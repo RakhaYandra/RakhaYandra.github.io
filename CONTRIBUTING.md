@@ -82,7 +82,7 @@ The portfolio focuses on:
 
 *   **Lazy Loading**: Use Code Splitting for heavy assets or secondary routes. Use `lazyLoadImage` or the Intersection Observer hook to defer loading of off-screen components.
 *   **Asset Optimization**: Use WebP or SVG format for illustrations and icons. Avoid uploading large raw images; compress assets before placing them in `assets/`.
-*   **Bundle Size**: Keep production bundles small by avoiding large external libraries. Optimize Webpack/Rollup chunks inside `vite.config.js`.
+*   **Bundle Size**: Keep production bundles small by avoiding large external libraries. Optimize Vite/Rollup chunks inside `vite.config.js`.
 
 ---
 

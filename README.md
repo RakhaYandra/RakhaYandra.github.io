@@ -6,7 +6,7 @@ The portfolio is designed to present my versatility across multiple IT functions
 
 ![Portfolio Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)
-![Vite](https://img.shields.io/badge/Vite-4.4.5-yellow?style=for-the-badge&logo=vite)
+![Vite](https://img.shields.io/badge/Vite-6.4-yellow?style=for-the-badge&logo=vite)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
@@ -36,7 +36,7 @@ This website acts as a comprehensive resume, demonstrating to HR recruiters, tec
 ## 🛠️ Tech Stack
 
 *   **Core**: HTML5, Vanilla CSS3 (Custom Variables), JavaScript (ES6+), React 18.2.0
-*   **Build Tooling**: Vite 4.4.5, Terser Minifier, ESLint
+*   **Build Tooling**: Vite 6.4, Terser Minifier, ESLint
 *   **UI primitives**: Tailwind CSS v4, Radix UI (dialog, dropdown-menu, tabs, slot), Motion, class-variance-authority
 *   **Typography**: Outfit & Roboto (preloaded via Google Fonts)
 *   **Hosting & Deployment**: GitHub Pages
