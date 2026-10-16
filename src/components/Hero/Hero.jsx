@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
+import { AnimatedCounter } from "../ui/animated-counter";
 
 export const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -60,12 +61,16 @@ export const Hero = () => {
         >
           <div className={styles.statCard}>
             <div className={styles.statLabel}>GPA / MERIT</div>
-            <div className={styles.statNumber}>3.81</div>
+            <div className={styles.statNumber}>
+              <AnimatedCounter value={3.81} decimals={2} />
+            </div>
             <div className={styles.statSub}>Cum Laude</div>
           </div>
           <div className={styles.statCard}>
             <div className={styles.statLabel}>TEST PASS RATE</div>
-            <div className={styles.statNumber}>100%</div>
+            <div className={styles.statNumber}>
+              <AnimatedCounter value={100} suffix="%" />
+            </div>
             <div className={styles.statSub}>267+ Assertions</div>
           </div>
           <div className={styles.statCard}>

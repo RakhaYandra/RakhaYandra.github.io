@@ -447,6 +447,26 @@ img {
   to { height: 0; opacity: 0; }
 }
 
+@keyframes sheetInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes sheetOutRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes sheetInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes sheetOutLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
 /* Motion Preferences */
 @media (prefers-reduced-motion: reduce) {  html {
     scroll-behavior: auto;

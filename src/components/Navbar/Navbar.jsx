@@ -7,6 +7,13 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "../ui/dropdown-menu";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "../ui/sheet";
 import styles from "./Navbar.module.css";
 
 export const Navbar = () => {
@@ -58,22 +65,50 @@ export const Navbar = () => {
         </a>
 
         <div className={styles.menu}>
-          <button
-            className={`${styles.menuBtn} ${menuOpen ? styles.menuOpen : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+            <SheetTrigger
+              className={`${styles.menuBtn} ${menuOpen ? styles.menuOpen : ""}`}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </SheetTrigger>
 
-          <ul
-            className={`${styles.menuItems} ${
-              menuOpen ? styles.menuItemsOpen : ""
-            }`}
-            onClick={() => setMenuOpen(false)}
-          >
+            <SheetContent aria-label="Site navigation">
+              <SheetHeader>
+                <SheetTitle>Navigate</SheetTitle>
+              </SheetHeader>
+              <nav className={styles.sheetLinks}>
+                {mainMenuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className={styles.menuItem}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span className={styles.menuNumber}>{item.number}</span>
+                    <span>{item.label}</span>
+                  </a>
+                ))}
+                {moreMenuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className={styles.menuItem}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span className={styles.dropdownIcon} aria-hidden="true">
+                      {item.icon}
+                    </span>
+                    <span>{item.label}</span>
+                  </a>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+
+          <ul className={styles.menuItems}>
             {mainMenuItems.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className={styles.menuItem}>
