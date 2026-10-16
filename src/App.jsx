@@ -14,6 +14,7 @@ import { Publications } from "./components/Publications/Publications";
 import { Skills } from "./components/Skills/Skills";
 import { Footer } from "./components/Footer/Footer";
 import { Writing } from "./components/Writing/Writing";
+import { GitHub } from "./components/GitHub/GitHub";
 import { ScrollProgress } from "./components/ui/scroll-progress";
 
 const SECTIONS = [
@@ -24,6 +25,7 @@ const SECTIONS = [
   { id: "publications", label: "Publications" },
   { id: "certificates", label: "Certificates" },
   { id: "organizations", label: "Organizations" },
+  { id: "open-source", label: "Open Source" },
   { id: "projects", label: "Projects" },
   { id: "writing", label: "Writing" },
   { id: "faq", label: "FAQ" },
@@ -47,6 +49,7 @@ function App() {
           <Publications />
           <Certificates />
           <Organizations />
+          <GitHub />
           <Projects />
           <Writing />
           <Faq />
