@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getImageUrl } from "../../utils";
 import { useTheme } from "../../hooks/useTheme";
+import { GooeyNav } from "../ui/gooey-nav";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -16,9 +17,27 @@ import {
 } from "../ui/sheet";
 import styles from "./Navbar.module.css";
 
+const mainMenuItems = [
+  { href: "#about", label: "About", number: "01" },
+  { href: "#education", label: "Education", number: "02" },
+  { href: "#skills", label: "Skills", number: "03" },
+  { href: "#experience", label: "Experience", number: "04" },
+  { href: "#projects", label: "Projects", number: "05" },
+  { href: "#contact", label: "Contact", number: "06" },
+];
+
+const moreMenuItems = [
+  { href: "#certificates", label: "Certificates", icon: "🏆" },
+  { href: "#organizations", label: "Organizations", icon: "🏢" },
+  { href: "#publications", label: "Publications", icon: "📚" },
+  { href: "#writing", label: "Writing", icon: "✍️" },
+  { href: "#faq", label: "FAQ", icon: "❓" },
+];
+
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState(0);
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
 
@@ -32,22 +51,20 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const mainMenuItems = [
-    { href: "#about", label: "About", number: "01" },
-    { href: "#education", label: "Education", number: "02" },
-    { href: "#skills", label: "Skills", number: "03" },
-    { href: "#experience", label: "Experience", number: "04" },
-    { href: "#projects", label: "Projects", number: "05" },
-    { href: "#contact", label: "Contact", number: "06" },
-  ];
+  useEffect(() => {
+    const updateActive = () => {
+      let current = 0;
+      mainMenuItems.forEach((item, i) => {
+        const el = document.getElementById(item.href.slice(1));
+        if (el && el.getBoundingClientRect().top <= 120) current = i;
+      });
+      setActiveSection(current);
+    };
 
-  const moreMenuItems = [
-    { href: "#certificates", label: "Certificates", icon: "🏆" },
-    { href: "#organizations", label: "Organizations", icon: "🏢" },
-    { href: "#publications", label: "Publications", icon: "📚" },
-    { href: "#writing", label: "Writing", icon: "✍️" },
-    { href: "#faq", label: "FAQ", icon: "❓" },
-  ];
+    updateActive();
+    window.addEventListener("scroll", updateActive, { passive: true });
+    return () => window.removeEventListener("scroll", updateActive);
+  }, []);
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
@@ -108,18 +125,28 @@ export const Navbar = () => {
             </SheetContent>
           </Sheet>
 
-          <ul className={styles.menuItems}>
-            {mainMenuItems.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} className={styles.menuItem}>
-                  <span className={styles.menuNumber}>{item.number}</span>
-                  <span>{item.label}</span>
-                </a>
-              </li>
-            ))}
+          <div className={styles.menuItems}>
+            <GooeyNav
+              className={styles.gooey}
+              items={mainMenuItems.map((item, i) => ({
+                href: item.href,
+                label: item.label,
+                icon: (
+                  <span
+                    className={styles.menuNumber}
+                    style={activeSection === i ? { color: "inherit" } : undefined}
+                  >
+                    {item.number}
+                  </span>
+                ),
+              }))}
+              value={activeSection}
+              onChange={setActiveSection}
+              size="xs"
+            />
 
             {/* More Dropdown */}
-            <li className={styles.dropdownContainer}>
+            <div className={styles.dropdownContainer}>
               <DropdownMenu>
                 <DropdownMenuTrigger
                   className={`${styles.menuItem} ${styles.dropdownToggle}`}
@@ -161,8 +188,8 @@ export const Navbar = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
 
         {/* CTA Button */}
