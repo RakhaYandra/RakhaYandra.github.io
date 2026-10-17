@@ -2,6 +2,24 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Skills.module.css";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
 import { AnimatedCounter } from "../ui/animated-counter";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import skillsData from "../../data/skills.json";
+
+const PROFICIENCY = new Map(
+  Object.values(skillsData.categories)
+    .flat()
+    .map((s) => [s.title, s.proficiency])
+);
+
+const CHIP_SKILL = {
+  "Go / Golang": "Golang",
+  "ASP.NET Core": "Blazor/.NET",
+  "C# / EF Core": "Blazor/.NET",
+  "Newman CLI": "Newman",
+  "Cypress E2E": "Cypress (QA Testing)",
+  "React.js SPA": "React",
+  "MySQL / SQLite": "MySQL",
+};
 
 const MODULES = [
   {
@@ -103,11 +121,26 @@ export const Skills = () => {
             <h3 className={styles.cardTitle}>{mod.title}</h3>
             <p className={styles.cardDesc}>{mod.description}</p>
             <div className={styles.chips}>
-              {mod.chips.map((chip) => (
-                <span key={chip} className={styles.chip}>
-                  {chip}
-                </span>
-              ))}
+              {mod.chips.map((chip) => {
+                const level = PROFICIENCY.get(CHIP_SKILL[chip] ?? chip);
+                if (!level) {
+                  return (
+                    <span key={chip} className={styles.chip}>
+                      {chip}
+                    </span>
+                  );
+                }
+                return (
+                  <Tooltip key={chip}>
+                    <TooltipTrigger asChild>
+                      <span className={styles.chip} tabIndex={0}>
+                        {chip}
+                      </span>
+                    </TooltipTrigger>
+                    <TooltipContent>Proficiency: {level}%</TooltipContent>
+                  </Tooltip>
+                );
+              })}
               {mod.highlight && (
                 <span className={`${styles.chip} ${styles.chipOk}`}>
                   {mod.highlight}
