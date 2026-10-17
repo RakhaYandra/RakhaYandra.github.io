@@ -69,6 +69,7 @@ RakhaYandra.github.io/
 │   ├── components/         # Modular layout components
 │   │   ├── About/          # Info grid & capability-based cards
 │   │   ├── Certificates/   # Certificates modal & lists
+│   │   ├── CommandPalette.jsx # ⌘K palette: sections, projects, links
 │   │   ├── Education/      # Honors timeline & focus descriptions
 │   │   ├── ErrorBoundary/  # Crash safety wrapper
 │   │   ├── Experience/     # Job timeline rendering tech stacks
@@ -83,8 +84,8 @@ RakhaYandra.github.io/
 │   │   ├── Publications/   # Research papers & recruiter summaries
 │   │   ├── Skills/         # Active categories grid & learning list
 │   │   ├── Writing/        # Backend architecture notes
-│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, dialog, dropdown-menu, tabs, select, collapsible, sheet, faq, scroll-progress, github-activity, animated-counter)
-│   ├── data/               # Content databases (JSON files)
+│   │   └── ui/             # Shared Tailwind primitives (button, input, badge, dialog, dropdown-menu, tabs, select, collapsible, sheet, tooltip, command, gooey-nav, faq, scroll-progress, github-activity, animated-counter)
+│   ├── data/               # JSON content databases + shared constants (sections, project slugs)
 │   │   ├── certificates.json
 │   │   ├── history.json
 │   │   ├── organizations.json

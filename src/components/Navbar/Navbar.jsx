@@ -34,7 +34,7 @@ const moreMenuItems = [
   { href: "#faq", label: "FAQ", icon: "❓" },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ onOpenPalette }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
@@ -194,6 +194,14 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className={styles.navActions}>
+          <button
+            type="button"
+            className={styles.paletteBtn}
+            onClick={onOpenPalette}
+            aria-label="Open command palette"
+          >
+            ⌘K
+          </button>
           <span className={styles.availBadge}>
             <span className={styles.availDot}></span>
             AVAILABLE FOR HIRE
