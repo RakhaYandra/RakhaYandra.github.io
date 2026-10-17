@@ -1,0 +1,11 @@
+# Rakha Putra Pebri Yandra — Portfolio
+
+> Information Systems Generalist (Telkom University, Cum Laude 3.81).
+> Build · Analyze · Assure across software development, systems analysis, and QA automation.
+
+- Homepage: https://rakhayandra.github.io/
+- Sections: #about #education #skills #experience #publications #certificates #organizations #projects #contact
+- Flagship proof: IEEE ICoDSA 2025 conference paper on a modular Laravel–Flask backend for real-time air quality forecasting (DOI: https://doi.org/10.1109/ICoDSA67155.2025.11157609)
+- Platforms: Shiftbase (scheduling & attendance REST API, Go/Gin + MySQL) and LifeOS (personal OS API, Go/Gin + SQLite) — each with API, web dashboard, QA automation, data pipeline, and ops runbook repos
+- Contact: email rakhaputrapebriyandra272@gmail.com or LinkedIn https://www.linkedin.com/in/rakhaputrapebriyandra — phone/WhatsApp available on request
+- Hiring: open to remote, hybrid, or on-site IT roles
