@@ -1,0 +1,206 @@
+.page {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+
+.hud {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  pointer-events: none;
+}
+
+.hud > * {
+  pointer-events: auto;
+}
+
+.hudLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-accent);
+  text-decoration: none;
+}
+
+.sheetCode {
+  font-family: var(--font-family-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.sheetTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.hudRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.readout {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  font-size: var(--font-size-sm);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.iconButton:hover {
+  border-color: var(--color-border-accent);
+  background: var(--color-bg-card-hover);
+}
+
+.zoneNav {
+  position: absolute;
+  left: 50%;
+  bottom: var(--spacing-lg);
+  z-index: 2;
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  transform: translateX(-50%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  max-width: calc(100% - var(--spacing-lg));
+  overflow-x: auto;
+}
+
+.zoneButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.zoneButton:hover,
+.zoneButtonActive {
+  background: var(--color-tint-bg);
+  box-shadow: inset 0 0 0 1px var(--color-tint-border);
+}
+
+.zoneCode {
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+}
+
+.zoneButtonActive .zoneCode {
+  color: var(--color-accent);
+}
+
+.zoneLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.hint {
+  position: absolute;
+  right: var(--spacing-lg);
+  bottom: var(--spacing-lg);
+  text-align: right;
+  z-index: 2;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  background: var(--color-bg-primary);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: var(--border-radius-full);
+  animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1360px) {
+  .hint {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hint,
+  .readout,
+  .sheetCode,
+  .sheetTitle {
+    display: none;
+  }
+
+  .zoneNav {
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    transform: none;
+    max-width: none;
+    bottom: var(--spacing-sm);
+  }
+}
