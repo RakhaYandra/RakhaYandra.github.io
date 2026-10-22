@@ -32,6 +32,7 @@ const moreMenuItems = [
   { href: "#publications", label: "Publications", icon: "📚" },
   { href: "#writing", label: "Writing", icon: "✍️" },
   { href: "#faq", label: "FAQ", icon: "❓" },
+  { href: "/3d/", label: "3D Blueprint", icon: "📐" },
 ];
 
 export const Navbar = ({ onOpenPalette }) => {
