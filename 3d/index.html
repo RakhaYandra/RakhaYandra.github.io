@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="canonical" href="https://rakhayandra.github.io/3d/" />
+    <meta
+      name="description"
+      content="Rakha Putra Pebri Yandra — CV presented as an interactive 3D blueprint: experience, skills, projects, certificates and publications."
+    />
+    <meta name="theme-color" content="#fbfbfb" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <title>Blueprint CV — Rakha Putra Pebri Yandra</title>
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("porto-theme");
+          var t =
+            s === "dark" || s === "light"
+              ? s
+              : window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.classList.toggle("dark", t === "dark");
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", t === "dark" ? "#000000" : "#fbfbfb");
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/js/blueprint-CTIzed6V.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/js/vendor-uyROrg2y.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/useTheme-DobocYnm.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/three-BQnpQ8lA.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/utils-DZSVog45.js">
+    <link rel="stylesheet" crossorigin href="/assets/css/useTheme-qwYOKb08.css">
+    <link rel="stylesheet" crossorigin href="/assets/css/blueprint-C3XCHjzi.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6">
+        The 3D blueprint CV needs JavaScript. The standard portfolio is still
+        available at <a href="/">rakhayandra.github.io</a>.
+      </p>
+    </noscript>
+  </body>
+</html>
