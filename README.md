@@ -30,6 +30,7 @@ This website acts as a comprehensive resume, demonstrating to HR recruiters, tec
 *   **♿ Accessible**: Proper HTML5 landmarks, clear tab index focus indicator rings, and a skip-navigation link for screen readers.
 *   **🔍 Optimized SEO & Schema**: Features comprehensive meta tags, OpenGraph validation parameters, and customized structured JSON-LD data for search crawlers.
 *   **🤖 Image Fallbacks**: An internal React state-based fallback system that handles missing skill/learning icons cleanly.
+*   **🧊 3D Blueprint CV**: A separate `/3d` entry renders the whole CV as an interactive isometric blueprint (three.js, lazy-loaded chunk) without touching the main page bundle.
 
 ---
 
@@ -38,6 +39,7 @@ This website acts as a comprehensive resume, demonstrating to HR recruiters, tec
 *   **Core**: HTML5, Vanilla CSS3 (Custom Variables), JavaScript (ES6+), React 18.2.0
 *   **Build Tooling**: Vite 6.4, Terser Minifier, ESLint
 *   **UI primitives**: Tailwind CSS v4, Radix UI (dialog, dropdown-menu, tabs, slot), Motion, class-variance-authority
+*   **3D page**: three.js (WebGLRenderer, OrbitControls) in an isolated `/3d` entry
 *   **Typography**: Outfit & Roboto (preloaded via Google Fonts)
 *   **Hosting & Deployment**: GitHub Pages
 
@@ -65,7 +67,10 @@ RakhaYandra.github.io/
 │   ├── organizations/      # Organizational banners
 │   ├── projects/           # Showcase previews
 │   └── skills/             # Technology icons
+├── 3d/                     # Second Vite entry: /3d blueprint page
+│   └── index.html          # Theme bootstrap + meta for the 3D view
 ├── src/                    # React application source code
+│   ├── blueprint/          # 3D page: scene, zones, sheets, palette
 │   ├── components/         # Modular layout components
 │   │   ├── About/          # Info grid & capability-based cards
 │   │   ├── Certificates/   # Certificates modal & lists
@@ -149,6 +154,16 @@ All text content is decoupled from components. To update content, modify the cor
 *   **Project Showcase**: Edit `src/data/projects.json` to update links, teams, descriptions, or change filters.
 *   **Organizations & Leadership**: Edit `src/data/organizations.json` to adjust roles, details, or achievements.
 *   **Academic Publications**: Edit `src/data/publications.json` to edit research papers or add recruiter summaries.
+*   **FAQ & Education**: Edit `src/data/faq.json` and `src/data/education.json`; both the main sections and the 3D sheets read from them.
+
+### 3D Blueprint CV (`/3d`)
+
+`3d/index.html` is a second Vite entry (`rollupOptions.input` in `vite.config.js`), so `/3d/` deploys as a static page next to the portfolio. The three.js chunk is only requested there.
+
+*   **Zone layout**: `src/blueprint/data/zones.js` holds the five zone keys and their position/size on the 22 × 14 plan. Sheet copy and tab wiring live in `src/blueprint/components/ZoneContent.jsx`.
+*   **Scene**: `src/blueprint/scene/` draws the board, block labels, and camera moves. Colours are read at runtime from `src/vars.css`, so light/dark follow the same `porto-theme` setting as the main site. Zone labels are real DOM nodes via `CSS2DRenderer`, and the camera tweens run on `motion`.
+*   **Controls**: hover/click a zone, `Ctrl`/`⌘ + K` to jump, `←`/`→` between zones, `Esc` to close, and pan/pinch on touch. `prefers-reduced-motion` skips the camera tween.
+*   **Dark-mode glow**: the dark theme renders through a `postprocessing` composer with a selective bloom limited to zone outlines; the light theme bypasses the composer entirely.
 
 ---
 

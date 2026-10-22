@@ -1,0 +1,59 @@
+/* CSS2D labels live outside React, so these class names stay global and
+   scoped by the bp- prefix instead of CSS Modules. */
+
+.bp-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bp-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 9px;
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-bg-glass-strong);
+  backdrop-filter: blur(10px);
+  color: var(--color-text-primary);
+  text-align: left;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  animation: bp-label-in 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bp-label:hover,
+.bp-label:focus-visible {
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.bp-label-title {
+  font-family: var(--font-family-mono);
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  color: var(--color-text-accent);
+}
+
+.bp-label-code {
+  font-family: var(--font-family-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+@keyframes bp-label-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

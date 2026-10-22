@@ -1,5 +1,9 @@
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+
+const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,9 +12,14 @@ export default defineConfig({
     outDir: "build",
     sourcemap: false, // Disable sourcemaps in production for smaller build
     rollupOptions: {
+      input: {
+        main: resolve(rootDir, "index.html"),
+        blueprint: resolve(rootDir, "3d/index.html"),
+      },
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
+          three: ['three'],
           utils: ['./src/utils.js']
         },
         assetFileNames: (assetInfo) => {

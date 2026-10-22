@@ -95,6 +95,10 @@ export const Hero = () => {
           <a href="#project-thesis" className={styles.secondaryCta}>
             <span>VIEW IEEE PUBLICATION</span>
           </a>
+          <a href="/3d/" className={styles.cvButton}>
+            <span aria-hidden="true">◈</span>
+            <span>3D BLUEPRINT CV</span>
+          </a>
           <a
             href="https://drive.google.com/file/d/1TaKJOdJJHmVEeZt7Ck2CnjJ7GLS531g-/view?usp=sharing"
             className={styles.cvButton}
