@@ -94,6 +94,58 @@
   ],
   "Solo": [
    {
+    "title": "Hibiki — Systemd Journal Timeline CLI",
+    "description": "Read-only timeline over the systemd journal: one structured event model, rule-based incident correlation that states its reasons and shows evidence, and an analysis budget measured on a 10,000-event fixture.",
+    "myRole": "Solo — Go, correlation engine, TUI, testing",
+    "outcome": [
+     "v0.3.0: correlation engine with explicit reasons and 500 ms budget held with 4-5x headroom",
+     "307 test functions across 51 files; linux amd64/arm64 releases with SHA256SUMS"
+    ],
+    "skills": [
+     "Go",
+     "Linux",
+     "systemd",
+     "CLI",
+     "Concurrency"
+    ],
+    "source": "https://github.com/RakhaYandra/hibiki",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/hibiki",
+     "docs": "https://github.com/RakhaYandra/hibiki/releases"
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
+    "title": "Shiro — Storage Inventory CLI",
+    "description": "Bottom-up filesystem scan with hardlink deduplication and sparse-file awareness. Stable JSON schema, exit-code contract, and a SQLite inventory you can query after the scan.",
+    "myRole": "Solo — Go, filesystem scanning, SQLite",
+    "outcome": [
+     "v0.3.0: scan, JSON schema v1, SQLite inventory, exit codes 0/2/3",
+     "111 test functions; linux amd64/arm64 releases with checksums"
+    ],
+    "skills": [
+     "Go",
+     "Linux",
+     "SQLite",
+     "CLI",
+     "Testing"
+    ],
+    "source": "https://github.com/RakhaYandra/shiro",
+    "links": {
+     "live": null,
+     "repo": "https://github.com/RakhaYandra/shiro",
+     "docs": "https://github.com/RakhaYandra/shiro/releases"
+    },
+    "duration": "Oct 2026",
+    "imageSrc": "projects/project.png",
+    "demo": null,
+    "workType": "Solo"
+   },
+   {
     "title": "Kage — Configuration State Manager",
     "description": "Linux-first CLI that snapshots dotfiles and configs into a local Git repo, diffs drift, restores selectively with checkpoints and conflict checks, and audits secrets. Local-only, secrets blocked by default.",
     "myRole": "Solo — Go, Cobra CLI, Bubble Tea TUI, testing",
