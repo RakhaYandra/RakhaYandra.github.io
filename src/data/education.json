@@ -1,0 +1,51 @@
+{
+  "education": [
+    {
+      "id": "university",
+      "institution": "Telkom University — Bachelor of Information Systems",
+      "degree": "S.Kom",
+      "major": "Enterprise Information Systems, Distributed Databases, Verification Harnesses",
+      "period": "2021 – 2025",
+      "location": "Bandung, Indonesia",
+      "status": "Cum Laude",
+      "gpa": "3.81 / 4.00",
+      "description": "Graduated with Cum Laude distinction. Specialized in Enterprise Information Systems, Distributed Database Architectures, and Automated Verification Harnesses.",
+      "highlights": [
+        "Distributed Systems & Cloud Architecture",
+        "Database Management Systems (RDBMS & NoSQL)",
+        "Software Verification, QA & Testing",
+        "Enterprise Architecture (TOGAF / Zachman)",
+        "Algorithms & Data Structures"
+      ]
+    },
+    {
+      "id": "highschool",
+      "institution": "SMK Telkom 1 Medan",
+      "degree": "High School Diploma",
+      "major": "Telecommunications Engineering",
+      "period": "2018 – 2021",
+      "location": "Medan, Indonesia",
+      "status": "Graduated",
+      "gpa": null,
+      "description": "Specialized in Telecommunications Engineering with focus on Electronics and Network Systems. Technical foundation for systems thinking.",
+      "highlights": [
+        "Electronics & Telecommunications",
+        "Fiber Optics Technology",
+        "Radio Communication Systems",
+        "Fiber to the Home (FTTH)"
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "label": "GRANT",
+      "title": "2023 Student Creativity Program (PKM) Grant Recipient",
+      "description": "Product designer in a team developing a secure digital lock payment system using IoT and mobile technologies."
+    },
+    {
+      "label": "HONORS",
+      "title": "Cum Laude Graduate",
+      "description": "Graduated with honors, demonstrating exceptional academic performance and commitment to excellence."
+    }
+  ]
+}
