@@ -190,7 +190,7 @@ export function createBlueprintScene({
   }
 
   function moveTo(target, distance) {
-    stopTween?.();
+    stopTween?.stop?.();
     stopTween = null;
 
     if (reducedMotion) {
@@ -402,7 +402,7 @@ export function createBlueprintScene({
 
   function dispose() {
     disposed = true;
-    stopTween?.();
+    stopTween?.stop?.();
     cancelAnimationFrame(frame);
     resizeObserver.disconnect();
     canvas.removeEventListener("pointermove", handlePointerMove);
