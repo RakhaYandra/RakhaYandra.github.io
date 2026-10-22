@@ -122,6 +122,30 @@ export const Hero = () => {
             </svg>
             <span>Download CV</span>
           </a>
+          <a
+            href="https://drive.google.com/file/d/14Lc1dxPWGVbzzExZg46ckDDkbIGKxc4Z/view?usp=sharing"
+            className={styles.cvButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={styles.downloadIcon}
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="13" x2="15" y2="13" />
+              <line x1="9" y1="17" x2="15" y2="17" />
+            </svg>
+            <span>Portfolio PDF</span>
+          </a>
         </div>
 
         {/* Social Links */}
