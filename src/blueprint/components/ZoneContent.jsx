@@ -31,7 +31,9 @@ const TABS = {
 
 const ALL_PROJECTS = Object.entries(projectsData.categories)
   .flatMap(([category, items]) =>
-    items.map((item) => ({ ...item, category }))
+    items
+      .filter((item) => !item.hidden)
+      .map((item) => ({ ...item, category }))
   )
   .sort((a, b) => Number(b.featured) - Number(a.featured));
 
