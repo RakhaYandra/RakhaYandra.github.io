@@ -161,8 +161,9 @@ All text content is decoupled from components. To update content, modify the cor
 `3d/index.html` is a second Vite entry (`rollupOptions.input` in `vite.config.js`), so `/3d/` deploys as a static page next to the portfolio. The three.js chunk is only requested there.
 
 *   **Zone layout**: `src/blueprint/data/zones.js` holds the five zone keys and their position/size on the 22 × 14 plan. Sheet copy and tab wiring live in `src/blueprint/components/ZoneContent.jsx`.
-*   **Scene**: `src/blueprint/scene/` draws the board, block labels, and camera moves. Colours are read at runtime from `src/vars.css`, so light/dark follow the same `porto-theme` setting as the main site.
+*   **Scene**: `src/blueprint/scene/` draws the board, block labels, and camera moves. Colours are read at runtime from `src/vars.css`, so light/dark follow the same `porto-theme` setting as the main site. Zone labels are real DOM nodes via `CSS2DRenderer`, and the camera tweens run on `motion`.
 *   **Controls**: hover/click a zone, `Ctrl`/`⌘ + K` to jump, `←`/`→` between zones, `Esc` to close, and pan/pinch on touch. `prefers-reduced-motion` skips the camera tween.
+*   **Dark-mode glow**: the dark theme renders through a `postprocessing` composer with a selective bloom limited to zone outlines; the light theme bypasses the composer entirely.
 
 ---
 

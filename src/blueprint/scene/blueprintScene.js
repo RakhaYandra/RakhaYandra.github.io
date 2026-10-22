@@ -1,4 +1,10 @@
 import { animate } from "motion";
+import {
+  EffectComposer,
+  EffectPass,
+  RenderPass,
+  SelectiveBloomEffect,
+} from "postprocessing";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import {
@@ -68,6 +74,7 @@ export function createBlueprintScene({
 
   const blocks = new Map();
   const meshes = [];
+  const edgeLines = [];
 
   zones.forEach((zone) => {
     const group = new THREE.Group();
@@ -110,6 +117,7 @@ export function createBlueprintScene({
     label.position.set(0, BLOCK_HEIGHT + 0.95, 0);
     label.visible = false;
 
+    edgeLines.push(edges);
     group.add(mesh, edges, label);
     scene.add(group);
     blocks.set(zone.key, {
@@ -132,6 +140,26 @@ export function createBlueprintScene({
       onHover(null);
     });
   });
+
+  let composer = null;
+
+  function ensureComposer() {
+    if (composer) return;
+    const size = renderer.getSize(new THREE.Vector2());
+    composer = new EffectComposer(renderer);
+    composer.setSize(size.x, size.y);
+    composer.addPass(new RenderPass(scene, camera));
+
+    const bloom = new SelectiveBloomEffect(scene, camera, {
+      intensity: 0.75,
+      luminanceThreshold: 0.18,
+      luminanceSmoothing: 0.25,
+      mipmapBlur: true,
+      radius: 0.65,
+    });
+    bloom.selection.set(edgeLines);
+    composer.addPass(new EffectPass(camera, bloom));
+  }
 
   function homeDistance() {
     return Math.min(fitDistance(plan.width, plan.depth) * 1.06, 78);
@@ -299,6 +327,7 @@ export function createBlueprintScene({
     const width = parent.clientWidth;
     const height = parent.clientHeight;
     renderer.setSize(width, height, false);
+    composer?.setSize(width, height);
     labelRenderer.setSize(width, height);
     camera.aspect = width / Math.max(height, 1);
     camera.updateProjectionMatrix();
@@ -359,7 +388,12 @@ export function createBlueprintScene({
       block.group.position.y = block.lift;
     });
 
-    renderer.render(scene, camera);
+    if (tokens.dark) {
+      ensureComposer();
+      composer.render();
+    } else {
+      renderer.render(scene, camera);
+    }
     labelRenderer.render(scene, camera);
   }
 
@@ -376,6 +410,7 @@ export function createBlueprintScene({
     canvas.removeEventListener("pointerdown", handlePointerDown);
     canvas.removeEventListener("pointerup", handlePointerUp);
     controls.dispose();
+    composer?.dispose();
     blocks.forEach((block) => {
       block.label.element?.remove();
     });
