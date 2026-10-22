@@ -3,16 +3,6 @@ import * as THREE from "three";
 const MONO = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
 const SANS = 'Geist, "Outfit", system-ui, sans-serif';
 
-function roundedRect(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.arcTo(x + w, y, x + w, y + h, r);
-  ctx.arcTo(x + w, y + h, x, y + h, r);
-  ctx.arcTo(x, y + h, x, y, r);
-  ctx.arcTo(x, y, x + w, y, r);
-  ctx.closePath();
-}
-
 export function createBoardTexture(tokens, zones, plan) {
   const width = 2048;
   const height = Math.round((width * plan.depth) / plan.width);
@@ -226,37 +216,5 @@ export function createBlockTexture(zone, tokens) {
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 8;
-  return texture;
-}
-
-export function createLabelTexture(zone, tokens) {
-  const canvas = document.createElement("canvas");
-  canvas.width = 1024;
-  canvas.height = 220;
-  const ctx = canvas.getContext("2d");
-
-  roundedRect(ctx, 6, 6, canvas.width - 12, canvas.height - 12, 18);
-  ctx.fillStyle = tokens.bg;
-  ctx.globalAlpha = 0.96;
-  ctx.fill();
-  ctx.globalAlpha = 1;
-  ctx.strokeStyle = tokens.accent;
-  ctx.lineWidth = 6;
-  ctx.stroke();
-
-  ctx.fillStyle = tokens.ink;
-  ctx.font = `600 84px ${SANS}`;
-  ctx.textAlign = "left";
-  ctx.textBaseline = "middle";
-  ctx.fillText("OPEN →", 48, 92);
-
-  ctx.fillStyle = tokens.accent;
-  ctx.font = `600 42px ${MONO}`;
-  ctx.fillText(`${zone.code} · ${zone.label.toUpperCase()}`, 48, 162);
-
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  texture.anisotropy = 8;
-  texture.needsUpdate = true;
   return texture;
 }

@@ -1,18 +1,18 @@
+import { animate } from "motion";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import {
-  createBlockTexture,
-  createBoardTexture,
-  createLabelTexture,
-} from "./textures.js";
+  CSS2DObject,
+  CSS2DRenderer,
+} from "three/addons/renderers/CSS2DRenderer.js";
+import { createBlockTexture, createBoardTexture } from "./textures.js";
+import "./labels.css";
 
 const FOV = 32;
 const BLOCK_HEIGHT = 0.36;
 const HOVER_LIFT = 0.9;
 const MOVE_DURATION = 700;
 const CAM_DIR = new THREE.Vector3(0, 1.05, 1).normalize();
-
-const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 const lerp = (a, b, t) => a + (b - a) * t;
 
@@ -36,6 +36,10 @@ export function createBlueprintScene({
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(tokens.bg);
+
+  const labelRenderer = new CSS2DRenderer();
+  labelRenderer.domElement.className = "bp-labels";
+  canvas.parentElement.appendChild(labelRenderer.domElement);
 
   const camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 300);
   const controls = new OrbitControls(camera, canvas);
@@ -91,16 +95,19 @@ export function createBlueprintScene({
     );
     edges.position.y = mesh.position.y;
 
-    const label = new THREE.Sprite(
-      new THREE.SpriteMaterial({
-        map: createLabelTexture(zone, tokens),
-        transparent: true,
-        depthTest: false,
-        depthWrite: false,
-      })
-    );
-    label.scale.set(2.1, 0.45, 1);
-    label.position.set(0, BLOCK_HEIGHT + 1.15, 0);
+    const labelElement = document.createElement("button");
+    labelElement.type = "button";
+    labelElement.className = "bp-label";
+    labelElement.tabIndex = -1;
+    labelElement.setAttribute("aria-hidden", "true");
+    labelElement.innerHTML =
+      '<span class="bp-label-title">OPEN →</span>' +
+      `<span class="bp-label-code">${zone.code} · ${zone.label.toUpperCase()}</span>`;
+    labelElement.addEventListener("click", () => onSelect(zone.key));
+
+    const label = new CSS2DObject(labelElement);
+    label.center.set(0.5, 1);
+    label.position.set(0, BLOCK_HEIGHT + 0.95, 0);
     label.visible = false;
 
     group.add(mesh, edges, label);
@@ -116,6 +123,14 @@ export function createBlueprintScene({
       target: 0,
     });
     meshes.push(mesh);
+
+    labelElement.addEventListener("pointerleave", () => {
+      if (activeKey === zone.key) return;
+      hovered = null;
+      label.visible = false;
+      blocks.get(zone.key).target = 0;
+      onHover(null);
+    });
   });
 
   function homeDistance() {
@@ -130,7 +145,8 @@ export function createBlueprintScene({
     return Math.max(horizontal, vertical, 6);
   }
 
-  let tween = null;
+  let tweening = false;
+  let stopTween = null;
   let activeKey = null;
 
   function placeCamera(target, distance) {
@@ -139,22 +155,40 @@ export function createBlueprintScene({
     controls.update();
   }
 
+  function finishMove() {
+    tweening = false;
+    stopTween = null;
+    controls.enabled = interacting;
+  }
+
   function moveTo(target, distance) {
-    const toTarget = target.clone();
-    const toPosition = toTarget.clone().addScaledVector(CAM_DIR, distance);
+    stopTween?.();
+    stopTween = null;
+
     if (reducedMotion) {
-      placeCamera(toTarget, distance);
-      tween = null;
+      placeCamera(target, distance);
+      tweening = false;
+      controls.enabled = interacting;
       return;
     }
-    tween = {
-      fromPosition: camera.position.clone(),
-      toPosition,
-      fromTarget: controls.target.clone(),
-      toTarget,
-      start: performance.now(),
-    };
+
+    const fromPosition = camera.position.clone();
+    const fromTarget = controls.target.clone();
+    const toTarget = target.clone();
+    const toPosition = toTarget.clone().addScaledVector(CAM_DIR, distance);
+
     controls.enabled = false;
+    tweening = true;
+    stopTween = animate(0, 1, {
+      duration: MOVE_DURATION / 1000,
+      ease: [0.65, 0, 0.35, 1],
+      onUpdate: (progress) => {
+        camera.position.lerpVectors(fromPosition, toPosition, progress);
+        controls.target.lerpVectors(fromTarget, toTarget, progress);
+      },
+      onComplete: finishMove,
+      onStop: finishMove,
+    });
   }
 
   function reset() {
@@ -220,8 +254,14 @@ export function createBlueprintScene({
     onHover(key);
   }
 
-  function handlePointerLeave() {
+  function handlePointerLeave(event) {
     if (press) return;
+    if (
+      event.relatedTarget instanceof Element &&
+      event.relatedTarget.closest(".bp-label")
+    ) {
+      return;
+    }
     hovered = null;
     blocks.forEach((block, blockKey) => {
       block.target = blockKey === activeKey ? 1 : 0;
@@ -259,9 +299,10 @@ export function createBlueprintScene({
     const width = parent.clientWidth;
     const height = parent.clientHeight;
     renderer.setSize(width, height, false);
+    labelRenderer.setSize(width, height);
     camera.aspect = width / Math.max(height, 1);
     camera.updateProjectionMatrix();
-    if (!activeKey && !tween) placeCamera(homeTarget, homeDistance());
+    if (!activeKey && !tweening) placeCamera(homeTarget, homeDistance());
   });
   resizeObserver.observe(canvas.parentElement);
   {
@@ -269,6 +310,7 @@ export function createBlueprintScene({
     const width = parent.clientWidth || window.innerWidth;
     const height = parent.clientHeight || window.innerHeight;
     renderer.setSize(width, height, false);
+    labelRenderer.setSize(width, height);
     camera.aspect = width / Math.max(height, 1);
     camera.updateProjectionMatrix();
     placeCamera(homeTarget, homeDistance());
@@ -287,9 +329,6 @@ export function createBlueprintScene({
       const zone = zones.find((item) => item.key === key);
       block.top.map = createBlockTexture(zone, tokens);
       block.top.needsUpdate = true;
-      block.label.material.map.dispose();
-      block.label.material.map = createLabelTexture(zone, tokens);
-      block.label.material.needsUpdate = true;
     });
   }
 
@@ -308,22 +347,11 @@ export function createBlueprintScene({
   let frame = 0;
   let disposed = false;
 
-  function animate(now) {
+  function renderFrame() {
     if (disposed) return;
-    frame = requestAnimationFrame(animate);
+    frame = requestAnimationFrame(renderFrame);
 
-    if (tween) {
-      const t = Math.min(1, (now - tween.start) / MOVE_DURATION);
-      const e = easeInOut(t);
-      camera.position.lerpVectors(tween.fromPosition, tween.toPosition, e);
-      controls.target.lerpVectors(tween.fromTarget, tween.toTarget, e);
-      if (t >= 1) {
-        tween = null;
-        controls.enabled = interacting;
-      }
-    } else {
-      controls.update();
-    }
+    if (!tweening) controls.update();
 
     blocks.forEach((block) => {
       const goal = block.target ? HOVER_LIFT : 0;
@@ -332,13 +360,15 @@ export function createBlueprintScene({
     });
 
     renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);
   }
 
-  frame = requestAnimationFrame(animate);
+  frame = requestAnimationFrame(renderFrame);
   if (onReady) requestAnimationFrame(() => onReady());
 
   function dispose() {
     disposed = true;
+    stopTween?.();
     cancelAnimationFrame(frame);
     resizeObserver.disconnect();
     canvas.removeEventListener("pointermove", handlePointerMove);
@@ -346,6 +376,10 @@ export function createBlueprintScene({
     canvas.removeEventListener("pointerdown", handlePointerDown);
     canvas.removeEventListener("pointerup", handlePointerUp);
     controls.dispose();
+    blocks.forEach((block) => {
+      block.label.element?.remove();
+    });
+    labelRenderer.domElement.remove();
     scene.traverse((object) => {
       if (object.geometry) object.geometry.dispose();
       if (object.material) {
