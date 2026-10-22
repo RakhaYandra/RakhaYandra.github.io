@@ -70,5 +70,41 @@
       "repo": "https://github.com/RakhaYandra/campkit",
       "docs": null
     }
+  },
+  {
+    "slug": "api-checks-to-incident-management",
+    "title": "From API Checks to Incident Management",
+    "date": "2026-10-05",
+    "tags": ["Monitoring", "Go", "Reliability", "Observability"],
+    "summary": "A 200 OK answers whether a port is open, not whether the service is healthy. How Pulse moved from endpoint checks to a threshold-driven incident lifecycle with notifications, recovery, and audited reliability numbers.",
+    "points": [
+      "The first version only asked whether an endpoint responded. That question is cheap to answer and nearly useless during an incident: a dependency can fail or latency can climb while every check still reports success and users are already affected.",
+      "The check loop was rebuilt around thresholds and consecutive failures, so a single blip pages nobody while a sustained failure opens an incident with an explicit OPEN/RESOLVED lifecycle. Transitions are recorded, which makes later metrics meaningful instead of reconstructed from logs.",
+      "Checks run asynchronously through a queue, so monitor count does not dictate check latency. Benchmarked at 1,000 monitors across 4 workers: peak 28 checks per second, zero queue backlog, and 50/50 injected timeouts detected - the queue drained instead of growing.",
+      "Notification is a delivery channel, not the source of truth: the incident carries the evidence, Telegram carries the alert, and Prometheus/Grafana expose the same state for dashboards. A separate DuckDB pipeline recomputes uptime and MTTR from incident history and cross-checks them against the API's own figures - the two have to MATCH.",
+      "The release gate was the QA harness rather than manual clicking: 22/22 Newman assertions, 22/22 QA checks, 7/7 end-to-end flows, with the runbook and backup/restore procedure kept in the pulse-docs repo. A monitoring tool fails in the dark, so the monitoring tool itself needs coverage."
+    ],
+    "links": {
+      "repo": "https://github.com/RakhaYandra/pulse",
+      "docs": null
+    }
+  },
+  {
+    "slug": "performance-metrics-beyond-average-latency",
+    "title": "Reading Performance Metrics Beyond Average Latency",
+    "date": "2026-10-14",
+    "tags": ["Performance", "Monitoring", "Testing"],
+    "summary": "An average is one number pretending to describe a distribution. What actually tells you whether a system is degrading: tail percentiles, throughput, backlog, and a timeout count you can trust.",
+    "points": [
+      "An average hides shape. A service answering 95% of requests in 40 ms and 5% in 4 seconds has a respectable mean and a terrible experience; p95 and p99 expose that split, and for a health-check API tracking a third-party dependency the tails are where failures announce themselves first.",
+      "Throughput and backlog belong next to latency, because they describe whether the system is keeping up. In the Pulse benchmark of 1,000 monitors on 4 workers the useful result was not the peak of 28 checks per second but the backlog staying at zero - a fast average with a growing queue is a system already behind.",
+      "Error rate needs a breakdown to be actionable: a timeout is a capacity or dependency problem, a 5xx is a defect, and collapsing both into one percentage points at the wrong fix. That benchmark injected 50 timeouts and expected 50 detections; anything less is an observability gap, not a rounding error.",
+      "Averages are fine when the question is genuinely about the average. The AQI ingestion API in my IEEE work reported a 557 ms mean against a fixed, documented workload and a throughput of 1.34 requests per second, which was a fair summary for that question. The mistake is carrying such a number into capacity decisions it was never measured to support.",
+      "Metrics only count if the harness producing them is repeatable: fixed fixtures, recorded parameters, and results that can be rerun on the same commit instead of remembered from a one-off session."
+    ],
+    "links": {
+      "repo": "https://github.com/RakhaYandra/pulse",
+      "docs": null
+    }
   }
 ]

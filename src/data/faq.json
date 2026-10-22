@@ -14,5 +14,21 @@
   {
     "q": "Are you available for remote, hybrid, or relocation contracts?",
     "a": "Yes. Currently based in Medan (UTC+7), I am actively open to institutional full-time software engineering roles, distributed remote contracts across global timezones, as well as on-site positions with relocation to Jakarta / Bandung."
+  },
+  {
+    "q": "How do you decide what to build first?",
+    "a": "Priority follows risk and consequence rather than novelty. On the Telkomsel workforce management build, the roster and attendance flows that payroll depended on were specified as Go/Gin endpoints before any interface work started; on my own tooling, destructive steps such as package installs and container teardown were pushed behind dry-run and doctor checks because a bad state there costs more than a late feature. Anything that can silently corrupt data or block recovery gets built and tested ahead of visible features."
+  },
+  {
+    "q": "How do you know when a feature is ready?",
+    "a": "Ready means the acceptance criteria pass under the same automated harness that will run after the merge, not that the happy path worked once by hand. In Pulse that meant 22/22 Newman assertions, 22/22 QA checks, and 7/7 end-to-end flows green before release, with the incident lifecycle and its notification path covered explicitly. For operational features I also require a written runbook and a tested backup/restore, because a feature that cannot be recovered is not finished."
+  },
+  {
+    "q": "What makes a good API design?",
+    "a": "A good API stays honest under failure: consistent status codes and error shapes, validation at the boundary, schema parity enforced by automated assertions, and idempotent relations so retries do not duplicate state. I keep the Newman collection as executable documentation and run it headless before any merge (LifeOS 75/75 endpoints, Shiftbase 15/15), alongside OpenAPI documentation generated from the same contract. Compatibility is part of the design too: a contract change without a versioning path is a break, not an improvement."
+  },
+  {
+    "q": "How do you approach debugging an unfamiliar codebase?",
+    "a": "I reproduce the failure with the smallest input that still triggers it, then read the tests before the implementation because they describe intended behavior faster than tracing every module. From there I follow the data path through logs and fixtures, which is the same discipline behind Hibiki's journal timeline: explicit correlation reasons backed by evidence instead of guesswork. The fix is verified through the harness that exposed the bug, so the conclusion is repeatable rather than a one-time observation."
   }
 ]
