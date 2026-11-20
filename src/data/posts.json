@@ -85,7 +85,7 @@
       "The release gate was the QA harness rather than manual clicking: 22/22 Newman assertions, 22/22 QA checks, 7/7 end-to-end flows, with the runbook and backup/restore procedure kept in the pulse-docs repo. A monitoring tool fails in the dark, so the monitoring tool itself needs coverage."
     ],
     "links": {
-      "repo": "https://github.com/RakhaYandra/pulse",
+      "repo": "https://github.com/hyousaa/pulse",
       "docs": null
     }
   },
@@ -103,7 +103,7 @@
       "Metrics only count if the harness producing them is repeatable: fixed fixtures, recorded parameters, and results that can be rerun on the same commit instead of remembered from a one-off session."
     ],
     "links": {
-      "repo": "https://github.com/RakhaYandra/pulse",
+      "repo": "https://github.com/hyousaa/pulse",
       "docs": null
     }
   }

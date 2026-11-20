@@ -108,11 +108,11 @@
      "CLI",
      "Concurrency"
     ],
-    "source": "https://github.com/RakhaYandra/hibiki",
+    "source": "https://github.com/hyousaa/hibiki",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/hibiki",
-     "docs": "https://github.com/RakhaYandra/hibiki/releases"
+     "repo": "https://github.com/hyousaa/hibiki",
+     "docs": "https://github.com/hyousaa/hibiki/releases"
     },
     "duration": "Oct 2026",
     "imageSrc": "projects/project.png",
@@ -134,11 +134,11 @@
      "CLI",
      "Testing"
     ],
-    "source": "https://github.com/RakhaYandra/shiro",
+    "source": "https://github.com/hyousaa/shiro",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiro",
-     "docs": "https://github.com/RakhaYandra/shiro/releases"
+     "repo": "https://github.com/hyousaa/shiro",
+     "docs": "https://github.com/hyousaa/shiro/releases"
     },
     "duration": "Oct 2026",
     "imageSrc": "projects/project.png",
@@ -161,11 +161,11 @@
      "Git",
      "TUI"
     ],
-    "source": "https://github.com/RakhaYandra/kage",
+    "source": "https://github.com/hyousaa/kage",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/kage",
-     "docs": "https://github.com/RakhaYandra/kage/releases"
+     "repo": "https://github.com/hyousaa/kage",
+     "docs": "https://github.com/hyousaa/kage/releases"
     },
     "duration": "Oct 2026",
     "imageSrc": "projects/project.png",
@@ -187,11 +187,11 @@
      "CLI",
      "Git"
     ],
-    "source": "https://github.com/RakhaYandra/mamori",
+    "source": "https://github.com/hyousaa/mamori",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/mamori",
-     "docs": "https://github.com/RakhaYandra/mamori/releases"
+     "repo": "https://github.com/hyousaa/mamori",
+     "docs": "https://github.com/hyousaa/mamori/releases"
     },
     "duration": "Oct 2026",
     "imageSrc": "projects/project.png",
@@ -212,11 +212,11 @@
      "Linux",
      "OpenCode"
     ],
-    "source": "https://github.com/RakhaYandra/neko",
+    "source": "https://github.com/hyousaa/neko",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/neko",
-     "docs": "https://github.com/RakhaYandra/neko/releases"
+     "repo": "https://github.com/hyousaa/neko",
+     "docs": "https://github.com/hyousaa/neko/releases"
     },
     "duration": "Oct 2026",
     "imageSrc": "projects/project.png",
@@ -237,10 +237,10 @@
      "Omarchy",
      "Linux"
     ],
-    "source": "https://github.com/RakhaYandra/omarchy-neko",
+    "source": "https://github.com/hyousaa/omarchy-neko",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/omarchy-neko",
+     "repo": "https://github.com/hyousaa/omarchy-neko",
      "docs": null
     },
     "duration": "Oct 2026",
@@ -272,11 +272,11 @@
      "GitHub Actions"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/fukurou",
+    "source": "https://github.com/hyousaa/fukurou",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/fukurou",
-     "docs": "https://github.com/RakhaYandra/fukurou/releases/tag/v0.1.0"
+     "repo": "https://github.com/hyousaa/fukurou",
+     "docs": "https://github.com/hyousaa/fukurou/releases/tag/v0.1.0"
     },
     "workType": "Solo",
     "duration": "Oct 2026"
@@ -301,11 +301,11 @@
      "GitHub Actions"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/tora",
+    "source": "https://github.com/hyousaa/tora",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/tora",
-     "docs": "https://github.com/RakhaYandra/tora/releases"
+     "repo": "https://github.com/hyousaa/tora",
+     "docs": "https://github.com/hyousaa/tora/releases"
     },
     "workType": "Solo",
     "duration": "Oct 2026"
@@ -329,11 +329,11 @@
      "GitHub Actions"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/ookami",
+    "source": "https://github.com/hyousaa/ookami",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/ookami",
-     "docs": "https://github.com/RakhaYandra/ookami/releases"
+     "repo": "https://github.com/hyousaa/ookami",
+     "docs": "https://github.com/hyousaa/ookami/releases"
     },
     "workType": "Solo",
     "duration": "Oct 2026"
@@ -358,11 +358,11 @@
      "Bash"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/kitsune",
+    "source": "https://github.com/hyousaa/kitsune",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/kitsune",
-     "docs": "https://github.com/RakhaYandra/kitsune/releases"
+     "repo": "https://github.com/hyousaa/kitsune",
+     "docs": "https://github.com/hyousaa/kitsune/releases"
     },
     "workType": "Solo",
     "duration": "Oct 2026",
@@ -387,11 +387,11 @@
      "Bash"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/tanuki",
+    "source": "https://github.com/hyousaa/tanuki",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/tanuki",
-     "docs": "https://github.com/RakhaYandra/tanuki/releases"
+     "repo": "https://github.com/hyousaa/tanuki",
+     "docs": "https://github.com/hyousaa/tanuki/releases"
     },
     "workType": "Solo",
     "duration": "Oct 2026"
@@ -417,11 +417,11 @@
      "HTTPS"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lanbox",
+    "source": "https://github.com/hyousaa/lanbox",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lanbox",
-     "docs": "https://github.com/RakhaYandra/lanbox-docs/releases"
+     "repo": "https://github.com/hyousaa/lanbox",
+     "docs": "https://github.com/hyousaa/lanbox-docs/releases"
     },
     "workType": "Solo",
     "duration": "Sep 2026",
@@ -429,7 +429,7 @@
      {
       "title": "LANBox Server",
       "blurb": "Go file server — always-HTTPS, token + PIN auth, chunked uploads with resume.",
-      "repo": "https://github.com/RakhaYandra/lanbox",
+      "repo": "https://github.com/hyousaa/lanbox",
       "stack": [
        "Go",
        "HTTPS",
@@ -439,7 +439,7 @@
      {
       "title": "LANBox Web",
       "blurb": "React + Vite UI consuming the lanbox API; served by the server or standalone.",
-      "repo": "https://github.com/RakhaYandra/lanbox-web",
+      "repo": "https://github.com/hyousaa/lanbox-web",
       "stack": [
        "React",
        "Vite",
@@ -449,7 +449,7 @@
      {
       "title": "LANBox Docs",
       "blurb": "Requirements, architecture, and guides (EN) + PDF releases.",
-      "repo": "https://github.com/RakhaYandra/lanbox-docs",
+      "repo": "https://github.com/hyousaa/lanbox-docs",
       "stack": [
        "Docs"
       ]
@@ -489,11 +489,11 @@
      "Troubleshooting"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/pulse",
+    "source": "https://github.com/hyousaa/pulse",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/pulse",
-     "docs": "https://github.com/RakhaYandra/pulse-docs/releases"
+     "repo": "https://github.com/hyousaa/pulse",
+     "docs": "https://github.com/hyousaa/pulse-docs/releases"
     },
     "workType": "Solo",
     "duration": "Sep 2026",
@@ -502,7 +502,7 @@
      {
       "title": "Pulse API",
       "blurb": "Monitoring & incident REST API — JWT, per-user isolation, threshold engine, Redis queue.",
-      "repo": "https://github.com/RakhaYandra/pulse",
+      "repo": "https://github.com/hyousaa/pulse",
       "stack": [
        "Go",
        "Gin",
@@ -515,7 +515,7 @@
      {
       "title": "Pulse Web",
       "blurb": "Monitoring dashboard — status board, response-time charts, incident history, reliability reports.",
-      "repo": "https://github.com/RakhaYandra/pulse-web",
+      "repo": "https://github.com/hyousaa/pulse-web",
       "stack": [
        "React",
        "Vite",
@@ -525,7 +525,7 @@
      {
       "title": "Pulse QA",
       "blurb": "22 cases 100% Pass, per-user isolation, Newman 22/22, Playwright 7/7, bench rig with validity gates.",
-      "repo": "https://github.com/RakhaYandra/pulse-qa",
+      "repo": "https://github.com/hyousaa/pulse-qa",
       "stack": [
        "QA",
        "Newman",
@@ -535,7 +535,7 @@
      {
       "title": "Pulse Data",
       "blurb": "Reliability analytics pipeline — 4 marts, MTTR cross-check MATCH, 4 charts.",
-      "repo": "https://github.com/RakhaYandra/pulse-data",
+      "repo": "https://github.com/hyousaa/pulse-data",
       "stack": [
        "Python",
        "DuckDB"
@@ -544,7 +544,7 @@
      {
       "title": "Pulse Ops",
       "blurb": "Compose runbook, tested backup/restore, Prometheus + Grafana + alerts.",
-      "repo": "https://github.com/RakhaYandra/pulse-ops",
+      "repo": "https://github.com/hyousaa/pulse-ops",
       "stack": [
        "Docker",
        "PostgreSQL",
@@ -554,7 +554,7 @@
      {
       "title": "Pulse Docs",
       "blurb": "BRD, PRD, FSD, SRS + ADRs and postmortems, PDFs auto-built as release assets.",
-      "repo": "https://github.com/RakhaYandra/pulse-docs",
+      "repo": "https://github.com/hyousaa/pulse-docs",
       "stack": [
        "Docs",
        "SRS"
@@ -593,11 +593,11 @@
      "openpyxl"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/kosmanager-dotnet",
+    "source": "https://github.com/hyousaa/kosmanager-dotnet",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
-     "docs": "https://github.com/RakhaYandra/kosmanager-dotnet-docs/releases"
+     "repo": "https://github.com/hyousaa/kosmanager-dotnet",
+     "docs": "https://github.com/hyousaa/kosmanager-dotnet-docs/releases"
     },
     "workType": "Solo",
     "duration": "Sep 2026",
@@ -606,7 +606,7 @@
      {
       "title": "KosManager API",
       "blurb": "Billing REST API — Clean Architecture-lite, RBAC, scheduler H-3/H-1/H+1, CSV import.",
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet",
+      "repo": "https://github.com/hyousaa/kosmanager-dotnet",
       "stack": [
        "C#",
        "ASP.NET Core",
@@ -618,7 +618,7 @@
      {
       "title": "KosManager Web",
       "blurb": "Board kamar + billing UI — Blazor Server, MudBlazor, Synapse light theme.",
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-web",
+      "repo": "https://github.com/hyousaa/kosmanager-dotnet-web",
       "stack": [
        "Blazor",
        "MudBlazor",
@@ -628,7 +628,7 @@
      {
       "title": "KosManager QA",
       "blurb": "47 cases 100% Pass, RBAC matrix, Newman 22/22, Playwright 12/12, Excel report.",
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-qa",
+      "repo": "https://github.com/hyousaa/kosmanager-dotnet-qa",
       "stack": [
        "QA",
        "Newman",
@@ -638,7 +638,7 @@
      {
       "title": "KosManager Data",
       "blurb": "Occupancy + arrears marts, quality gates, DuckDB pipeline.",
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-data",
+      "repo": "https://github.com/hyousaa/kosmanager-dotnet-data",
       "stack": [
        "Python",
        "DuckDB"
@@ -647,7 +647,7 @@
      {
       "title": "KosManager Ops",
       "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting.",
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-ops",
+      "repo": "https://github.com/hyousaa/kosmanager-dotnet-ops",
       "stack": [
        "Docker",
        "MySQL",
@@ -657,7 +657,7 @@
      {
       "title": "KosManager Docs",
       "blurb": "BRD, PRD, FSD, SRS in Indonesian + ADR-002/003.",
-      "repo": "https://github.com/RakhaYandra/kosmanager-dotnet-docs",
+      "repo": "https://github.com/hyousaa/kosmanager-dotnet-docs",
       "stack": [
        "Docs",
        "SRS"
@@ -700,11 +700,11 @@
      "openpyxl"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase",
+    "source": "https://github.com/hyousaa/shiftbase",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase",
-     "docs": "https://github.com/RakhaYandra/shiftbase-docs/releases"
+     "repo": "https://github.com/hyousaa/shiftbase",
+     "docs": "https://github.com/hyousaa/shiftbase-docs/releases"
     },
     "workType": "Solo",
     "duration": "Sep 2026",
@@ -713,7 +713,7 @@
      {
       "title": "Shiftbase API",
       "blurb": "Scheduling & attendance REST API — RBAC, conflict 409s, CSV import, overtime & coverage reports.",
-      "repo": "https://github.com/RakhaYandra/shiftbase",
+      "repo": "https://github.com/hyousaa/shiftbase",
       "stack": [
        "Go",
        "Gin",
@@ -725,7 +725,7 @@
      {
       "title": "Shiftbase Web",
       "blurb": "Roster board UI — schedule timeline, shift CRUD, attendance + CSV import, reports.",
-      "repo": "https://github.com/RakhaYandra/shiftbase-web",
+      "repo": "https://github.com/hyousaa/shiftbase-web",
       "stack": [
        "React",
        "TypeScript",
@@ -736,7 +736,7 @@
      {
       "title": "Shiftbase QA",
       "blurb": "38 cases 100% Pass, RBAC matrix, Newman 15/15, Playwright 8/8, Excel report.",
-      "repo": "https://github.com/RakhaYandra/shiftbase-qa",
+      "repo": "https://github.com/hyousaa/shiftbase-qa",
       "stack": [
        "QA",
        "Newman",
@@ -746,7 +746,7 @@
      {
       "title": "Shiftbase Data",
       "blurb": "HR analytics pipeline — 5 marts, overtime cross-check MATCH, 4 charts.",
-      "repo": "https://github.com/RakhaYandra/shiftbase-data",
+      "repo": "https://github.com/hyousaa/shiftbase-data",
       "stack": [
        "Python",
        "pandas",
@@ -756,7 +756,7 @@
      {
       "title": "Shiftbase Ops",
       "blurb": "Compose runbook, tested MySQL backup roundtrip, 15-entry troubleshooting, 10 tickets.",
-      "repo": "https://github.com/RakhaYandra/shiftbase-ops",
+      "repo": "https://github.com/hyousaa/shiftbase-ops",
       "stack": [
        "Docker",
        "MySQL",
@@ -766,7 +766,7 @@
      {
       "title": "Shiftbase Docs",
       "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
-      "repo": "https://github.com/RakhaYandra/shiftbase-docs",
+      "repo": "https://github.com/hyousaa/shiftbase-docs",
       "stack": [
        "Docs",
        "SRS",
@@ -809,11 +809,11 @@
      "Troubleshooting"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos",
+    "source": "https://github.com/hyousaa/lifeos",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos",
-     "docs": "https://github.com/RakhaYandra/lifeos-docs/releases"
+     "repo": "https://github.com/hyousaa/lifeos",
+     "docs": "https://github.com/hyousaa/lifeos-docs/releases"
     },
     "workType": "Solo",
     "duration": "Sep 2026",
@@ -822,7 +822,7 @@
      {
       "title": "LifeOS API",
       "blurb": "Personal OS REST API — tasks, goals, habits, finance, health, reviews, dashboard.",
-      "repo": "https://github.com/RakhaYandra/lifeos",
+      "repo": "https://github.com/hyousaa/lifeos",
       "stack": [
        "Go",
        "Gin",
@@ -833,7 +833,7 @@
      {
       "title": "LifeOS Web",
       "blurb": "Telemetry dashboard — 30-day habit heatmap, cashflow, goals, weekly reviews.",
-      "repo": "https://github.com/RakhaYandra/lifeos-web",
+      "repo": "https://github.com/hyousaa/lifeos-web",
       "stack": [
        "React",
        "TypeScript",
@@ -844,7 +844,7 @@
      {
       "title": "LifeOS QA",
       "blurb": "61 cases 100% Pass, 4 real bugs, Newman 75/75, Playwright 26/26, Excel report.",
-      "repo": "https://github.com/RakhaYandra/lifeos-qa",
+      "repo": "https://github.com/hyousaa/lifeos-qa",
       "stack": [
        "QA",
        "Newman",
@@ -854,7 +854,7 @@
      {
       "title": "LifeOS Data",
       "blurb": "ETL & analytics pipeline — 8 tables, quality gates, 5 marts, 4 charts.",
-      "repo": "https://github.com/RakhaYandra/lifeos-data",
+      "repo": "https://github.com/hyousaa/lifeos-data",
       "stack": [
        "Python",
        "pandas",
@@ -864,7 +864,7 @@
      {
       "title": "LifeOS Ops",
       "blurb": "Runbook + bash scripts, tested backup roundtrip, 15-entry troubleshooting, 10 tickets.",
-      "repo": "https://github.com/RakhaYandra/lifeos-ops",
+      "repo": "https://github.com/hyousaa/lifeos-ops",
       "stack": [
        "Linux",
        "Bash",
@@ -874,7 +874,7 @@
      {
       "title": "LifeOS Docs",
       "blurb": "BRD, PRD, FSD, SRS in Indonesian + PDFs auto-built as release assets.",
-      "repo": "https://github.com/RakhaYandra/lifeos-docs",
+      "repo": "https://github.com/hyousaa/lifeos-docs",
       "stack": [
        "Docs",
        "SRS",
@@ -903,10 +903,10 @@
      "Troubleshooting"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase-ops",
+    "source": "https://github.com/hyousaa/shiftbase-ops",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase-ops",
+     "repo": "https://github.com/hyousaa/shiftbase-ops",
      "docs": null
     },
     "workType": "Solo",
@@ -931,10 +931,10 @@
      "Troubleshooting"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos-ops",
+    "source": "https://github.com/hyousaa/lifeos-ops",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos-ops",
+     "repo": "https://github.com/hyousaa/lifeos-ops",
      "docs": null
     },
     "workType": "Solo",
@@ -960,10 +960,10 @@
      "ETL"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase-data",
+    "source": "https://github.com/hyousaa/shiftbase-data",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase-data",
+     "repo": "https://github.com/hyousaa/shiftbase-data",
      "docs": null
     },
     "workType": "Solo",
@@ -988,10 +988,10 @@
      "ETL"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos-data",
+    "source": "https://github.com/hyousaa/lifeos-data",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos-data",
+     "repo": "https://github.com/hyousaa/lifeos-data",
      "docs": null
     },
     "workType": "Solo",
@@ -1017,10 +1017,10 @@
      "Docker"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase-qa",
+    "source": "https://github.com/hyousaa/shiftbase-qa",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase-qa",
+     "repo": "https://github.com/hyousaa/shiftbase-qa",
      "docs": null
     },
     "workType": "Solo",
@@ -1046,10 +1046,10 @@
      "openpyxl"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos-qa",
+    "source": "https://github.com/hyousaa/lifeos-qa",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos-qa",
+     "repo": "https://github.com/hyousaa/lifeos-qa",
      "docs": null
     },
     "workType": "Solo",
@@ -1076,10 +1076,10 @@
      "Newman"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos",
+    "source": "https://github.com/hyousaa/lifeos",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos",
+     "repo": "https://github.com/hyousaa/lifeos",
      "docs": null
     },
     "workType": "Solo",
@@ -1105,10 +1105,10 @@
      "shadcn"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/lifeos-web",
+    "source": "https://github.com/hyousaa/lifeos-web",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/lifeos-web",
+     "repo": "https://github.com/hyousaa/lifeos-web",
      "docs": null
     },
     "workType": "Solo",
@@ -1136,10 +1136,10 @@
      "Newman"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase",
+    "source": "https://github.com/hyousaa/shiftbase",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase",
+     "repo": "https://github.com/hyousaa/shiftbase",
      "docs": null
     },
     "workType": "Solo",
@@ -1165,10 +1165,10 @@
      "shadcn"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/shiftbase-web",
+    "source": "https://github.com/hyousaa/shiftbase-web",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/shiftbase-web",
+     "repo": "https://github.com/hyousaa/shiftbase-web",
      "docs": null
     },
     "workType": "Solo",
@@ -1214,10 +1214,10 @@
      "Web APIs"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/gamepad-dashboard",
+    "source": "https://github.com/hyousaa/gamepad-dashboard",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/gamepad-dashboard",
+     "repo": "https://github.com/hyousaa/gamepad-dashboard",
      "docs": null
     },
     "workType": "Solo",
@@ -1284,10 +1284,10 @@
      "Data Modeling"
     ],
     "demo": null,
-    "source": "https://github.com/RakhaYandra/wedding-tracker",
+    "source": "https://github.com/hyousaa/wedding-tracker",
     "links": {
      "live": null,
-     "repo": "https://github.com/RakhaYandra/wedding-tracker",
+     "repo": "https://github.com/hyousaa/wedding-tracker",
      "docs": null
     },
     "workType": "Solo",
