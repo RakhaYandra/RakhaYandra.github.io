@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
+import { mergeContributions } from "../../lib/merge-activity";
 import styles from "./HeatmapCard.module.css";
 
-const API = "https://github-contributions-api.jogruber.de/v4/RakhaYandra?y=last";
+const API = "https://github-contributions-api.jogruber.de/v4";
+const PROFILES = ["RakhaYandra", "hyousaa"];
 
 export function HeatmapCard() {
   const [data, setData] = useState(null);
@@ -9,10 +11,20 @@ export function HeatmapCard() {
 
   useEffect(() => {
     let alive = true;
-    fetch(API)
-      .then((response) => (response.ok ? response.json() : null))
-      .then((json) => {
-        if (alive && json) setData(json);
+    Promise.all(
+      PROFILES.map((login) =>
+        fetch(`${API}/${login}?y=last`).then((response) =>
+          response.ok ? response.json() : null
+        )
+      )
+    )
+      .then((responses) => {
+        if (!alive) return;
+        const lists = responses
+          .filter(Boolean)
+          .map((json) => json.contributions ?? []);
+        const days = mergeContributions(lists);
+        if (days.length) setData(days);
       })
       .catch(() => {
         if (alive) setFailed(true);
@@ -24,7 +36,7 @@ export function HeatmapCard() {
 
   const weeks = useMemo(() => {
     if (!data) return [];
-    const days = data.contributions.slice(-371);
+    const days = data.slice(-371);
     const grouped = [];
     for (let index = 0; index < days.length; index += 7) {
       grouped.push(days.slice(index, index + 7));
@@ -32,12 +44,17 @@ export function HeatmapCard() {
     return grouped;
   }, [data]);
 
+  const total = useMemo(
+    () => (data ?? []).reduce((sum, day) => sum + day.count, 0),
+    [data]
+  );
+
   if (failed) return null;
 
   return (
     <aside
       className={styles.card}
-      aria-label="GitHub contribution activity for the last twelve months"
+      aria-label="GitHub contribution activity for RakhaYandra and hyousaa over the last twelve months"
     >
       <p className={styles.label}>GITHUB ACTIVITY · LAST 12 MONTHS</p>
       {data ? (
@@ -57,13 +74,21 @@ export function HeatmapCard() {
             ))}
           </div>
           <p className={styles.meta}>
-            {data.total.lastYear} contributions ·{" "}
+            {total} contributions ·{" "}
             <a
               href="https://github.com/RakhaYandra"
               target="_blank"
               rel="noopener noreferrer"
             >
-              @RakhaYandra →
+              @RakhaYandra
+            </a>{" "}
+            +{" "}
+            <a
+              href="https://github.com/hyousaa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @hyousaa
             </a>
           </p>
         </>

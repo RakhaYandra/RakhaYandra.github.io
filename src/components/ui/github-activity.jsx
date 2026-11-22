@@ -8,6 +8,7 @@ import {
   useReducedMotion,
 } from "motion/react";
 import { cn } from "../../lib/utils";
+import { mergeContributions } from "../../lib/merge-activity";
 
 const DEFAULT_ACCENT = "#39d353";
 const DEFAULT_CELL_SIZE = 11;
@@ -94,53 +95,61 @@ async function fetchCalendar(login) {
   }));
 }
 
-async function fetchRepos(login) {
-  const res = await fetch(`${EVENTS_API}/${login}/events/public?per_page=100`);
-  if (!res.ok) return [];
-
-  const events = await res.json();
+async function fetchRepos(logins) {
   const counts = new Map();
 
-  for (const event of events) {
-    if (event.type !== "PushEvent" || !event.repo) continue;
-    const commits = event.payload?.commits?.length ?? 1;
-    counts.set(event.repo.name, (counts.get(event.repo.name) ?? 0) + commits);
-  }
+  await Promise.all(
+    logins.map(async (login) => {
+      const res = await fetch(`${EVENTS_API}/${login}/events/public?per_page=100`);
+      if (!res.ok) return;
+
+      for (const event of await res.json()) {
+        if (event.type !== "PushEvent" || !event.repo) continue;
+        const commits = event.payload?.commits?.length ?? 1;
+        counts.set(event.repo.name, (counts.get(event.repo.name) ?? 0) + commits);
+      }
+    })
+  );
 
   return [...counts.entries()]
     .sort(([, a], [, b]) => b - a)
     .slice(0, STACK_LIMIT)
     .map(([fullName, count]) => {
       const [owner, name] = fullName.split("/");
+      const isOwn = logins.some(
+        (login) => login.toLowerCase() === owner.toLowerCase()
+      );
       return {
         name,
         count,
         href: `https://github.com/${fullName}`,
-        logo:
-          owner.toLowerCase() === login.toLowerCase() ? undefined : (
-            <img src={`https://github.com/${owner}.png?size=64`} alt="" />
-          ),
+        logo: isOwn ? undefined : (
+          <img src={`https://github.com/${owner}.png?size=64`} alt="" />
+        ),
       };
     });
 }
 
-function useGitHubUser(login) {
+function useGitHubUser(usernames) {
   const [data, setData] = useState();
+  const key = usernames.join(",");
 
   useEffect(() => {
-    if (!login) return;
+    const logins = key.split(",").filter(Boolean);
+    if (!logins.length) return;
     let active = true;
 
-    Promise.all([fetchCalendar(login), fetchRepos(login)])
-      .then(([contributions, repos]) => {
-        if (active && contributions) setData({ contributions, repos });
+    Promise.all([Promise.all(logins.map(fetchCalendar)), fetchRepos(logins)])
+      .then(([calendars, repos]) => {
+        const contributions = mergeContributions(calendars.filter(Boolean));
+        if (active && contributions.length) setData({ contributions, repos });
       })
       .catch(() => {});
 
     return () => {
       active = false;
     };
-  }, [login]);
+  }, [key]);
 
   return data;
 }
@@ -403,6 +412,7 @@ const Chevron = ({ open, transition }) => (
 export function GitHubActivity({
   className,
   username,
+  usernames,
   contributions: contributionsProp = [],
   repos: reposProp = [],
   year,
@@ -427,11 +437,16 @@ export function GitHubActivity({
     onOpenChange?.(!open);
   };
 
+  const logins = useMemo(
+    () => [usernames ?? username].flat().filter(Boolean),
+    [usernames, username]
+  );
+
   const needsFetch = !contributionsProp.length || !reposProp.length;
-  const fetched = useGitHubUser(needsFetch ? username : undefined);
+  const fetched = useGitHubUser(needsFetch ? logins : []);
   const placeholder = useMemo(
-    () => (username ? emptyDays(weeksFor(months)) : []),
-    [username, months]
+    () => (logins.length ? emptyDays(weeksFor(months)) : []),
+    [logins.length, months]
   );
 
   const contributions = contributionsProp.length
